@@ -1,0 +1,1749 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+		<meta charset="UTF-8" />
+		<title>UPClass - Módulo Logística I: Lição 1</title>
+		<link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.min.css"/>
+		<link rel="stylesheet" type="text/css" href="./assets/css/font-awesome.min.css"/>
+		<link rel="stylesheet" type="text/css" href="./assets/css/input-style.css"/>
+		<link rel="stylesheet" type="text/css" href="./assets/css/style.css"/>
+		<link rel="icon" href="./assets/images/favicon-16x16.png" />
+		<link rel="icon" href="./assets/images/favicon-32x32.png" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  </head>
+	<body>
+		<!-- top nav -->
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<!-- nav top -->
+			<div class="navbar-header">
+				<button href="javascript:void(0)" id="main-toggle" class="sidebar-toggle navigation-toggle">
+					<span class="navigation-toggle-line"></span>
+					<span class="navigation-toggle-line"></span>
+					<span class="navigation-toggle-line"></span>
+				</button>
+				<a class="navbar-brand" href="./meus-cursos.html">
+					<h1>
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 119 22" width="119px" height="22px" class="header-logo"><defs><linearGradient id="a" x1="16.7" y1="21.09" x2="16.7" y2="0.23" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#6cc071" stop-opacity="0.3"/><stop offset="0.67" stop-color="#b2d235" stop-opacity="0.5"/><stop offset="1" stop-color="#fff9ae" stop-opacity="0.8"/></linearGradient></defs><title>logo-upclass</title><path d="M7.6,22h5.7C13.9,20.5,19.5,8.6,34.1.4A.2.2,0,0,0,34,0H21.4c-.8.7-8.2,7.6-11,14.6a.2.2,0,0,1-.4,0A33,33,0,0,0,5.7,7.9H.2a.2.2,0,0,0-.2.4A29,29,0,0,1,7.4,21.8Z" fill="#129e4a"/><path d="M7.8,21.1A30.4,30.4,0,0,0,.9,8H5.3a34.3,34.3,0,0,1,4,6.5.8.8,0,0,0,1.4,0C13.4,7.9,20.3,1.3,21.5.2h11A53.3,53.3,0,0,0,17.9,13a42.4,42.4,0,0,0-5.1,8.1Z" fill="url(#a)"/><path d="M11.2,11,9.9,9.5H8.1l2.1,3.2Z" fill="#0c3166"/><path d="M37.8,3.1H32.4a50.7,50.7,0,0,0-13.7,12,43.8,43.8,0,0,0-3.7,5.5l1.4-1.3C23.7,10.9,34.7,5.1,37.9,3.5A.2.2,0,0,0,37.8,3.1Z" fill="#0c3166"/><path d="M44.6,21.9a6.7,6.7,0,0,1-3.3-.7,3.7,3.7,0,0,1-1.7-2,9.8,9.8,0,0,1-.5-3.3V3.1h4.1V16.5a7.2,7.2,0,0,0,.1,1.1,1.9,1.9,0,0,0,.4.9,1.4,1.4,0,0,0,1.9,0,1.9,1.9,0,0,0,.4-.9,8.3,8.3,0,0,0,.1-1.1V3.1h4.1V15.9a9.6,9.6,0,0,1-.5,3.3,3.8,3.8,0,0,1-1.7,2A6.6,6.6,0,0,1,44.6,21.9Z" fill="#0a2b54"/><path d="M52.1,21.6V3.1h6.2a5.4,5.4,0,0,1,2.7.6,3.8,3.8,0,0,1,1.6,1.8,7.3,7.3,0,0,1,.5,2.9,6.2,6.2,0,0,1-.7,3.3,3.7,3.7,0,0,1-1.9,1.6,8,8,0,0,1-2.7.4H56.2v7.9Zm4.1-10.7h1.4a2,2,0,0,0,1.1-.3,1.3,1.3,0,0,0,.5-.8,6.4,6.4,0,0,0,.1-1.4,6.7,6.7,0,0,0-.1-1.2,1.4,1.4,0,0,0-.5-.9,1.9,1.9,0,0,0-1.2-.3H56.2Z" fill="#0a2b54"/><path d="M70,21.9a6.2,6.2,0,0,1-3.3-.8A4.1,4.1,0,0,1,64.9,19a9.5,9.5,0,0,1-.5-3.3V9a9.7,9.7,0,0,1,.5-3.3,4.1,4.1,0,0,1,1.7-2.1A6.3,6.3,0,0,1,70,2.8a6.4,6.4,0,0,1,3.2.7,3.7,3.7,0,0,1,1.6,1.9,7.5,7.5,0,0,1,.5,2.8V9.8h-4V7.9a9.4,9.4,0,0,0-.1-1.1,1.6,1.6,0,0,0-.3-.8,1.2,1.2,0,0,0-.9-.3A1.2,1.2,0,0,0,69,6a1.6,1.6,0,0,0-.4.9A7,7,0,0,0,68.5,8v8.7a5.8,5.8,0,0,0,.1,1.1,1.6,1.6,0,0,0,.4.8,1.2,1.2,0,0,0,.9.3,1.1,1.1,0,0,0,.9-.3,1.6,1.6,0,0,0,.3-.9,8.3,8.3,0,0,0,.1-1.1V14.8h4v1.6a8,8,0,0,1-.5,2.8,3.9,3.9,0,0,1-1.6,2A6.1,6.1,0,0,1,70,21.9Z" fill="#0c3166"/><path d="M77,21.6V3.1h4.1V18.8h4.3v2.8Z" fill="#0c3166"/><path d="M85.6,21.6,89.2,3.1h4.7l3.5,18.5H93.5l-.6-3.9H90.2l-.6,3.9Zm4.9-6.4h2L91.5,8Z" fill="#0c3166"/><path d="M103.3,21.9a6.2,6.2,0,0,1-2.9-.6,4,4,0,0,1-1.8-1.9A8.8,8.8,0,0,1,98,16l3.5-.5a8.3,8.3,0,0,0,.2,1.9,2.1,2.1,0,0,0,.5,1.1,1.2,1.2,0,0,0,.9.3.8.8,0,0,0,.8-.4,2.2,2.2,0,0,0,.2-.9,3.3,3.3,0,0,0-.5-1.9,8.6,8.6,0,0,0-1.5-1.6l-1.6-1.4a8.9,8.9,0,0,1-1.8-2A5.1,5.1,0,0,1,98,7.7a4.6,4.6,0,0,1,1.4-3.6,5.5,5.5,0,0,1,3.8-1.2,4.9,4.9,0,0,1,2.4.5A3.5,3.5,0,0,1,107,4.6a5.5,5.5,0,0,1,.6,1.7,10.9,10.9,0,0,1,.2,1.7l-3.5.4a14.1,14.1,0,0,0-.1-1.4,2,2,0,0,0-.3-.9.9.9,0,0,0-.8-.3.9.9,0,0,0-.8.5,2,2,0,0,0-.3,1,2.7,2.7,0,0,0,.5,1.7l1.3,1.4,1.5,1.4a10.4,10.4,0,0,1,2,2.3,5.9,5.9,0,0,1,.8,3.2,4.8,4.8,0,0,1-.6,2.4,4.4,4.4,0,0,1-1.7,1.7A5.1,5.1,0,0,1,103.3,21.9Z" fill="#0c3166"/><path d="M114.2,21.9a6.2,6.2,0,0,1-2.9-.6,4,4,0,0,1-1.8-1.9,8.8,8.8,0,0,1-.7-3.4l3.5-.5a8.3,8.3,0,0,0,.2,1.9,2.1,2.1,0,0,0,.5,1.1,1.2,1.2,0,0,0,.9.3.8.8,0,0,0,.8-.4,2.2,2.2,0,0,0,.2-.9,3.3,3.3,0,0,0-.5-1.9,8.6,8.6,0,0,0-1.5-1.6l-1.6-1.4a8.9,8.9,0,0,1-1.8-2,5.1,5.1,0,0,1-.7-2.8,4.6,4.6,0,0,1,1.4-3.6A5.5,5.5,0,0,1,114,2.8a4.9,4.9,0,0,1,2.4.5,3.5,3.5,0,0,1,1.4,1.3,5.5,5.5,0,0,1,.6,1.7,10.9,10.9,0,0,1,.2,1.7l-3.5.4a14.1,14.1,0,0,0-.1-1.4,2,2,0,0,0-.3-.9.9.9,0,0,0-.8-.3.9.9,0,0,0-.8.5,2,2,0,0,0-.3,1,2.7,2.7,0,0,0,.5,1.7l1.3,1.4,1.5,1.4a10.4,10.4,0,0,1,2,2.3,5.9,5.9,0,0,1,.8,3.2,4.8,4.8,0,0,1-.6,2.4,4.4,4.4,0,0,1-1.7,1.7A5.1,5.1,0,0,1,114.2,21.9Z" fill="#0c3166"/></svg>
+						<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 40 22" width="40px" height="22px"  class="icone-logo"><defs><linearGradient id="a" x1="16.7" y1="21.09" x2="16.7" y2="0.23" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#6cc071" stop-opacity="0.3"/><stop offset="0.67" stop-color="#b2d235" stop-opacity="0.5"/><stop offset="1" stop-color="#fff9ae" stop-opacity="0.8"/></linearGradient></defs><title>icone-upclass</title><path d="M7.6,22h5.7C13.9,20.5,19.5,8.6,34.1.4A.2.2,0,0,0,34,0H21.4c-.8.7-8.2,7.6-11,14.6a.2.2,0,0,1-.4,0A33,33,0,0,0,5.7,7.9H.2a.2.2,0,0,0-.2.4A29,29,0,0,1,7.4,21.8Z" fill="#129e4a"/><path d="M7.8,21.1A30.4,30.4,0,0,0,.9,8H5.3a34.3,34.3,0,0,1,4,6.5.8.8,0,0,0,1.4,0C13.4,7.9,20.3,1.3,21.5.2h11A53.3,53.3,0,0,0,17.9,13a42.4,42.4,0,0,0-5.1,8.1Z" fill="url(#a)"/><path d="M11.2,11,9.9,9.5H8.1l2.1,3.2Z" fill="#0c3166"/><path d="M37.8,3.1H32.4a50.7,50.7,0,0,0-13.7,12,43.8,43.8,0,0,0-3.7,5.5l1.4-1.3C23.7,10.9,34.7,5.1,37.9,3.5A.2.2,0,0,0,37.8,3.1Z" fill="#0c3166"/></svg>
+					</h1>
+				</a>
+			</div>
+			<!-- right links -->
+			<div class="header-links">
+				<div class="notification-wrapper dropdown navbar-right">
+					<div class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+						<i class="fa fa-bell" aria-hidden="true"></i>
+					</div>
+					<ul class="dropdown-menu">
+						<li>
+							<a href="#">Você ainda não possui nenhuma notificação</a>
+						</li>
+						<li class="dropdown-header">Segundos atrás</li>
+					</ul>
+				</div>
+				<div class="header-score" data-toggle="modal" data-target="#myModal">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="27px" height="27px" class="header-score-icon">
+						<polygon points="464 444.8 388.3 445.9 349.9 512 299.7 426.7 264.5 366.9 379.7 299.7 414.9 360.5 464 444.8"
+						style="fill:#ff7058" />
+						<polygon points="247.5 366.9 212.3 426.7 162.1 512 123.7 445.9 48 444.8 97.1 360.5 132.3 299.7 247.5 366.9" style="fill:#ff7058"
+						/>
+						<path d="M132.3,299.7l115.2,67.2-35.2,59.7c-4.3-3.2-7.5-6.4-10.7-7.5h-3.2c-4.3,0-10.7,1.1-16,2.1a81.2,81.2,0,0,1-22.4,3.2c-7.5,0-13.9-1.1-20.3-5.3-13.9-8.5-19.2-23.5-23.5-36.3-2.1-7.5-5.3-14.9-7.5-18.1s-6.4-4.3-10.7-5.3Z"
+						style="fill:#231f20;opacity:0.100000001490116;isolation:isolate" />
+						<path d="M414.9,360.5c-4.3,2.1-8.5,3.2-10.7,5.3s-5.3,10.7-7.5,18.1c-4.3,13.9-9.6,28.8-23.5,36.3a37.9,37.9,0,0,1-20.3,5.3,81.2,81.2,0,0,1-22.4-3.2c-6.4-1.1-11.7-2.1-16-2.1h-3.2c-3.2,1.1-6.4,3.2-10.7,7.5L265.6,368l115.2-67.2Z"
+						style="fill:#231f20;opacity:0.100000001490116;isolation:isolate" />
+						<path d="M473.6,217.6c0,18.1-26.7,33.1-30.9,50.1s10.7,43.7,2.1,58.7-39.5,14.9-52.3,27.7-11.7,42.7-27.7,52.3-41.6-6.4-58.7-2.1-32,30.9-50.1,30.9-33.1-26.7-50.1-30.9-43.7,10.7-58.7,2.1-14.9-39.5-27.7-52.3-42.7-11.7-52.3-27.7,6.4-41.6,2.1-58.7-30.9-32-30.9-50.1,26.7-33.1,30.9-50.1-10.7-43.7-2.1-58.7,39.5-14.9,52.3-27.7,11.7-42.7,27.7-52.3,41.6,6.4,58.7,2.1S237.9,0,256,0s33.1,26.7,50.1,30.9,43.7-10.7,58.7-2.1,14.9,39.5,27.7,52.3,42.7,11.7,52.3,27.7-6.4,41.6-2.1,58.7S473.6,199.5,473.6,217.6Z"
+						style="fill:#ffd15c" />
+						<polygon points="256 128 277.3 193.1 346.7 193.1 290.1 233.6 311.5 299.7 256 259.2 200.5 299.7 221.9 233.6 165.3 193.1 234.7 193.1 256 128"
+						style="fill:#fff" />
+						<path d="M256,370.1A152.5,152.5,0,1,1,408.5,217.6,152.5,152.5,0,0,1,256,370.1Zm0-273.1c-66.1,0-120.5,54.4-120.5,120.5S189.9,338.1,256,338.1s120.5-54.4,120.5-120.5S322.1,97.1,256,97.1Z"
+						style="fill:#ff7058" />
+						<path d="M256,370.1c-82.1,0-149.3-66.1-152.5-147.2v5.3a152.5,152.5,0,0,0,305.1,0v-5.3C405.3,305.1,338.1,370.1,256,370.1Z"
+						style="fill:#231f20;opacity:0.100000001490116;isolation:isolate" />
+					</svg>
+					<span class="score-cost">8</span>
+				</div>
+				<div class="header-account dropdown navbar-right">
+					<div class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+						<div class="user-letter img-circle color-U img-avatar-md">J</div>
+						<span class="header-username hidden-ms-down">
+							<span class="text-ellipsis">José Eduardo Costa</span>
+							<i class="fa fa-chevron-down icon-down" aria-hidden="true"></i>
+						</span>
+					</div>
+					<ul class="dropdown-menu">
+						<li><a href="#">Editar perfil</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="./meus-cursos.html">Ver meus cursos</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="#">Ver meu progresso</a></li>
+						<li role="separator" class="divider"></li>
+						<li><a href="./index.html">Sair</a></li>
+					</ul>
+				</div>					
+			</div>
+		</nav>
+		<!-- end top nav -->
+		<div class="main-content">
+			<!-- sidebar -->
+			<section id="wrapper">
+				<div id="sidebar-wrapper">
+					<div class="card progress-status">
+						<h2>Logística I</h2>
+						<div class="Progress">
+							<span class="progress-label" id="Progress-id">Lições: 1 de 6 Concluídas</span>
+							<progress max="100" value="16" class="Progress-main" aria-labelledby="Progress-id">
+								<div class="Progress-bar" role="presentation"><span class="progress-value" style="width: 80%;">&nbsp;</span></div>
+							</progress>
+						</div>
+						<!--Progress-->
+					</div>
+					<nav class="sidebar">
+						<ul class="nav-modules">
+							<li class="card nav-module">
+								<a href="#" class="card-header nav-module-header">
+									<i class="fa fa-check-circle icon-lock nav-module-icon done" aria-hidden="true"></i>
+									<div class="nav-module-content">
+										<span class="navigation-module-index">Lição 1</span>
+										<div class="nav-module-score">
+											<span class="nav-module-score-cost">8</span>
+											<span class="nav-module-score-icon">
+												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20px" height="20px" class="header-score-icon">
+													<polygon points="464 444.8 388.3 445.9 349.9 512 299.7 426.7 264.5 366.9 379.7 299.7 414.9 360.5 464 444.8" style="fill:#ff7058"
+													/>
+													<polygon points="247.5 366.9 212.3 426.7 162.1 512 123.7 445.9 48 444.8 97.1 360.5 132.3 299.7 247.5 366.9" style="fill:#ff7058"
+													/>
+													<path d="M132.3,299.7l115.2,67.2-35.2,59.7c-4.3-3.2-7.5-6.4-10.7-7.5h-3.2c-4.3,0-10.7,1.1-16,2.1a81.2,81.2,0,0,1-22.4,3.2c-7.5,0-13.9-1.1-20.3-5.3-13.9-8.5-19.2-23.5-23.5-36.3-2.1-7.5-5.3-14.9-7.5-18.1s-6.4-4.3-10.7-5.3Z"
+													style="fill:#231f20;opacity:0.100000001490116;isolation:isolate" />
+													<path d="M414.9,360.5c-4.3,2.1-8.5,3.2-10.7,5.3s-5.3,10.7-7.5,18.1c-4.3,13.9-9.6,28.8-23.5,36.3a37.9,37.9,0,0,1-20.3,5.3,81.2,81.2,0,0,1-22.4-3.2c-6.4-1.1-11.7-2.1-16-2.1h-3.2c-3.2,1.1-6.4,3.2-10.7,7.5L265.6,368l115.2-67.2Z"
+													style="fill:#231f20;opacity:0.100000001490116;isolation:isolate" />
+													<path d="M473.6,217.6c0,18.1-26.7,33.1-30.9,50.1s10.7,43.7,2.1,58.7-39.5,14.9-52.3,27.7-11.7,42.7-27.7,52.3-41.6-6.4-58.7-2.1-32,30.9-50.1,30.9-33.1-26.7-50.1-30.9-43.7,10.7-58.7,2.1-14.9-39.5-27.7-52.3-42.7-11.7-52.3-27.7,6.4-41.6,2.1-58.7-30.9-32-30.9-50.1,26.7-33.1,30.9-50.1-10.7-43.7-2.1-58.7,39.5-14.9,52.3-27.7,11.7-42.7,27.7-52.3,41.6,6.4,58.7,2.1S237.9,0,256,0s33.1,26.7,50.1,30.9,43.7-10.7,58.7-2.1,14.9,39.5,27.7,52.3,42.7,11.7,52.3,27.7-6.4,41.6-2.1,58.7S473.6,199.5,473.6,217.6Z"
+													style="fill:#ffd15c" />
+													<polygon points="256 128 277.3 193.1 346.7 193.1 290.1 233.6 311.5 299.7 256 259.2 200.5 299.7 221.9 233.6 165.3 193.1 234.7 193.1 256 128"
+													style="fill:#fff" />
+													<path d="M256,370.1A152.5,152.5,0,1,1,408.5,217.6,152.5,152.5,0,0,1,256,370.1Zm0-273.1c-66.1,0-120.5,54.4-120.5,120.5S189.9,338.1,256,338.1s120.5-54.4,120.5-120.5S322.1,97.1,256,97.1Z"
+													style="fill:#ff7058" />
+													<path d="M256,370.1c-82.1,0-149.3-66.1-152.5-147.2v5.3a152.5,152.5,0,0,0,305.1,0v-5.3C405.3,305.1,338.1,370.1,256,370.1Z"
+													style="fill:#231f20;opacity:0.100000001490116;isolation:isolate" />
+												</svg>														
+											</span>
+										</div>
+										<h3 class="nav-module-title">Fundamentos da Distribuição Física</h3>
+										<span><i class="fa fa-clock-o" aria-hidden="true"></i> 7 minutos</span>
+									</div>											
+								</a>
+							</li>
+							<li class="card nav-module inative">
+								<a href="#" class="card-header nav-module-header">
+									<i class="fa fa-lock icon-lock nav-module-icon" aria-hidden="true"></i>
+									<div class="nav-module-content">
+										<span class="navigation-module-index">Lição 2</span>
+										<div class="nav-module-score">
+											<span class="nav-module-score-cost">8</span>
+											<span class="nav-module-score-icon">
+												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20px" height="20px" class="header-score-icon">
+													<polygon points="464 444.8 388.3 445.9 349.9 512 299.7 426.7 264.5 366.9 379.7 299.7 414.9 360.5 464 444.8" style="fill:#ff7058"
+													/>
+													<polygon points="247.5 366.9 212.3 426.7 162.1 512 123.7 445.9 48 444.8 97.1 360.5 132.3 299.7 247.5 366.9" style="fill:#ff7058"
+													/>
+													<path d="M132.3,299.7l115.2,67.2-35.2,59.7c-4.3-3.2-7.5-6.4-10.7-7.5h-3.2c-4.3,0-10.7,1.1-16,2.1a81.2,81.2,0,0,1-22.4,3.2c-7.5,0-13.9-1.1-20.3-5.3-13.9-8.5-19.2-23.5-23.5-36.3-2.1-7.5-5.3-14.9-7.5-18.1s-6.4-4.3-10.7-5.3Z"
+													 style="fill:#231f20;opacity:0.100000001490116;isolation:isolate" />
+													<path d="M414.9,360.5c-4.3,2.1-8.5,3.2-10.7,5.3s-5.3,10.7-7.5,18.1c-4.3,13.9-9.6,28.8-23.5,36.3a37.9,37.9,0,0,1-20.3,5.3,81.2,81.2,0,0,1-22.4-3.2c-6.4-1.1-11.7-2.1-16-2.1h-3.2c-3.2,1.1-6.4,3.2-10.7,7.5L265.6,368l115.2-67.2Z"
+													 style="fill:#231f20;opacity:0.100000001490116;isolation:isolate" />
+													<path d="M473.6,217.6c0,18.1-26.7,33.1-30.9,50.1s10.7,43.7,2.1,58.7-39.5,14.9-52.3,27.7-11.7,42.7-27.7,52.3-41.6-6.4-58.7-2.1-32,30.9-50.1,30.9-33.1-26.7-50.1-30.9-43.7,10.7-58.7,2.1-14.9-39.5-27.7-52.3-42.7-11.7-52.3-27.7,6.4-41.6,2.1-58.7-30.9-32-30.9-50.1,26.7-33.1,30.9-50.1-10.7-43.7-2.1-58.7,39.5-14.9,52.3-27.7,11.7-42.7,27.7-52.3,41.6,6.4,58.7,2.1S237.9,0,256,0s33.1,26.7,50.1,30.9,43.7-10.7,58.7-2.1,14.9,39.5,27.7,52.3,42.7,11.7,52.3,27.7-6.4,41.6-2.1,58.7S473.6,199.5,473.6,217.6Z"
+													 style="fill:#ffd15c" />
+													<polygon points="256 128 277.3 193.1 346.7 193.1 290.1 233.6 311.5 299.7 256 259.2 200.5 299.7 221.9 233.6 165.3 193.1 234.7 193.1 256 128"
+													 style="fill:#fff" />
+													<path d="M256,370.1A152.5,152.5,0,1,1,408.5,217.6,152.5,152.5,0,0,1,256,370.1Zm0-273.1c-66.1,0-120.5,54.4-120.5,120.5S189.9,338.1,256,338.1s120.5-54.4,120.5-120.5S322.1,97.1,256,97.1Z"
+													 style="fill:#ff7058" />
+													<path d="M256,370.1c-82.1,0-149.3-66.1-152.5-147.2v5.3a152.5,152.5,0,0,0,305.1,0v-5.3C405.3,305.1,338.1,370.1,256,370.1Z"
+													 style="fill:#231f20;opacity:0.100000001490116;isolation:isolate" />
+												</svg>
+											</span>
+										</div>
+										<h3 class="nav-module-title">Produtos e Processos de Distribuição</h3>
+										<span><i class="fa fa-clock-o" aria-hidden="true"></i> 8 minutos</span>
+									</div>
+								</a>
+							</li>
+							<li class="card nav-module inative">
+								<a href="#" class="card-header nav-module-header">
+									<i class="fa fa-lock icon-lock nav-module-icon" aria-hidden="true"></i>
+									<div class="nav-module-content">
+										<span class="navigation-module-index">Lição 3</span>
+										<div class="nav-module-score">
+											<span class="nav-module-score-cost">10</span>
+											<span class="nav-module-score-icon">
+												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20px" height="20px" class="header-score-icon">
+													<polygon points="464 444.8 388.3 445.9 349.9 512 299.7 426.7 264.5 366.9 379.7 299.7 414.9 360.5 464 444.8" style="fill:#ff7058"
+													/>
+													<polygon points="247.5 366.9 212.3 426.7 162.1 512 123.7 445.9 48 444.8 97.1 360.5 132.3 299.7 247.5 366.9" style="fill:#ff7058"
+													/>
+													<path d="M132.3,299.7l115.2,67.2-35.2,59.7c-4.3-3.2-7.5-6.4-10.7-7.5h-3.2c-4.3,0-10.7,1.1-16,2.1a81.2,81.2,0,0,1-22.4,3.2c-7.5,0-13.9-1.1-20.3-5.3-13.9-8.5-19.2-23.5-23.5-36.3-2.1-7.5-5.3-14.9-7.5-18.1s-6.4-4.3-10.7-5.3Z"
+													 style="fill:#231f20;opacity:0.100000001490116;isolation:isolate" />
+													<path d="M414.9,360.5c-4.3,2.1-8.5,3.2-10.7,5.3s-5.3,10.7-7.5,18.1c-4.3,13.9-9.6,28.8-23.5,36.3a37.9,37.9,0,0,1-20.3,5.3,81.2,81.2,0,0,1-22.4-3.2c-6.4-1.1-11.7-2.1-16-2.1h-3.2c-3.2,1.1-6.4,3.2-10.7,7.5L265.6,368l115.2-67.2Z"
+													 style="fill:#231f20;opacity:0.100000001490116;isolation:isolate" />
+													<path d="M473.6,217.6c0,18.1-26.7,33.1-30.9,50.1s10.7,43.7,2.1,58.7-39.5,14.9-52.3,27.7-11.7,42.7-27.7,52.3-41.6-6.4-58.7-2.1-32,30.9-50.1,30.9-33.1-26.7-50.1-30.9-43.7,10.7-58.7,2.1-14.9-39.5-27.7-52.3-42.7-11.7-52.3-27.7,6.4-41.6,2.1-58.7-30.9-32-30.9-50.1,26.7-33.1,30.9-50.1-10.7-43.7-2.1-58.7,39.5-14.9,52.3-27.7,11.7-42.7,27.7-52.3,41.6,6.4,58.7,2.1S237.9,0,256,0s33.1,26.7,50.1,30.9,43.7-10.7,58.7-2.1,14.9,39.5,27.7,52.3,42.7,11.7,52.3,27.7-6.4,41.6-2.1,58.7S473.6,199.5,473.6,217.6Z"
+													 style="fill:#ffd15c" />
+													<polygon points="256 128 277.3 193.1 346.7 193.1 290.1 233.6 311.5 299.7 256 259.2 200.5 299.7 221.9 233.6 165.3 193.1 234.7 193.1 256 128"
+													 style="fill:#fff" />
+													<path d="M256,370.1A152.5,152.5,0,1,1,408.5,217.6,152.5,152.5,0,0,1,256,370.1Zm0-273.1c-66.1,0-120.5,54.4-120.5,120.5S189.9,338.1,256,338.1s120.5-54.4,120.5-120.5S322.1,97.1,256,97.1Z"
+													 style="fill:#ff7058" />
+													<path d="M256,370.1c-82.1,0-149.3-66.1-152.5-147.2v5.3a152.5,152.5,0,0,0,305.1,0v-5.3C405.3,305.1,338.1,370.1,256,370.1Z"
+													 style="fill:#231f20;opacity:0.100000001490116;isolation:isolate" />
+												</svg>
+											</span>
+										</div>
+										<h3 class="nav-module-title">Objetivos Gerais da Distribuição Física</h3>
+										<span><i class="fa fa-clock-o" aria-hidden="true"></i> 4 minutos</span>
+									</div>
+								</a>
+							</li>	
+							<li class="card nav-module inative">
+								<a href="#" class="card-header nav-module-header">
+									<i class="fa fa-lock icon-lock nav-module-icon" aria-hidden="true"></i>
+									<div class="nav-module-content">
+										<span class="navigation-module-index">Lição 4</span>
+										<div class="nav-module-score">
+											<span class="nav-module-score-cost">10</span>
+											<span class="nav-module-score-icon">
+												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20px" height="20px" class="header-score-icon">
+													<polygon points="464 444.8 388.3 445.9 349.9 512 299.7 426.7 264.5 366.9 379.7 299.7 414.9 360.5 464 444.8" style="fill:#ff7058"
+													/>
+													<polygon points="247.5 366.9 212.3 426.7 162.1 512 123.7 445.9 48 444.8 97.1 360.5 132.3 299.7 247.5 366.9" style="fill:#ff7058"
+													/>
+													<path d="M132.3,299.7l115.2,67.2-35.2,59.7c-4.3-3.2-7.5-6.4-10.7-7.5h-3.2c-4.3,0-10.7,1.1-16,2.1a81.2,81.2,0,0,1-22.4,3.2c-7.5,0-13.9-1.1-20.3-5.3-13.9-8.5-19.2-23.5-23.5-36.3-2.1-7.5-5.3-14.9-7.5-18.1s-6.4-4.3-10.7-5.3Z"
+													 style="fill:#231f20;opacity:0.100000001490116;isolation:isolate" />
+													<path d="M414.9,360.5c-4.3,2.1-8.5,3.2-10.7,5.3s-5.3,10.7-7.5,18.1c-4.3,13.9-9.6,28.8-23.5,36.3a37.9,37.9,0,0,1-20.3,5.3,81.2,81.2,0,0,1-22.4-3.2c-6.4-1.1-11.7-2.1-16-2.1h-3.2c-3.2,1.1-6.4,3.2-10.7,7.5L265.6,368l115.2-67.2Z"
+													 style="fill:#231f20;opacity:0.100000001490116;isolation:isolate" />
+													<path d="M473.6,217.6c0,18.1-26.7,33.1-30.9,50.1s10.7,43.7,2.1,58.7-39.5,14.9-52.3,27.7-11.7,42.7-27.7,52.3-41.6-6.4-58.7-2.1-32,30.9-50.1,30.9-33.1-26.7-50.1-30.9-43.7,10.7-58.7,2.1-14.9-39.5-27.7-52.3-42.7-11.7-52.3-27.7,6.4-41.6,2.1-58.7-30.9-32-30.9-50.1,26.7-33.1,30.9-50.1-10.7-43.7-2.1-58.7,39.5-14.9,52.3-27.7,11.7-42.7,27.7-52.3,41.6,6.4,58.7,2.1S237.9,0,256,0s33.1,26.7,50.1,30.9,43.7-10.7,58.7-2.1,14.9,39.5,27.7,52.3,42.7,11.7,52.3,27.7-6.4,41.6-2.1,58.7S473.6,199.5,473.6,217.6Z"
+													 style="fill:#ffd15c" />
+													<polygon points="256 128 277.3 193.1 346.7 193.1 290.1 233.6 311.5 299.7 256 259.2 200.5 299.7 221.9 233.6 165.3 193.1 234.7 193.1 256 128"
+													 style="fill:#fff" />
+													<path d="M256,370.1A152.5,152.5,0,1,1,408.5,217.6,152.5,152.5,0,0,1,256,370.1Zm0-273.1c-66.1,0-120.5,54.4-120.5,120.5S189.9,338.1,256,338.1s120.5-54.4,120.5-120.5S322.1,97.1,256,97.1Z"
+													 style="fill:#ff7058" />
+													<path d="M256,370.1c-82.1,0-149.3-66.1-152.5-147.2v5.3a152.5,152.5,0,0,0,305.1,0v-5.3C405.3,305.1,338.1,370.1,256,370.1Z"
+													 style="fill:#231f20;opacity:0.100000001490116;isolation:isolate" />
+												</svg>
+											</span>
+										</div>
+										<h3 class="nav-module-title">Custos de Trasporte e Condições de Serviço</h3>
+										<span><i class="fa fa-clock-o" aria-hidden="true"></i> 8 minutos</span>
+									</div>
+								</a>
+							</li>
+							<li class="card nav-module inative">
+								<a href="#" class="card-header nav-module-header">
+									<i class="fa fa-lock icon-lock nav-module-icon" aria-hidden="true"></i>
+									<div class="nav-module-content">
+										<span class="navigation-module-index">Lição 5</span>
+										<div class="nav-module-score">
+											<span class="nav-module-score-cost">12</span>
+											<span class="nav-module-score-icon">
+												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20px" height="20px" class="header-score-icon">
+													<polygon points="464 444.8 388.3 445.9 349.9 512 299.7 426.7 264.5 366.9 379.7 299.7 414.9 360.5 464 444.8" style="fill:#ff7058"
+													/>
+													<polygon points="247.5 366.9 212.3 426.7 162.1 512 123.7 445.9 48 444.8 97.1 360.5 132.3 299.7 247.5 366.9" style="fill:#ff7058"
+													/>
+													<path d="M132.3,299.7l115.2,67.2-35.2,59.7c-4.3-3.2-7.5-6.4-10.7-7.5h-3.2c-4.3,0-10.7,1.1-16,2.1a81.2,81.2,0,0,1-22.4,3.2c-7.5,0-13.9-1.1-20.3-5.3-13.9-8.5-19.2-23.5-23.5-36.3-2.1-7.5-5.3-14.9-7.5-18.1s-6.4-4.3-10.7-5.3Z"
+													 style="fill:#231f20;opacity:0.100000001490116;isolation:isolate" />
+													<path d="M414.9,360.5c-4.3,2.1-8.5,3.2-10.7,5.3s-5.3,10.7-7.5,18.1c-4.3,13.9-9.6,28.8-23.5,36.3a37.9,37.9,0,0,1-20.3,5.3,81.2,81.2,0,0,1-22.4-3.2c-6.4-1.1-11.7-2.1-16-2.1h-3.2c-3.2,1.1-6.4,3.2-10.7,7.5L265.6,368l115.2-67.2Z"
+													 style="fill:#231f20;opacity:0.100000001490116;isolation:isolate" />
+													<path d="M473.6,217.6c0,18.1-26.7,33.1-30.9,50.1s10.7,43.7,2.1,58.7-39.5,14.9-52.3,27.7-11.7,42.7-27.7,52.3-41.6-6.4-58.7-2.1-32,30.9-50.1,30.9-33.1-26.7-50.1-30.9-43.7,10.7-58.7,2.1-14.9-39.5-27.7-52.3-42.7-11.7-52.3-27.7,6.4-41.6,2.1-58.7-30.9-32-30.9-50.1,26.7-33.1,30.9-50.1-10.7-43.7-2.1-58.7,39.5-14.9,52.3-27.7,11.7-42.7,27.7-52.3,41.6,6.4,58.7,2.1S237.9,0,256,0s33.1,26.7,50.1,30.9,43.7-10.7,58.7-2.1,14.9,39.5,27.7,52.3,42.7,11.7,52.3,27.7-6.4,41.6-2.1,58.7S473.6,199.5,473.6,217.6Z"
+													 style="fill:#ffd15c" />
+													<polygon points="256 128 277.3 193.1 346.7 193.1 290.1 233.6 311.5 299.7 256 259.2 200.5 299.7 221.9 233.6 165.3 193.1 234.7 193.1 256 128"
+													 style="fill:#fff" />
+													<path d="M256,370.1A152.5,152.5,0,1,1,408.5,217.6,152.5,152.5,0,0,1,256,370.1Zm0-273.1c-66.1,0-120.5,54.4-120.5,120.5S189.9,338.1,256,338.1s120.5-54.4,120.5-120.5S322.1,97.1,256,97.1Z"
+													 style="fill:#ff7058" />
+													<path d="M256,370.1c-82.1,0-149.3-66.1-152.5-147.2v5.3a152.5,152.5,0,0,0,305.1,0v-5.3C405.3,305.1,338.1,370.1,256,370.1Z"
+													 style="fill:#231f20;opacity:0.100000001490116;isolation:isolate" />
+												</svg>
+											</span>
+										</div>
+										<h3 class="nav-module-title">Distribuição e Entregas de Cargas Fracionadas</h3>
+										<span><i class="fa fa-clock-o" aria-hidden="true"></i> 7 minutos</span>
+									</div>
+								</a>
+							</li>
+							<li class="card nav-module inative">
+								<a href="#" class="card-header nav-module-header">
+									<i class="fa fa-lock icon-lock nav-module-icon" aria-hidden="true"></i>
+									<div class="nav-module-content">
+										<span class="navigation-module-index">Lição 6</span>
+										<div class="nav-module-score">
+											<span class="nav-module-score-cost">12</span>
+											<span class="nav-module-score-icon">
+												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20px" height="20px" class="header-score-icon">
+													<polygon points="464 444.8 388.3 445.9 349.9 512 299.7 426.7 264.5 366.9 379.7 299.7 414.9 360.5 464 444.8" style="fill:#ff7058"
+													/>
+													<polygon points="247.5 366.9 212.3 426.7 162.1 512 123.7 445.9 48 444.8 97.1 360.5 132.3 299.7 247.5 366.9" style="fill:#ff7058"
+													/>
+													<path d="M132.3,299.7l115.2,67.2-35.2,59.7c-4.3-3.2-7.5-6.4-10.7-7.5h-3.2c-4.3,0-10.7,1.1-16,2.1a81.2,81.2,0,0,1-22.4,3.2c-7.5,0-13.9-1.1-20.3-5.3-13.9-8.5-19.2-23.5-23.5-36.3-2.1-7.5-5.3-14.9-7.5-18.1s-6.4-4.3-10.7-5.3Z"
+													 style="fill:#231f20;opacity:0.100000001490116;isolation:isolate" />
+													<path d="M414.9,360.5c-4.3,2.1-8.5,3.2-10.7,5.3s-5.3,10.7-7.5,18.1c-4.3,13.9-9.6,28.8-23.5,36.3a37.9,37.9,0,0,1-20.3,5.3,81.2,81.2,0,0,1-22.4-3.2c-6.4-1.1-11.7-2.1-16-2.1h-3.2c-3.2,1.1-6.4,3.2-10.7,7.5L265.6,368l115.2-67.2Z"
+													 style="fill:#231f20;opacity:0.100000001490116;isolation:isolate" />
+													<path d="M473.6,217.6c0,18.1-26.7,33.1-30.9,50.1s10.7,43.7,2.1,58.7-39.5,14.9-52.3,27.7-11.7,42.7-27.7,52.3-41.6-6.4-58.7-2.1-32,30.9-50.1,30.9-33.1-26.7-50.1-30.9-43.7,10.7-58.7,2.1-14.9-39.5-27.7-52.3-42.7-11.7-52.3-27.7,6.4-41.6,2.1-58.7-30.9-32-30.9-50.1,26.7-33.1,30.9-50.1-10.7-43.7-2.1-58.7,39.5-14.9,52.3-27.7,11.7-42.7,27.7-52.3,41.6,6.4,58.7,2.1S237.9,0,256,0s33.1,26.7,50.1,30.9,43.7-10.7,58.7-2.1,14.9,39.5,27.7,52.3,42.7,11.7,52.3,27.7-6.4,41.6-2.1,58.7S473.6,199.5,473.6,217.6Z"
+													 style="fill:#ffd15c" />
+													<polygon points="256 128 277.3 193.1 346.7 193.1 290.1 233.6 311.5 299.7 256 259.2 200.5 299.7 221.9 233.6 165.3 193.1 234.7 193.1 256 128"
+													 style="fill:#fff" />
+													<path d="M256,370.1A152.5,152.5,0,1,1,408.5,217.6,152.5,152.5,0,0,1,256,370.1Zm0-273.1c-66.1,0-120.5,54.4-120.5,120.5S189.9,338.1,256,338.1s120.5-54.4,120.5-120.5S322.1,97.1,256,97.1Z"
+													 style="fill:#ff7058" />
+													<path d="M256,370.1c-82.1,0-149.3-66.1-152.5-147.2v5.3a152.5,152.5,0,0,0,305.1,0v-5.3C405.3,305.1,338.1,370.1,256,370.1Z"
+													 style="fill:#231f20;opacity:0.100000001490116;isolation:isolate" />
+												</svg>
+											</span>
+										</div>
+										<h3 class="nav-module-title">Etapas do Planejamento e Custos Totais</h3>
+										<span><i class="fa fa-clock-o" aria-hidden="true"></i> 11 minutos</span>
+									</div>
+								</a>
+							</li>							
+						</ul>
+					</nav>
+				</div>
+			</section>
+			<!-- content -->
+			<div class="d-flex">
+				<input type="checkbox" id="edit_side">
+				<div class="move-side"></div>
+				<div class="content-module">
+					<section class="base-content">
+						<div class="card-shadow">
+							<div class="row">
+								<article class="col-xs-12 col-lg-8 col-xl-9 content-video">
+									<div class="content-page-video">
+										<div class="image-wrapper">
+											<img src="./assets/images/img-video-licao.jpg" alt="Lição 1 - Vídeo - Fundamentos da Distribuição Física">
+										</div>
+									</div>
+									<div><h3 class="module-title">Fundamentos da Distribuição Física</h3></div>
+								</article>
+								<aside class="content-related col-xs-12 col-lg-4 col-xl-3">
+									<div class="content-related-info">
+										<div class="categories">
+										 <p class="content-related-label">Categoria</p>
+										 <p class="category-label">Módulo I - Logística I</p>
+										</div>
+									</div>
+									<div class="content-related-info">
+										<p class="content-related-label">Avaliação do conteúdo</p>
+										<div class="rating">
+											<a href="#5" ><i class="fa fa-star" aria-hidden="true"></i></a><a href="#4"><i class="fa fa-star" aria-hidden="true"></i></a><a href="#3" ><i class="fa fa-star" aria-hidden="true"></i></a><a href="#2" ><i class="fa fa-star" aria-hidden="true"></i></a><a href="#1" ><i class="fa fa-star" aria-hidden="true"></i></a>
+										</div>										
+									</div>
+									<div class="content-related-info">
+										<div class="categories">
+											<p class="content-related-label">Pontuação da lição</p>
+											<div class="score-side">
+												<span class="score-icon">
+													<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="25px" height="25px" class="header-score-icon">
+														<polygon points="464 444.8 388.3 445.9 349.9 512 299.7 426.7 264.5 366.9 379.7 299.7 414.9 360.5 464 444.8" style="fill:#ff7058"
+														/>
+														<polygon points="247.5 366.9 212.3 426.7 162.1 512 123.7 445.9 48 444.8 97.1 360.5 132.3 299.7 247.5 366.9" style="fill:#ff7058"
+														/>
+														<path d="M132.3,299.7l115.2,67.2-35.2,59.7c-4.3-3.2-7.5-6.4-10.7-7.5h-3.2c-4.3,0-10.7,1.1-16,2.1a81.2,81.2,0,0,1-22.4,3.2c-7.5,0-13.9-1.1-20.3-5.3-13.9-8.5-19.2-23.5-23.5-36.3-2.1-7.5-5.3-14.9-7.5-18.1s-6.4-4.3-10.7-5.3Z"
+														style="fill:#231f20;opacity:0.100000001490116;isolation:isolate" />
+														<path d="M414.9,360.5c-4.3,2.1-8.5,3.2-10.7,5.3s-5.3,10.7-7.5,18.1c-4.3,13.9-9.6,28.8-23.5,36.3a37.9,37.9,0,0,1-20.3,5.3,81.2,81.2,0,0,1-22.4-3.2c-6.4-1.1-11.7-2.1-16-2.1h-3.2c-3.2,1.1-6.4,3.2-10.7,7.5L265.6,368l115.2-67.2Z"
+														style="fill:#231f20;opacity:0.100000001490116;isolation:isolate" />
+														<path d="M473.6,217.6c0,18.1-26.7,33.1-30.9,50.1s10.7,43.7,2.1,58.7-39.5,14.9-52.3,27.7-11.7,42.7-27.7,52.3-41.6-6.4-58.7-2.1-32,30.9-50.1,30.9-33.1-26.7-50.1-30.9-43.7,10.7-58.7,2.1-14.9-39.5-27.7-52.3-42.7-11.7-52.3-27.7,6.4-41.6,2.1-58.7-30.9-32-30.9-50.1,26.7-33.1,30.9-50.1-10.7-43.7-2.1-58.7,39.5-14.9,52.3-27.7,11.7-42.7,27.7-52.3,41.6,6.4,58.7,2.1S237.9,0,256,0s33.1,26.7,50.1,30.9,43.7-10.7,58.7-2.1,14.9,39.5,27.7,52.3,42.7,11.7,52.3,27.7-6.4,41.6-2.1,58.7S473.6,199.5,473.6,217.6Z"
+														style="fill:#ffd15c" />
+														<polygon points="256 128 277.3 193.1 346.7 193.1 290.1 233.6 311.5 299.7 256 259.2 200.5 299.7 221.9 233.6 165.3 193.1 234.7 193.1 256 128"
+														style="fill:#fff" />
+														<path d="M256,370.1A152.5,152.5,0,1,1,408.5,217.6,152.5,152.5,0,0,1,256,370.1Zm0-273.1c-66.1,0-120.5,54.4-120.5,120.5S189.9,338.1,256,338.1s120.5-54.4,120.5-120.5S322.1,97.1,256,97.1Z"
+														style="fill:#ff7058" />
+														<path d="M256,370.1c-82.1,0-149.3-66.1-152.5-147.2v5.3a152.5,152.5,0,0,0,305.1,0v-5.3C405.3,305.1,338.1,370.1,256,370.1Z"
+														style="fill:#231f20;opacity:0.100000001490116;isolation:isolate" />
+													</svg>
+												</span>
+												<span class="score-value">8 ptos</span>
+											</div>
+										</div>
+									</div>
+									<div><button type="button" class="btn btn-done" data-toggle="modal" data-target="#module-completed">Finalizar módulo</button></div>
+								</aside>
+							</div>
+						</div>
+					</section>
+					<section class="module-material">
+						<div class="card-shadow">
+							<article>
+								<h3>Material complementar</h3>
+								<h4>Distribuição Física - Nível 1</h4>
+								<div>
+									<p> Uma organização pode ser divida em três processos principais: <strong>suprimentos, produção e distribuição</strong>.</p>
+									<p>Onde termina o processo de distribuição de uma empresa, inicia o processo de suprimentos da empresa seguinte.</p>
+								</div>
+								<div class="row">
+									<div class="col-xs-12 col-lg-4 col-xl-4">
+										<div class="card-material">
+											<div>
+												<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 40 40" width="40px" height="40px">
+													<defs>
+														<linearGradient id="a" x1="1179.49" y1="15.82" x2="1182.13" y2="15.82" gradientTransform="translate(-1165.4)" gradientUnits="userSpaceOnUse">
+															<stop offset="0.16" stop-color="#9c9c9c" />
+															<stop offset="0.16" stop-color="#bfbfbf" />
+															<stop offset="0.56" stop-color="#bfbfbf" />
+															<stop offset="0.56" stop-color="#ccc" />
+															<stop offset="0.87" stop-color="#ccc" />
+															<stop offset="0.87" stop-color="#e3e3e3" />
+														</linearGradient>
+														<linearGradient id="b" x1="1179.49" y1="12.83" x2="1182.12" y2="12.83" xlink:href="#a" />
+														<linearGradient id="c" x1="1179.49" y1="13.5" x2="1182.12" y2="13.5" gradientTransform="translate(-1165.4)" gradientUnits="userSpaceOnUse">
+															<stop offset="0.16" stop-color="#ad4b00" />
+															<stop offset="0.16" stop-color="#c55803" />
+															<stop offset="0.56" stop-color="#c55803" />
+															<stop offset="0.56" stop-color="#d88120" />
+															<stop offset="0.87" stop-color="#d88120" />
+															<stop offset="0.87" stop-color="#ed9450" />
+														</linearGradient>
+														<linearGradient id="d" x1="1179.49" y1="15.03" x2="1182.12" y2="15.03" xlink:href="#c" />
+														<linearGradient id="e" x1="1178.76" y1="11.57" x2="1182.83" y2="11.57" gradientTransform="translate(-1165.4)" gradientUnits="userSpaceOnUse">
+															<stop offset="0.16" stop-color="#71777a" />
+															<stop offset="0.16" stop-color="#878b8d" />
+															<stop offset="0.56" stop-color="#878b8d" />
+															<stop offset="0.56" stop-color="#9b9fa1" />
+															<stop offset="0.87" stop-color="#9b9fa1" />
+															<stop offset="0.87" stop-color="#aaa" />
+														</linearGradient>
+														<linearGradient id="f" x1="1179.49" y1="10.1" x2="1182.12" y2="10.1" xlink:href="#a" />
+														<linearGradient id="g" x1="1179.49" y1="10.1" x2="1182.12" y2="10.1" xlink:href="#c" />
+														<linearGradient id="h" x1="1178.76" y1="10.52" x2="1182.84" y2="10.52" gradientTransform="translate(-1165.4)" gradientUnits="userSpaceOnUse">
+															<stop offset="0.16" stop-color="#b32a0d" />
+															<stop offset="0.16" stop-color="#c83c21" />
+															<stop offset="0.56" stop-color="#c83c21" />
+															<stop offset="0.56" stop-color="#dc5135" />
+															<stop offset="0.87" stop-color="#dc5135" />
+															<stop offset="0.87" stop-color="#eb573e" />
+														</linearGradient>
+														<linearGradient id="i" x1="1193.93" y1="14.01" x2="1196.74" y2="14.01" xlink:href="#a" />
+														<linearGradient id="j" x1="1193.93" y1="8.35" x2="1196.73" y2="8.35" xlink:href="#a" />
+														<linearGradient id="k" x1="1193.93" y1="9.06" x2="1196.73" y2="9.06" xlink:href="#c" />
+														<linearGradient id="l" x1="1193.93" y1="10.7" x2="1196.73" y2="10.7" xlink:href="#c" />
+														<linearGradient id="m" x1="1193.16" y1="7.01" x2="1197.48" y2="7.01" xlink:href="#e" />
+														<linearGradient id="n" x1="1193.93" y1="5.44" x2="1196.73" y2="5.44" xlink:href="#a" />
+														<linearGradient id="o" x1="1193.93" y1="5.45" x2="1196.73" y2="5.45" xlink:href="#c" />
+														<linearGradient id="p" x1="1193.16" y1="5.89" x2="1197.5" y2="5.89" xlink:href="#h" />
+														<linearGradient id="q" x1="-56.75" y1="21.14" x2="-56.69" y2="31.92" gradientTransform="translate(85.7)" gradientUnits="userSpaceOnUse">
+															<stop offset="0.19" stop-color="#2150b1" />
+															<stop offset="0.94" stop-color="#6f9bbf" />
+														</linearGradient>
+														<linearGradient id="r" x1="-55.47" y1="20.89" x2="-55.42" y2="30.82" xlink:href="#q" />
+														<linearGradient id="s" x1="-59.06" y1="22.47" x2="-59" y2="33.25" xlink:href="#q" />
+														<linearGradient id="t" x1="-57.78" y1="22.22" x2="-57.73" y2="32.15" xlink:href="#q" />
+														<linearGradient id="u" x1="-61.29" y1="23.76" x2="-61.23" y2="34.54" xlink:href="#q" />
+														<linearGradient id="v" x1="-60.01" y1="23.51" x2="-59.96" y2="33.44" xlink:href="#q" />
+														<linearGradient id="w" x1="-56.74" y1="20.09" x2="-56.68" y2="30.87" xlink:href="#q" />
+														<linearGradient id="x" x1="-55.46" y1="19.84" x2="-55.41" y2="29.77" xlink:href="#q" />
+														<linearGradient id="y" x1="-56.74" y1="19.11" x2="-56.68" y2="29.89" xlink:href="#q" />
+														<linearGradient id="z" x1="-55.46" y1="18.86" x2="-55.41" y2="28.79" xlink:href="#q" />
+														<linearGradient id="aa" x1="-59.05" y1="21.43" x2="-58.99" y2="32.2" xlink:href="#q" />
+														<linearGradient id="ab" x1="-57.77" y1="21.18" x2="-57.72" y2="31.1" xlink:href="#q" />
+														<linearGradient id="ac" x1="-59.05" y1="20.44" x2="-58.99" y2="31.22" xlink:href="#q" />
+														<linearGradient id="ad" x1="-57.77" y1="20.19" x2="-57.72" y2="30.12" xlink:href="#q" />
+														<linearGradient id="ae" x1="-61.28" y1="22.71" x2="-61.22" y2="33.48" xlink:href="#q" />
+														<linearGradient id="af" x1="-60" y1="22.46" x2="-59.94" y2="32.38" xlink:href="#q" />
+														<linearGradient id="ag" x1="-61.28" y1="21.72" x2="-61.22" y2="32.5" xlink:href="#q" />
+														<linearGradient id="ah" x1="-60" y1="21.47" x2="-59.94" y2="31.4" xlink:href="#q" />
+														<linearGradient id="ai" x1="-2079.03" y1="19.52" x2="-2078.97" y2="30.3" gradientTransform="matrix(-1, 0, 0, 1, -2063.26, 0)"
+														xlink:href="#q" />
+														<linearGradient id="aj" x1="-2077.75" y1="19.27" x2="-2077.69" y2="29.2" gradientTransform="matrix(-1, 0, 0, 1, -2063.26, 0)"
+														xlink:href="#q" />
+														<linearGradient id="ak" x1="-2079.03" y1="18.54" x2="-2078.97" y2="29.32" gradientTransform="matrix(-1, 0, 0, 1, -2063.26, 0)"
+														xlink:href="#q" />
+														<linearGradient id="al" x1="-2077.75" y1="18.29" x2="-2077.69" y2="28.22" gradientTransform="matrix(-1, 0, 0, 1, -2063.26, 0)"
+														xlink:href="#q" />
+														<linearGradient id="am" x1="-2081.34" y1="20.85" x2="-2081.28" y2="31.63" gradientTransform="matrix(-1, 0, 0, 1, -2063.26, 0)"
+														xlink:href="#q" />
+														<linearGradient id="an" x1="-2080.06" y1="20.6" x2="-2080" y2="30.53" gradientTransform="matrix(-1, 0, 0, 1, -2063.26, 0)"
+														xlink:href="#q" />
+														<linearGradient id="ao" x1="-2081.34" y1="19.87" x2="-2081.28" y2="30.65" gradientTransform="matrix(-1, 0, 0, 1, -2063.26, 0)"
+														xlink:href="#q" />
+														<linearGradient id="ap" x1="-2080.06" y1="19.62" x2="-2080" y2="29.55" gradientTransform="matrix(-1, 0, 0, 1, -2063.26, 0)"
+														xlink:href="#q" />
+														<linearGradient id="aq" x1="-2083.56" y1="22.14" x2="-2083.5" y2="32.92" gradientTransform="matrix(-1, 0, 0, 1, -2063.26, 0)"
+														xlink:href="#q" />
+														<linearGradient id="ar" x1="-2082.28" y1="21.89" x2="-2082.23" y2="31.82" gradientTransform="matrix(-1, 0, 0, 1, -2063.26, 0)"
+														xlink:href="#q" />
+														<linearGradient id="as" x1="-2083.56" y1="21.16" x2="-2083.5" y2="31.94" gradientTransform="matrix(-1, 0, 0, 1, -2063.26, 0)"
+														xlink:href="#q" />
+														<linearGradient id="at" x1="-2082.28" y1="20.91" x2="-2082.23" y2="30.83" gradientTransform="matrix(-1, 0, 0, 1, -2063.26, 0)"
+														xlink:href="#q" />
+													</defs>
+													<title>processo-fornecedores</title>
+													<g style="isolation:isolate">
+														<ellipse cx="20" cy="31.8" rx="20" ry="7.8" fill="#e8e8e8" />
+														<polygon points="9.7 25.3 9.7 33.9 21.3 27.1 21.3 18.6 9.7 25.3" fill="#f5c207" />
+														<polygon points="9.7 25.3 9.7 33.9 4 30.6 4 22.1 9.7 25.3" fill="#db8a00" />
+														<polygon points="9.7 25.1 9.7 25.5 21.6 18.6 21.6 18.2 9.7 25.1" fill="#bdcacf" />
+														<polygon points="9.7 25.1 3.7 21.6 15.6 14.7 21.6 18.2 9.7 25.1" fill="#dfe1eb" />
+														<path d="M13.6,18.2l.2-.2h0l.2-.2h.1v-.2h.2v-.3h0v-.2h0l-.2-.2h0l-.3-.2-2.6,1.5,1.7,1A.6.6,0,0,0,13.6,18.2Z" fill="#d4d4d1"
+														style="mix-blend-mode:multiply" />
+														<polygon points="20.8 18.3 15.5 15.2 4.5 21.6 9.8 24.6 20.8 18.3" fill="#d3d3d9" />
+														<path d="M14.2,19.3a.6.6,0,0,0,.7,0l.2-.2h0l.2-.2h.1v-.2h.2v-.3h0v-.2h0l-.2-.2h0l-1.6-.9-2.6,1.5Z" fill="#d4d4d1" style="mix-blend-mode:multiply"
+														/>
+														<polygon points="15.5 15.6 4.9 21.8 4.5 21.6 15.5 15.2 20.8 18.3 20.4 18.4 15.5 15.6" fill="#9fa7ab" />
+														<polygon points="9.7 25.1 9.7 25.5 3.7 22 3.7 21.6 9.7 25.1" fill="#9fa7ab" />
+														<polygon points="15.5 15.2 15.5 15.6 4.9 21.8 4.5 21.6 15.5 15.2" fill="#9fa7ab" />
+														<polygon points="7.4 20.8 8.4 20.2 8.9 20.5 7.9 21.1 7.4 20.8" fill="#d4d4d1" style="mix-blend-mode:multiply" />
+														<polygon points="8.4 20.7 8.4 21.4 9.4 20.8 9.4 20.1 8.4 20.7" fill="#919191" />
+														<polygon points="8.4 20.7 7.9 20.4 7.9 21.1 8.4 21.4 8.4 20.7" fill="#bdbdbd" />
+														<polygon points="7.9 20.4 8.9 19.8 9.4 20.1 8.4 20.7 7.9 20.4" fill="#e7e3e3" />
+														<polygon points="8.4 21.4 9.4 20.8 10 21.1 9 21.7 8.4 21.4" fill="#d4d4d1" style="mix-blend-mode:multiply" />
+														<polygon points="9.5 21.3 9.5 22 10.5 21.5 10.5 20.7 9.5 21.3" fill="#919191" />
+														<polygon points="9.5 21.3 9 21 9 21.7 9.5 22 9.5 21.3" fill="#bdbdbd" />
+														<polygon points="9 21 10 20.4 10.5 20.7 9.5 21.3 9 21" fill="#e7e3e3" />
+														<polygon points="6 21.6 7 21.1 7.5 21.4 6.5 21.9 6 21.6" fill="#d4d4d1" style="mix-blend-mode:multiply" />
+														<polygon points="7 21.5 7 22.2 8 21.7 8 20.9 7 21.5" fill="#919191" />
+														<polygon points="7 21.5 6.5 21.2 6.5 21.9 7 22.2 7 21.5" fill="#bdbdbd" />
+														<polygon points="6.5 21.2 7.5 20.6 8 20.9 7 21.5 6.5 21.2" fill="#e7e3e3" />
+														<polygon points="7 22.2 8 21.7 8.6 22 7.5 22.5 7 22.2" fill="#d4d4d1" style="mix-blend-mode:multiply" />
+														<polygon points="8.1 22.1 8.1 22.8 9.1 22.3 9.1 21.5 8.1 22.1" fill="#919191" />
+														<polygon points="8.1 22.1 7.5 21.8 7.5 22.5 8.1 22.8 8.1 22.1" fill="#bdbdbd" />
+														<polygon points="7.5 21.8 8.6 21.2 9.1 21.5 8.1 22.1 7.5 21.8" fill="#e7e3e3" />
+														<polygon points="9.5 22 10.5 21.5 11 21.8 10 22.3 9.5 22" fill="#d4d4d1" style="mix-blend-mode:multiply" />
+														<polygon points="10.5 21.9 10.5 22.6 11.5 22.1 11.5 21.3 10.5 21.9" fill="#919191" />
+														<polygon points="10.5 21.9 10 21.6 10 22.3 10.5 22.6 10.5 21.9" fill="#bdbdbd" />
+														<polygon points="10 21.6 11 21 11.5 21.3 10.5 21.9 10 21.6" fill="#e7e3e3" />
+														<polygon points="10.5 22.6 11.5 22.1 12 22.4 11 22.9 10.5 22.6" fill="#d4d4d1" style="mix-blend-mode:multiply" />
+														<polygon points="11.6 22.5 11.6 23.2 12.6 22.7 12.6 21.9 11.6 22.5" fill="#919191" />
+														<polygon points="11.6 22.5 11 22.2 11 22.9 11.6 23.2 11.6 22.5" fill="#bdbdbd" />
+														<polygon points="11 22.2 12 21.6 12.6 21.9 11.6 22.5 11 22.2" fill="#e7e3e3" />
+														<polygon points="8.1 22.8 9.1 22.3 9.6 22.6 8.6 23.1 8.1 22.8" fill="#d4d4d1" style="mix-blend-mode:multiply" />
+														<polygon points="9.1 22.7 9.1 23.4 10.1 22.9 10.1 22.1 9.1 22.7" fill="#919191" />
+														<polygon points="9.1 22.7 8.6 22.4 8.6 23.1 9.1 23.4 9.1 22.7" fill="#bdbdbd" />
+														<polygon points="8.6 22.4 9.6 21.8 10.1 22.1 9.1 22.7 8.6 22.4" fill="#e7e3e3" />
+														<polygon points="9.1 23.4 10.1 22.9 10.6 23.2 9.6 23.7 9.1 23.4" fill="#d4d4d1" style="mix-blend-mode:multiply" />
+														<polygon points="10.2 23.3 10.2 24.1 11.2 23.5 11.2 22.7 10.2 23.3" fill="#919191" />
+														<polygon points="10.2 23.3 9.6 23 9.6 23.7 10.2 24.1 10.2 23.3" fill="#bdbdbd" />
+														<polygon points="9.6 23 10.6 22.4 11.2 22.7 10.2 23.3 9.6 23" fill="#e7e3e3" />
+														<polygon points="24.4 26.3 24.4 34.8 36 28.1 36 19.5 24.4 26.3" fill="#f5c207" />
+														<polygon points="24.4 26.3 24.4 34.8 18.7 31.5 18.7 23 24.4 26.3" fill="#db8a00" />
+														<polygon points="24.4 26 24.4 26.4 36.3 19.5 36.3 19.1 24.4 26" fill="#bdcacf" />
+														<polygon points="24.4 26 18.4 22.5 30.3 15.6 36.3 19.1 24.4 26" fill="#dfe1eb" />
+														<polygon points="35.5 19.2 30.2 16.1 19.2 22.5 24.5 25.5 35.5 19.2" fill="#d3d3d9" />
+														<polygon points="30.2 16.5 19.6 22.7 19.2 22.5 30.2 16.1 35.5 19.2 35.1 19.4 30.2 16.5" fill="#9fa7ab" />
+														<polygon points="24.4 26 24.4 26.4 18.4 22.9 18.4 22.5 24.4 26" fill="#9fa7ab" />
+														<polygon points="30.2 16.1 30.2 16.5 19.6 22.7 19.2 22.5 30.2 16.1" fill="#9fa7ab" />
+														<path d="M13.7,17.9v.7c0,.4.4.7,1,.9h2.6v-.7c0-.3-.3-.6-.8-.8H14.7C14.1,17.1,13.7,17.5,13.7,17.9Z" fill="#ababab" />
+														<path d="M14.7,17h0v2.5h0c-.6-.2-1-.5-1-.9v-.7C13.7,17.5,14.1,17.1,14.7,17Z" fill="#9e9e9e" />
+														<path d="M15.7,16.9h.8c.5.2.8.5.8.8v.7H15.7Z" fill="#bdbdbd" />
+														<path d="M16.7,17.2c.3.2.5.4.5.7v.7h-.5Z" fill="#c2c2c2" />
+														<path d="M17.2,17.8c0,.3-.3.6-.7.8l-.9.2h-.1c-1,0-1.8-.5-1.8-1h0c.1-.5.8-.9,1.8-.9a1.9,1.9,0,0,1,1.7.8Z" fill="#f3f3f3"
+														/>
+														<path d="M17.2,17.5h-.2v.2h-.1l-.2.2h0l-.2.2a.6.6,0,0,1-.7,0h0l-1.9-1.1c.1-.5.8-.9,1.8-.9A1.9,1.9,0,0,1,17.2,17.5Z" fill="#d4d4d1"
+														style="mix-blend-mode:multiply" />
+														<path d="M16.4,18.2H14.2v-.2h0V13.5l.2.2h.1l.6.2h1.3a.7.7,0,0,0,.4-.4v4.2A.6.6,0,0,1,16.4,18.2Z" fill="url(#a)" />
+														<path d="M14.1,13.6h0V11.4h2.6v2.1a.7.7,0,0,1-.4.4H15.1l-.6-.2h-.1l-.2-.2Z" fill="url(#b)" />
+														<path d="M16.7,12.9l-.2.2h-.1l-.6.2H14.5a.7.7,0,0,1-.4-.4v.9a.7.7,0,0,0,.4.4h1.3l.6-.2h.1l.2-.2v-1h-.1Z" fill="url(#c)"
+														/>
+														<path d="M16.7,14.4l-.2.2h-.1l-.6.2H14.5a.7.7,0,0,1-.4-.4v.9a.7.7,0,0,0,.4.4h1.3l.6-.2h.1l.2-.2v-1h-.1Z" fill="url(#d)"
+														/>
+														<rect x="14.1" y="11.5" height="0.77" fill="#b5b5b5" />
+														<path d="M16.8,12.4v-.9h0v.7A.4.4,0,0,1,16.8,12.4Z" fill="#b5b5b5" />
+														<polygon points="16.3 7.3 16.3 7.2 16.4 7.3 16.3 7.3 16.3 7.3" fill="#8d8b8e" />
+														<polygon points="14.5 6.3 14.5 6.2 14.6 6.3 14.5 6.3 14.5 6.3" fill="#8d8b8e" />
+														<path d="M13.4,11.2v-.3h4.1v.4a1.1,1.1,0,0,1-.6.7l-.4.2a3.4,3.4,0,0,1-1.6.1l-.9-.3h-.2l-.3-.4Z" fill="url(#e)" />
+														<path d="M14,10a3.2,3.2,0,0,1,2.9,0c.8.5.8,1.2,0,1.7a3.2,3.2,0,0,1-2.9,0C13.2,11.2,13.2,10.5,14,10Z" fill="#bfbfbf" />
+														<path d="M14.1,10.8h0V8.7h2.6v2.1a.7.7,0,0,1-.4.4H15.1l-.6-.2h-.1l-.2-.2Z" fill="url(#f)" />
+														<path d="M14.5,8.1a2.1,2.1,0,0,1,1.9,0c.5.3.5.8,0,1.1a2.1,2.1,0,0,1-1.9,0C14,8.9,14,8.4,14.5,8.1Z" fill="#f0f0f0" />
+														<path d="M16.3,8.2a1.9,1.9,0,0,0-1.7,0c-.5.3-.5.7,0,.9a1.9,1.9,0,0,0,1.7,0C16.7,8.9,16.8,8.5,16.3,8.2Z" fill="#787878"
+														/>
+														<path d="M14.6,8.2a1.9,1.9,0,0,1,1.6-.1L14.9,9.3h-.3C14.1,8.9,14.2,8.5,14.6,8.2Z" fill="#adadad" />
+														<polygon points="16.3 7.4 16.3 9.2 16.4 9.2 16.4 7.4 16.3 7.4" fill="#727273" />
+														<polygon points="16.3 7.4 16.3 7.4 16.3 9.2 16.3 9.2 16.3 7.4" fill="#444445" />
+														<polygon points="14.5 6.4 14.5 8.2 14.6 8.2 14.6 6.4 14.5 6.4" fill="#727273" />
+														<polygon points="14.5 6.4 14.5 6.4 14.5 8.2 14.5 8.2 14.5 6.4" fill="#444445" />
+														<path d="M16.8,9.3h0l-.2.2h-.1l-.6.2H14.5a.7.7,0,0,1-.4-.4v.9a.7.7,0,0,0,.4.4h1.3l.6-.2h.1l.2-.2v-1Z" fill="url(#g)" />
+														<polygon points="16.3 7.1 16.3 7.5 16.4 7.4 16.4 7 16.3 7.1" fill="#cc4935" />
+														<polygon points="16.3 7.1 16.2 7 16.2 7.4 16.3 7.5 16.3 7.1" fill="#8a2212" />
+														<polygon points="16.2 7 16.3 6.9 16.4 7 16.3 7.1 16.2 7" fill="#ffa1a1" />
+														<polygon points="14.5 6.1 14.5 6.5 14.6 6.5 14.6 6 14.5 6.1" fill="#cc4935" />
+														<polygon points="14.5 6.1 14.4 6 14.4 6.5 14.5 6.5 14.5 6.1" fill="#8a2212" />
+														<polygon points="14.4 6 14.5 6 14.6 6 14.5 6.1 14.4 6" fill="#ffa1a1" />
+														<polygon points="15.9 11.5 15.9 12 16 12 16 11.4 15.9 11.5" fill="#b41e05" />
+														<polygon points="15.9 11.5 15.8 11.4 15.8 12 15.9 12 15.9 11.5" fill="#870000" />
+														<polygon points="16.9 11.1 16.9 11.7 17 11.7 17 11.1 16.9 11.1" fill="#b41e05" />
+														<polygon points="16.9 11.1 16.9 11.1 16.9 11.7 16.9 11.7 16.9 11.1" fill="#870000" />
+														<polygon points="17.4 10.4 17.4 11 17.5 11 17.5 10.4 17.4 10.4" fill="#b41e05" />
+														<polygon points="17.4 10.4 17.3 10.4 17.3 11 17.4 11 17.4 10.4" fill="#870000" />
+														<polygon points="17 9.7 17 10.3 17 10.2 17 9.7 17 9.7" fill="#b41e05" />
+														<polygon points="17 9.7 16.9 9.6 16.9 10.2 17 10.3 17 9.7" fill="#870000" />
+														<polygon points="15 11.5 15 12 15 12 15 11.4 15 11.5" fill="#b41e05" />
+														<polygon points="15 11.5 15.1 11.4 15.1 12 15 12 15 11.5" fill="#870000" />
+														<polygon points="13.9 11.1 13.9 11.7 13.9 11.7 13.9 11.1 13.9 11.1" fill="#b41e05" />
+														<polygon points="13.9 11.1 14 11.1 14 11.7 13.9 11.7 13.9 11.1" fill="#870000" />
+														<polygon points="13.5 10.4 13.5 11 13.4 11 13.4 10.4 13.5 10.4" fill="#b41e05" />
+														<polygon points="13.5 10.4 13.6 10.4 13.6 11 13.5 11 13.5 10.4" fill="#870000" />
+														<polygon points="13.9 9.7 13.9 10.3 13.8 10.2 13.8 9.7 13.9 9.7" fill="#b41e05" />
+														<polygon points="13.9 9.7 14 9.6 14 10.2 13.9 10.3 13.9 9.7" fill="#870000" />
+														<path d="M17.5,10.2h0a1.1,1.1,0,0,0-.6-.7h-.1v.2h0a.9.9,0,0,1,.5.7h0a.9.9,0,0,1-.5.7l-.6.2H14.7l-.6-.2a.9.9,0,0,1-.5-.7h0a.9.9,0,0,1,.5-.6h.1V9.5H14a1.1,1.1,0,0,0-.6.7h0a1,1,0,0,0,.6.8,3.2,3.2,0,0,0,2.9,0,1.1,1.1,0,0,0,.6-.7.8.8,0,0,0,0-.2h0Z"
+														fill="url(#h)" />
+														<path d="M16.9,9.4h-.1v.2h0a.9.9,0,0,1,.5.7h0a.9.9,0,0,1-.5.6,2.8,2.8,0,0,1-1.4.3,2.8,2.8,0,0,1-1.4-.3.9.9,0,0,1-.5-.7h0a.9.9,0,0,1,.5-.7h.1V9.3H14a1,1,0,0,0-.6.8h0a1.1,1.1,0,0,0,.6.8l.7.3h1.6l.7-.3a1.1,1.1,0,0,0,.6-.7h0A1,1,0,0,0,16.9,9.4Z"
+														fill="#ff6d54" />
+														<path d="M28.6,18.9l.2-.2h0l.2-.2h.1v-.2h.2v-.3h0v-.2h0l-.2-.2h0l-.3-.2L26.2,18l1.7,1A.6.6,0,0,0,28.6,18.9Z" fill="#d4d4d1"
+														style="mix-blend-mode:multiply" />
+														<path d="M29.1,20.1a.6.6,0,0,0,.7,0l.2-.2h0l.2-.2h.1v-.2h.2v-.3h0V18h0l-.2-.2h0l-1.6-.9-2.6,1.5Z" fill="#d4d4d1" style="mix-blend-mode:multiply"
+														/>
+														<polygon points="26.6 18.2 26.6 18.6 29.1 17.1 29.1 16.8 26.6 18.2" fill="#808b90" />
+														<path d="M28.1,18.6v.7c0,.4.4.8,1.1,1h2.7v-.9c0-.4-.3-.7-.8-.9H29.1C28.5,17.9,28.1,18.2,28.1,18.6Z" fill="#ababab" />
+														<path d="M29.1,17.7h0v2.6h0c-.6-.2-1.1-.5-1.1-1v-.7C28.1,18.2,28.5,17.9,29.1,17.7Z" fill="#9e9e9e" />
+														<path d="M30.3,17.6H31c.5.2.8.5.8.9v.9H30.3Z" fill="#bdbdbd" />
+														<path d="M31.3,17.9c.3.2.6.4.6.7v.9h-.6Z" fill="#c2c2c2" />
+														<path d="M28.1,18.5c0-.6.8-1.1,1.9-1.1s1.9.5,1.9,1.1S31,19.6,30,19.6,28.1,19.1,28.1,18.5Z" fill="#f3f3f3" />
+														<path d="M29.6,18.9h1.2l.2-.3v-.3a.5.5,0,0,1,0-.4l-1-.2c-.9,0-1.7.4-1.8.9l1.1.6Z" fill="#d4d4d1" style="mix-blend-mode:multiply"
+														/>
+														<path d="M31,19H28.6v-.2h0V9l.2.3H29l.6.2H31a.7.7,0,0,0,.4-.5v9.4A.6.6,0,0,1,31,19Z" fill="url(#i)" />
+														<path d="M28.6,9.1h0V6.9h2.8V9.1a.7.7,0,0,1-.4.5H29.6L29,9.6h-.1l-.2-.3Z" fill="url(#j)" />
+														<path d="M31.3,8.4l-.2.3H31l-.6.2H29a.7.7,0,0,1-.4-.5v.9a.7.7,0,0,0,.4.5h1.4l.6-.2h.1l.2-.3v-1h-.1Z" fill="url(#k)" />
+														<path d="M31.3,10l-.2.3H31l-.6.2H29a.7.7,0,0,1-.4-.5v.9a.7.7,0,0,0,.4.5h1.4l.6-.2h.1l.2-.3v-1h-.1Z" fill="url(#l)" />
+														<rect x="28.6" y="6.9" height="0.82" fill="#b5b5b5" />
+														<path d="M31.4,7.8V6.9h0v.8A.4.4,0,0,1,31.4,7.8Z" fill="#b5b5b5" />
+														<polygon points="30.8 2.4 30.9 2.4 31 2.4 30.9 2.5 30.8 2.4" fill="#8d8b8e" />
+														<polygon points="28.9 1.4 29 1.3 29.1 1.4 29 1.4 28.9 1.4" fill="#8d8b8e" />
+														<path d="M27.8,6.6V6.3h4.3v.4a1.1,1.1,0,0,1-.6.7l-.4.2a3.6,3.6,0,0,1-1.7.1l-1-.3h-.2l-.3-.4Z" fill="url(#m)" />
+														<path d="M28.4,5.4a3.4,3.4,0,0,1,3.1,0c.9.5.9,1.3,0,1.8a3.4,3.4,0,0,1-3.1,0C27.6,6.7,27.6,5.9,28.4,5.4Z" fill="#bfbfbf"
+														/>
+														<path d="M28.6,6.2h0V4h2.8V6.2a.7.7,0,0,1-.4.5H29.6L29,6.7h-.1l-.2-.3Z" fill="url(#n)" />
+														<path d="M29,3.4a2.2,2.2,0,0,1,2,0c.6.3.6.8,0,1.2a2.2,2.2,0,0,1-2,0C28.4,4.2,28.4,3.7,29,3.4Z" fill="#f0f0f0" />
+														<path d="M30.9,3.4a2,2,0,0,0-1.8,0c-.5.3-.5.7,0,1a2,2,0,0,0,1.8,0C31.4,4.1,31.4,3.7,30.9,3.4Z" fill="#787878" />
+														<path d="M29.1,3.4a2,2,0,0,1,1.7-.1L29.4,4.6h-.3C28.6,4.2,28.6,3.7,29.1,3.4Z" fill="#adadad" />
+														<polygon points="30.9 2.6 30.9 4.5 31 4.5 31 2.6 30.9 2.6" fill="#727273" />
+														<polygon points="30.9 2.6 30.8 2.6 30.8 4.5 30.9 4.5 30.9 2.6" fill="#444445" />
+														<polygon points="29 1.6 29 3.5 29.1 3.4 29.1 1.5 29 1.6" fill="#727273" />
+														<polygon points="29 1.6 28.9 1.5 28.9 3.4 29 3.5 29 1.6" fill="#444445" />
+														<path d="M31.4,4.6h-.1l-.2.3H31l-.6.2H29a.7.7,0,0,1-.4-.5v.9A.7.7,0,0,0,29,6h1.4L31,6h.1l.2-.3v-1Z" fill="url(#o)" />
+														<polygon points="30.9 2.2 30.9 2.7 31 2.6 31 2.1 30.9 2.2" fill="#cc4935" />
+														<polygon points="30.9 2.2 30.8 2.1 30.8 2.6 30.9 2.7 30.9 2.2" fill="#8a2212" />
+														<polygon points="30.8 2.1 30.9 2.1 31 2.1 30.9 2.2 30.8 2.1" fill="#ffa1a1" />
+														<polygon points="29 1.2 29 1.7 29.1 1.6 29.1 1.1 29 1.2" fill="#cc4935" />
+														<polygon points="29 1.2 28.9 1.1 28.9 1.6 29 1.7 29 1.2" fill="#8a2212" />
+														<polygon points="28.9 1.1 29 1.1 29.1 1.1 29 1.2 28.9 1.1" fill="#ffa1a1" />
+														<polygon points="30.5 6.9 30.5 7.5 30.5 7.5 30.5 6.9 30.5 6.9" fill="#b41e05" />
+														<polygon points="30.5 6.9 30.4 6.9 30.4 7.5 30.5 7.5 30.5 6.9" fill="#870000" />
+														<polygon points="31.6 6.5 31.6 7.1 31.6 7.1 31.6 6.5 31.6 6.5" fill="#b41e05" />
+														<polygon points="31.6 6.5 31.5 6.5 31.5 7.1 31.6 7.1 31.6 6.5" fill="#870000" />
+														<polygon points="32 5.8 32 6.4 32.1 6.4 32.1 5.7 32 5.8" fill="#b41e05" />
+														<polygon points="32 5.8 32 5.7 32 6.4 32 6.4 32 5.8" fill="#870000" />
+														<polygon points="31.6 5 31.6 5.6 31.7 5.6 31.7 5 31.6 5" fill="#b41e05" />
+														<polygon points="31.6 5 31.5 5 31.5 5.6 31.6 5.6 31.6 5" fill="#870000" />
+														<polygon points="29.5 6.9 29.5 7.5 29.5 7.5 29.5 6.9 29.5 6.9" fill="#b41e05" />
+														<polygon points="29.5 6.9 29.6 6.9 29.6 7.5 29.5 7.5 29.5 6.9" fill="#870000" />
+														<polygon points="28.4 6.5 28.4 7.1 28.3 7.1 28.3 6.5 28.4 6.5" fill="#b41e05" />
+														<polygon points="28.4 6.5 28.5 6.5 28.5 7.1 28.4 7.1 28.4 6.5" fill="#870000" />
+														<polygon points="27.9 5.8 27.9 6.4 27.8 6.4 27.8 5.7 27.9 5.8" fill="#b41e05" />
+														<polygon points="27.9 5.8 28 5.7 28 6.4 27.9 6.4 27.9 5.8" fill="#870000" />
+														<polygon points="28.3 5 28.3 5.6 28.3 5.6 28.3 5 28.3 5" fill="#b41e05" />
+														<polygon points="28.3 5 28.4 5 28.4 5.6 28.3 5.6 28.3 5" fill="#870000" />
+														<path d="M32.1,5.6h0a1.2,1.2,0,0,0-.6-.7h-.1V5h0a1,1,0,0,1,.6.7h0a.9.9,0,0,1-.6.7l-.6.2H29.2l-.6-.3a1,1,0,0,1-.6-.8h0a1,1,0,0,1,.5-.7h.1V4.8h-.1a1.1,1.1,0,0,0-.6.7h0a1.1,1.1,0,0,0,.6.9,3.4,3.4,0,0,0,3.1,0,1.1,1.1,0,0,0,.6-.7.9.9,0,0,0,0-.2h0Z"
+														fill="url(#p)" />
+														<path d="M31.5,4.7h-.1v.2h0a1,1,0,0,1,.6.7h0a1,1,0,0,1-.5.7,3,3,0,0,1-1.4.3,3,3,0,0,1-1.5-.4,1,1,0,0,1-.6-.7h0a.9.9,0,0,1,.6-.7h.1V4.6h-.1a1.1,1.1,0,0,0-.6.9h0a1.1,1.1,0,0,0,.6.8l.7.3h1.7l.7-.3a1.1,1.1,0,0,0,.6-.7h0A1,1,0,0,0,31.5,4.7Z"
+														fill="#ff6d54" />
+														<polygon points="31.8 21.6 31.8 33.7 31.5 33.9 31.4 34 31.4 34 31.2 34.1 23.7 38.5 23.6 38.5 23.5 38.5 23.4 38.6 22.9 38.9 22.9 26.8 22.9 26.7 23.4 26.4 23.5 26.4 23.6 26.4 23.7 26.3 31.2 21.9 31.4 21.9 31.4 21.8 31.5 21.8 31.8 21.6"
+														fill="#fed542" />
+														<polygon points="23.5 17 23.5 38.5 23.4 38.6 23.4 17 23.5 17" fill="#edba00" />
+														<polygon points="23.7 17 23.7 38.5 23.6 38.5 23.6 17 23.7 17" fill="#fff67d" />
+														<polygon points="24.5 17.6 24.5 38 24.4 38 24.4 17.6 24.5 17.6" fill="#edba00" />
+														<polygon points="24.7 17.6 24.7 37.9 24.6 38 24.6 17.6 24.7 17.6" fill="#fff67d" />
+														<polygon points="25.5 18.2 25.5 37.4 25.4 37.5 25.4 18.2 25.5 18.2" fill="#edba00" />
+														<polygon points="25.6 18.2 25.6 37.3 25.5 37.4 25.5 18.2 25.6 18.2" fill="#fff67d" />
+														<polygon points="26.5 18.8 26.5 36.8 26.4 36.9 26.4 18.8 26.5 18.8" fill="#edba00" />
+														<polygon points="26.6 18.8 26.6 36.8 26.5 36.8 26.5 18.8 26.6 18.8" fill="#fff67d" />
+														<polygon points="27.4 19.4 27.4 36.3 27.3 36.3 27.3 19.4 27.4 19.4" fill="#edba00" />
+														<polygon points="27.6 19.4 27.6 36.2 27.5 36.3 27.5 19.4 27.6 19.4" fill="#fff67d" />
+														<polygon points="28.4 20 28.4 35.7 28.3 35.8 28.3 20.1 28.4 20" fill="#edba00" />
+														<polygon points="28.6 20 28.6 35.6 28.5 35.7 28.5 20 28.6 20" fill="#fff67d" />
+														<polygon points="29.4 20.6 29.4 35.1 29.3 35.2 29.3 20.7 29.4 20.6" fill="#edba00" />
+														<polygon points="29.6 20.6 29.6 35.1 29.5 35.1 29.5 20.6 29.6 20.6" fill="#fff67d" />
+														<polygon points="30.4 21.2 30.4 34.6 30.3 34.6 30.3 21.3 30.4 21.2" fill="#edba00" />
+														<polygon points="30.5 21.2 30.5 34.5 30.4 34.6 30.4 21.2 30.5 21.2" fill="#fff67d" />
+														<polygon points="31.4 21.9 31.4 34 31.2 34.1 31.2 21.9 31.4 21.9" fill="#edba00" />
+														<polygon points="31.5 21.8 31.5 33.9 31.4 34 31.4 21.8 31.5 21.8" fill="#fff67d" />
+														<polygon points="22.9 26.8 22.9 38.9 22.5 38.7 22.4 38.6 22.3 38.6 22.2 38.5 12 32.5 12 20.4 12.2 20.5 12.4 20.6 12.4 20.6 12.5 20.7 22.2 26.4 22.3 26.4 22.4 26.5 22.5 26.5 22.9 26.8"
+														fill="#db8a00" />
+														<polygon points="22.3 16.6 22.3 38.6 22.2 38.5 22.2 16.6 22.3 16.6" fill="#edba00" />
+														<polygon points="22.5 16.6 22.5 38.7 22.4 38.6 22.4 16.6 22.5 16.6" fill="#c77f3c" />
+														<polygon points="21.3 17 21.3 38 21.2 38 21.2 17 21.3 17" fill="#edba00" />
+														<polygon points="21.5 17 21.5 38.1 21.4 38 21.4 17 21.5 17" fill="#c77f3c" />
+														<polygon points="20.3 17.4 20.3 37.4 20.2 37.4 20.2 17.4 20.3 17.4" fill="#edba00" />
+														<polygon points="20.5 17.5 20.5 37.5 20.4 37.5 20.4 17.4 20.5 17.5" fill="#c77f3c" />
+														<polygon points="19.3 17.8 19.3 36.9 19.2 36.8 19.2 17.8 19.3 17.8" fill="#edba00" />
+														<polygon points="19.5 17.9 19.5 36.9 19.4 36.9 19.4 17.8 19.5 17.9" fill="#c77f3c" />
+														<polygon points="18.3 18.2 18.3 36.3 18.2 36.2 18.2 18.2 18.3 18.2" fill="#edba00" />
+														<polygon points="18.5 18.3 18.5 36.4 18.4 36.3 18.4 18.2 18.5 18.3" fill="#c77f3c" />
+														<polygon points="17.3 18.6 17.3 35.7 17.2 35.6 17.2 18.6 17.3 18.6" fill="#edba00" />
+														<polygon points="17.5 18.7 17.5 35.8 17.4 35.7 17.4 18.6 17.5 18.7" fill="#c77f3c" />
+														<polygon points="16.3 19 16.3 35.1 16.2 35 16.2 19 16.3 19" fill="#edba00" />
+														<polygon points="16.5 19.1 16.5 35.2 16.4 35.1 16.4 19 16.5 19.1" fill="#c77f3c" />
+														<polygon points="15.3 19.4 15.3 34.5 15.2 34.5 15.2 19.4 15.3 19.4" fill="#edba00" />
+														<polygon points="15.5 19.5 15.5 34.6 15.4 34.5 15.4 19.4 15.5 19.5" fill="#c77f3c" />
+														<polygon points="14.3 19.8 14.3 33.9 14.2 33.9 14.2 19.8 14.3 19.8" fill="#edba00" />
+														<polygon points="14.5 19.9 14.5 34 14.4 34 14.4 19.8 14.5 19.9" fill="#c77f3c" />
+														<polygon points="13.3 20.2 13.3 33.3 13.2 33.3 13.2 20.1 13.3 20.2" fill="#edba00" />
+														<polygon points="13.5 20.3 13.5 33.4 13.4 33.4 13.4 20.2 13.5 20.3" fill="#c77f3c" />
+														<polygon points="12.4 20.6 12.4 32.8 12.2 32.7 12.2 20.5 12.4 20.6" fill="#edba00" />
+														<polygon points="12.5 20.7 12.5 32.9 12.4 32.8 12.4 20.6 12.5 20.7" fill="#c77f3c" />
+														<polygon points="22.9 26.5 22.9 26.9 32.2 21.6 32.2 21.2 22.9 26.5" fill="#bdcacf" />
+														<polygon points="22.9 26.5 11.6 19.9 20.8 14.6 32.2 21.2 22.9 26.5" fill="#dfe1eb" />
+														<polygon points="31.3 21.2 20.8 15 12.5 19.9 23 26 31.3 21.2" fill="#d3d3d9" />
+														<polygon points="20.8 15.4 12.8 20 12.5 19.9 20.8 15 31.3 21.2 31 21.4 20.8 15.4" fill="#9fa7ab" />
+														<polygon points="22.9 26.5 22.9 26.9 11.6 20.3 11.6 19.9 22.9 26.5" fill="#9fa7ab" />
+														<polygon points="20.8 15 20.8 15.4 12.8 20 12.5 19.9 20.8 15" fill="#9fa7ab" />
+														<polygon points="7.4 25.8 7.4 26.5 5.5 25.5 5.5 24.8 7.4 25.8" fill="#7a7a7a" />
+														<polygon points="5.7 25.4 5.7 25 7.2 25.9 7.2 26.3 5.7 25.4" fill="#41484d" />
+														<polygon points="5.8 25.3 5.8 25 5.7 25 5.7 25.4 7.2 26.3 7.2 26.2 5.8 25.3" fill="#4d565b" />
+														<polygon points="5.8 25.3 5.7 25.4 7.2 26.3 7.2 26.2 5.8 25.3" fill="#a1abb3" />
+														<polygon points="7.4 26.4 7.4 27 5.5 26 5.5 25.3 7.4 26.4" fill="#7a7a7a" />
+														<polygon points="5.7 25.9 5.7 25.5 7.2 26.4 7.2 26.8 5.7 25.9" fill="#41484d" />
+														<polygon points="5.8 25.9 5.8 25.6 5.7 25.5 5.7 25.9 7.2 26.8 7.2 26.7 5.8 25.9" fill="#4d565b" />
+														<polygon points="5.8 25.9 5.7 25.9 7.2 26.8 7.2 26.7 5.8 25.9" fill="#a1abb3" />
+														<polygon points="7.4 26.9 7.4 27.6 5.5 26.5 5.5 25.8 7.4 26.9" fill="#7a7a7a" />
+														<polygon points="5.7 26.5 5.7 26.1 7.2 27 7.2 27.4 5.7 26.5" fill="#41484d" />
+														<polygon points="5.8 26.4 5.8 26.1 5.7 26.1 5.7 26.5 7.2 27.4 7.2 27.3 5.8 26.4" fill="#4d565b" />
+														<polygon points="5.8 26.4 5.7 26.5 7.2 27.4 7.2 27.3 5.8 26.4" fill="#a1abb3" />
+														<polygon points="7.4 27.4 7.4 28.1 5.5 27.1 5.5 26.4 7.4 27.4" fill="#7a7a7a" />
+														<polygon points="5.7 27 5.7 26.6 7.2 27.5 7.2 27.9 5.7 27" fill="#41484d" />
+														<polygon points="5.8 26.9 5.8 26.6 5.7 26.6 5.7 27 7.2 27.9 7.2 27.8 5.8 26.9" fill="#4d565b" />
+														<polygon points="5.8 26.9 5.7 27 7.2 27.9 7.2 27.8 5.8 26.9" fill="#a1abb3" />
+														<polygon points="7.4 28 7.4 28.6 5.5 27.6 5.5 26.9 7.4 28" fill="#7a7a7a" />
+														<polygon points="5.7 27.5 5.7 27.1 7.2 28 7.2 28.4 5.7 27.5" fill="#41484d" />
+														<polygon points="5.8 27.5 5.8 27.2 5.7 27.1 5.7 27.5 7.2 28.4 7.2 28.3 5.8 27.5" fill="#4d565b" />
+														<polygon points="5.8 27.5 5.7 27.5 7.2 28.4 7.2 28.3 5.8 27.5" fill="#a1abb3" />
+														<polygon points="28.2 27.1 28.2 28.4 29.8 27.5 29.8 26.2 28.2 27.1" fill="#c7c7c7" />
+														<polygon points="29.6 27.3 29.6 26.6 28.5 27.2 28.5 28 29.6 27.3" fill="url(#q)" />
+														<polygon points="29.4 27.2 29.6 27.3 28.5 28 28.5 27.8 29.4 27.2" fill="#e6f5ff" />
+														<polygon points="29.6 26.3 29.6 27.6 31 26.8 31 25.5 29.6 26.3" fill="#c7c7c7" />
+														<polygon points="30.8 26.6 30.8 25.9 29.8 26.5 29.8 27.2 30.8 26.6" fill="url(#r)" />
+														<polygon points="30.6 26.5 30.8 26.6 29.8 27.2 29.8 27 30.6 26.5" fill="#e6f5ff" />
+														<polygon points="25.9 28.4 25.9 29.7 27.5 28.8 27.5 27.5 25.9 28.4" fill="#c7c7c7" />
+														<polygon points="27.3 28.6 27.3 27.9 26.1 28.6 26.1 29.3 27.3 28.6" fill="url(#s)" />
+														<polygon points="27.1 28.5 27.3 28.6 26.1 29.3 26.1 29.1 27.1 28.5" fill="#e6f5ff" />
+														<polygon points="27.3 27.6 27.3 28.9 28.7 28.1 28.7 26.8 27.3 27.6" fill="#c7c7c7" />
+														<polygon points="28.5 28 28.5 27.2 27.5 27.8 27.5 28.5 28.5 28" fill="url(#t)" />
+														<polygon points="28.3 27.9 28.5 28 27.5 28.5 27.5 28.3 28.3 27.9" fill="#e6f5ff" />
+														<polygon points="23.7 29.7 23.7 31 25.3 30.1 25.3 28.8 23.7 29.7" fill="#c7c7c7" />
+														<polygon points="25.1 29.9 25.1 29.2 23.9 29.9 23.9 30.6 25.1 29.9" fill="url(#u)" />
+														<polygon points="24.9 29.8 25.1 29.9 23.9 30.6 23.9 30.4 24.9 29.8" fill="#e6f5ff" />
+														<polygon points="25.1 28.9 25.1 30.2 26.5 29.4 26.5 28.1 25.1 28.9" fill="#c7c7c7" />
+														<polygon points="26.2 29.3 26.2 28.5 25.3 29.1 25.3 29.8 26.2 29.3" fill="url(#v)" />
+														<polygon points="26.1 29.2 26.2 29.3 25.3 29.8 25.3 29.6 26.1 29.2" fill="#e6f5ff" />
+														<polygon points="15.2 19.4 17.3 19.1 17.3 20.7 15.2 19.4" fill="#bdcacf" />
+														<polygon points="21.9 16.5 19.8 16.8 15.2 19.4 17.3 19.1 21.9 16.5" fill="#e7e3e3" />
+														<polygon points="21.3 16.6 21.5 16.7 17.7 18.9 17.5 18.8 21.3 16.6" fill="#e7e3e3" />
+														<polygon points="21.9 18.1 17.3 20.7 17.3 19.1 21.9 16.5 21.9 18.1" fill="#9fa7ab" />
+														<polygon points="17.3 20.7 19.5 20.3 19.5 21.9 17.3 20.7" fill="#bdcacf" />
+														<polygon points="24 17.7 21.9 18.1 17.3 20.7 19.5 20.3 24 17.7" fill="#e7e3e3" />
+														<polygon points="23.5 17.8 23.7 17.9 19.8 20.1 19.6 20.1 23.5 17.8" fill="#e7e3e3" />
+														<polygon points="24 19.3 19.5 21.9 19.5 20.3 24 17.7 24 19.3" fill="#9fa7ab" />
+														<polygon points="19.5 21.9 21.6 21.5 21.6 23.1 19.5 21.9" fill="#bdcacf" />
+														<polygon points="26.1 18.9 24 19.3 19.5 21.9 21.6 21.5 26.1 18.9" fill="#e7e3e3" />
+														<polygon points="25.6 19.1 25.8 19.1 21.9 21.4 21.7 21.3 25.6 19.1" fill="#e7e3e3" />
+														<polygon points="26.1 20.5 21.6 23.1 21.6 21.5 26.1 18.9 26.1 20.5" fill="#9fa7ab" />
+														<polygon points="21.6 23.1 23.7 22.8 23.7 24.4 21.6 23.1" fill="#bdcacf" />
+														<polygon points="28.2 20.2 26.1 20.5 21.6 23.1 23.7 22.8 28.2 20.2" fill="#e7e3e3" />
+														<polygon points="27.7 20.3 27.9 20.4 24 22.6 23.8 22.5 27.7 20.3" fill="#e7e3e3" />
+														<polygon points="28.2 21.8 23.7 24.4 23.7 22.8 28.2 20.2 28.2 21.8" fill="#9fa7ab" />
+														<polygon points="28.2 26.1 28.2 27.3 29.8 26.4 29.8 25.1 28.2 26.1" fill="#c7c7c7" />
+														<polygon points="29.6 26.3 29.6 25.5 28.5 26.2 28.5 26.9 29.6 26.3" fill="url(#w)" />
+														<polygon points="29.4 26.2 29.6 26.3 28.5 26.9 28.5 26.7 29.4 26.2" fill="#e6f5ff" />
+														<polygon points="29.6 25.3 29.6 26.5 31 25.7 31 24.4 29.6 25.3" fill="#c7c7c7" />
+														<polygon points="30.8 25.6 30.8 24.9 29.8 25.4 29.8 26.1 30.8 25.6" fill="url(#x)" />
+														<polygon points="30.6 25.5 30.8 25.6 29.8 26.1 29.8 25.9 30.6 25.5" fill="#e6f5ff" />
+														<polygon points="28.2 25.1 28.2 26.3 29.8 25.4 29.8 24.1 28.2 25.1" fill="#c7c7c7" />
+														<polygon points="29.6 25.3 29.6 24.6 28.5 25.2 28.5 25.9 29.6 25.3" fill="url(#y)" />
+														<polygon points="29.4 25.2 29.6 25.3 28.5 25.9 28.5 25.7 29.4 25.2" fill="#e6f5ff" />
+														<polygon points="29.6 24.3 29.6 25.6 31 24.7 31 23.5 29.6 24.3" fill="#c7c7c7" />
+														<polygon points="30.8 24.6 30.8 23.9 29.8 24.4 29.8 25.1 30.8 24.6" fill="url(#z)" />
+														<polygon points="30.6 24.5 30.8 24.6 29.8 25.1 29.8 24.9 30.6 24.5" fill="#e6f5ff" />
+														<polygon points="25.9 27.4 25.9 28.7 27.5 27.7 27.5 26.5 25.9 27.4" fill="#c7c7c7" />
+														<polygon points="27.3 27.6 27.3 26.9 26.2 27.5 26.2 28.2 27.3 27.6" fill="url(#aa)" />
+														<polygon points="27.1 27.5 27.3 27.6 26.2 28.2 26.2 28.1 27.1 27.5" fill="#e6f5ff" />
+														<polygon points="27.3 26.6 27.3 27.9 28.7 27.1 28.7 25.8 27.3 26.6" fill="#c7c7c7" />
+														<polygon points="28.5 26.9 28.5 26.2 27.5 26.7 27.5 27.5 28.5 26.9" fill="url(#ab)" />
+														<polygon points="28.3 26.8 28.5 26.9 27.5 27.5 27.5 27.3 28.3 26.8" fill="#e6f5ff" />
+														<polygon points="25.9 26.4 25.9 27.7 27.5 26.8 27.5 25.5 25.9 26.4" fill="#c7c7c7" />
+														<polygon points="27.3 26.6 27.3 25.9 26.2 26.5 26.2 27.3 27.3 26.6" fill="url(#ac)" />
+														<polygon points="27.1 26.5 27.3 26.6 26.2 27.3 26.2 27.1 27.1 26.5" fill="#e6f5ff" />
+														<polygon points="27.3 25.6 27.3 26.9 28.7 26.1 28.7 24.8 27.3 25.6" fill="#c7c7c7" />
+														<polygon points="28.5 25.9 28.5 25.2 27.5 25.8 27.5 26.5 28.5 25.9" fill="url(#ad)" />
+														<polygon points="28.3 25.8 28.5 25.9 27.5 26.5 27.5 26.3 28.3 25.8" fill="#e6f5ff" />
+														<polygon points="23.7 28.7 23.7 29.9 25.3 29 25.3 27.7 23.7 28.7" fill="#c7c7c7" />
+														<polygon points="25.1 28.9 25.1 28.2 23.9 28.8 23.9 29.5 25.1 28.9" fill="url(#ae)" />
+														<polygon points="24.9 28.8 25.1 28.9 23.9 29.5 23.9 29.3 24.9 28.8" fill="#e6f5ff" />
+														<polygon points="25.1 27.9 25.1 29.2 26.5 28.3 26.5 27.1 25.1 27.9" fill="#c7c7c7" />
+														<polygon points="26.2 28.2 26.2 27.5 25.3 28 25.3 28.7 26.2 28.2" fill="url(#af)" />
+														<polygon points="26.1 28.1 26.2 28.2 25.3 28.7 25.3 28.5 26.1 28.1" fill="#e6f5ff" />
+														<polygon points="23.7 27.7 23.7 29 25.3 28 25.3 26.8 23.7 27.7" fill="#c7c7c7" />
+														<polygon points="25.1 27.9 25.1 27.2 23.9 27.8 23.9 28.5 25.1 27.9" fill="url(#ag)" />
+														<polygon points="24.9 27.8 25.1 27.9 23.9 28.5 23.9 28.4 24.9 27.8" fill="#e6f5ff" />
+														<polygon points="25.1 26.9 25.1 28.2 26.5 27.4 26.5 26.1 25.1 26.9" fill="#c7c7c7" />
+														<polygon points="26.2 27.2 26.2 26.5 25.3 27 25.3 27.8 26.2 27.2" fill="url(#ah)" />
+														<polygon points="26.1 27.1 26.2 27.2 25.3 27.8 25.3 27.6 26.1 27.1" fill="#e6f5ff" />
+														<polygon points="16.5 25.5 16.5 26.8 14.9 25.8 14.9 24.6 16.5 25.5" fill="#c7c7c7" />
+														<polygon points="15.2 25.7 15.2 25 16.3 25.6 16.3 26.3 15.2 25.7" fill="url(#ai)" />
+														<polygon points="15.3 25.6 15.2 25.7 16.3 26.3 16.3 26.2 15.3 25.6" fill="#e6f5ff" />
+														<polygon points="15.2 24.7 15.2 26 13.7 25.2 13.7 23.9 15.2 24.7" fill="#c7c7c7" />
+														<polygon points="14 25 14 24.3 14.9 24.8 14.9 25.6 14 25" fill="url(#aj)" />
+														<polygon points="14.2 24.9 14 25 14.9 25.6 14.9 25.4 14.2 24.9" fill="#e6f5ff" />
+														<polygon points="16.5 24.5 16.5 25.8 14.9 24.8 14.9 23.6 16.5 24.5" fill="#c7c7c7" />
+														<polygon points="15.2 24.7 15.2 24 16.3 24.6 16.3 25.4 15.2 24.7" fill="url(#ak)" />
+														<polygon points="15.3 24.6 15.2 24.7 16.3 25.4 16.3 25.2 15.3 24.6" fill="#e6f5ff" />
+														<polygon points="15.2 23.7 15.2 25 13.7 24.2 13.7 22.9 15.2 23.7" fill="#c7c7c7" />
+														<polygon points="14 24 14 23.3 14.9 23.9 14.9 24.6 14 24" fill="url(#al)" />
+														<polygon points="14.2 23.9 14 24 14.9 24.6 14.9 24.4 14.2 23.9" fill="#e6f5ff" />
+														<polygon points="18.8 26.8 18.8 28.1 17.2 27.2 17.2 25.9 18.8 26.8" fill="#c7c7c7" />
+														<polygon points="17.5 27 17.5 26.3 18.6 27 18.6 27.7 17.5 27" fill="url(#am)" />
+														<polygon points="17.6 26.9 17.5 27 18.6 27.7 18.6 27.5 17.6 26.9" fill="#e6f5ff" />
+														<polygon points="17.5 26 17.5 27.3 16.1 26.5 16.1 25.2 17.5 26" fill="#c7c7c7" />
+														<polygon points="16.3 26.3 16.3 25.6 17.2 26.2 17.2 26.9 16.3 26.3" fill="url(#an)" />
+														<polygon points="16.5 26.2 16.3 26.3 17.2 26.9 17.2 26.7 16.5 26.2" fill="#e6f5ff" />
+														<polygon points="18.8 25.8 18.8 27.1 17.2 26.2 17.2 24.9 18.8 25.8" fill="#c7c7c7" />
+														<polygon points="17.5 26 17.5 25.3 18.6 26 18.6 26.7 17.5 26" fill="url(#ao)" />
+														<polygon points="17.6 25.9 17.5 26 18.6 26.7 18.6 26.5 17.6 25.9" fill="#e6f5ff" />
+														<polygon points="17.5 25 17.5 26.3 16.1 25.5 16.1 24.2 17.5 25" fill="#c7c7c7" />
+														<polygon points="16.3 25.4 16.3 24.6 17.2 25.2 17.2 25.9 16.3 25.4" fill="url(#ap)" />
+														<polygon points="16.5 25.3 16.3 25.4 17.2 25.9 17.2 25.7 16.5 25.3" fill="#e6f5ff" />
+														<polygon points="21.1 28.1 21.1 29.4 19.5 28.4 19.5 27.2 21.1 28.1" fill="#c7c7c7" />
+														<polygon points="19.7 28.3 19.7 27.6 20.8 28.2 20.8 29 19.7 28.3" fill="url(#aq)" />
+														<polygon points="19.9 28.2 19.7 28.3 20.8 29 20.8 28.8 19.9 28.2" fill="#e6f5ff" />
+														<polygon points="19.7 27.3 19.7 28.6 18.3 27.8 18.3 26.5 19.7 27.3" fill="#c7c7c7" />
+														<polygon points="18.5 27.6 18.5 26.9 19.5 27.5 19.5 28.2 18.5 27.6" fill="url(#ar)" />
+														<polygon points="18.7 27.5 18.5 27.6 19.5 28.2 19.5 28 18.7 27.5" fill="#e6f5ff" />
+														<polygon points="21.1 27.1 21.1 28.4 19.5 27.5 19.5 26.2 21.1 27.1" fill="#c7c7c7" />
+														<polygon points="19.7 27.3 19.7 26.6 20.8 27.3 20.8 28 19.7 27.3" fill="url(#as)" />
+														<polygon points="19.9 27.2 19.7 27.3 20.8 28 20.8 27.8 19.9 27.2" fill="#e6f5ff" />
+														<polygon points="19.7 26.3 19.7 27.6 18.3 26.8 18.3 25.5 19.7 26.3" fill="#c7c7c7" />
+														<polygon points="18.5 26.6 18.5 25.9 19.5 26.5 19.5 27.2 18.5 26.6" fill="url(#at)" />
+														<polygon points="18.7 26.6 18.5 26.6 19.5 27.2 19.5 27 18.7 26.6" fill="#e6f5ff" />
+														<polygon points="13.1 29.1 13.1 33.2 16.5 35.2 16.5 31.1 13.1 29.1" fill="#b8b8b8" />
+														<rect x="14.8" y="28.3" width="0.1" height="3.97" transform="translate(-18.8 27.9) rotate(-60)" fill="#d6d6d6" />
+														<rect x="14.8" y="28.7" width="0.1" height="3.97" transform="matrix(0.5, -0.87, 0.87, 0.5, -19.17, 28.16)" fill="#d6d6d6"
+														/>
+														<rect x="14.8" y="29.1" width="0.1" height="3.97" transform="translate(-19.5 28.4) rotate(-60)" fill="#d6d6d6" />
+														<rect x="14.8" y="29.6" width="0.1" height="3.97" transform="translate(-19.9 28.6) rotate(-60)" fill="#d6d6d6" />
+														<rect x="14.8" y="30" width="0.1" height="3.97" transform="translate(-20.3 28.8) rotate(-60)" fill="#d6d6d6" />
+														<rect x="14.8" y="30.4" width="0.1" height="3.97" transform="matrix(0.5, -0.87, 0.87, 0.5, -20.66, 29.02)" fill="#d6d6d6"
+														/>
+														<rect x="14.8" y="30.8" width="0.1" height="3.97" transform="translate(-21 29.2) rotate(-59.9)" fill="#d6d6d6" />
+														<rect x="14.8" y="31.3" width="0.1" height="3.97" transform="matrix(0.5, -0.87, 0.87, 0.5, -21.4, 29.45)" fill="#d6d6d6"
+														/>
+														<rect x="14.8" y="31.7" width="0.1" height="3.97" transform="translate(-21.8 29.6) rotate(-60)" fill="#d6d6d6" />
+														<polygon points="13.1 32.8 13.1 33.2 16.5 35.2 16.5 34.8 13.1 32.8" fill="#909090" />
+														<polygon points="16.4 31.2 16.5 31.1 16.5 30.4 16.4 30.4 16.4 31.2" fill="#474747" />
+														<polygon points="13.2 28.5 13 28.7 16.4 30.7 16.5 30.4 13.2 28.5" fill="#909090" />
+														<polygon points="13 28.7 13 29.2 16.4 31.2 16.4 30.7 13 28.7" fill="#636363" />
+														<polygon points="17.7 31.9 17.7 35.9 21.2 37.9 21.2 33.9 17.7 31.9" fill="#b8b8b8" />
+														<rect x="19.4" y="31" width="0.1" height="3.97" transform="translate(-18.8 33.3) rotate(-60)" fill="#d6d6d6" />
+														<rect x="19.4" y="31.4" width="0.1" height="3.97" transform="translate(-19.2 33.5) rotate(-60)" fill="#d6d6d6" />
+														<rect x="19.4" y="31.9" width="0.1" height="3.97" transform="translate(-19.6 33.7) rotate(-60)" fill="#d6d6d6" />
+														<rect x="19.4" y="32.3" width="0.1" height="3.97" transform="translate(-20 33.9) rotate(-60)" fill="#d6d6d6" />
+														<rect x="19.4" y="32.7" width="0.1" height="3.97" transform="translate(-20.3 34.1) rotate(-60)" fill="#d6d6d6" />
+														<rect x="19.4" y="33.1" width="0.1" height="3.97" transform="translate(-20.7 34.4) rotate(-60)" fill="#d6d6d6" />
+														<rect x="19.4" y="33.6" width="0.1" height="3.97" transform="translate(-21.1 34.6) rotate(-60)" fill="#d6d6d6" />
+														<rect x="19.4" y="34" width="0.1" height="3.97" transform="translate(-21.4 34.8) rotate(-60)" fill="#d6d6d6" />
+														<rect x="19.4" y="34.4" width="0.1" height="3.97" transform="translate(-21.8 35) rotate(-59.9)" fill="#d6d6d6" />
+														<polygon points="17.7 35.5 17.7 36 21.2 37.9 21.2 37.5 17.7 35.5" fill="#909090" />
+														<polygon points="21 33.9 21.2 33.8 21.2 33.2 21 33.2 21 33.9" fill="#474747" />
+														<polygon points="17.8 31.2 17.6 31.5 21 33.5 21.2 33.2 17.8 31.2" fill="#909090" />
+														<polygon points="17.6 31.5 17.6 31.9 21 33.9 21 33.5 17.6 31.5" fill="#636363" />
+														<polygon points="33.8 22.1 33.8 23.4 35.3 22.5 35.3 21.3 33.8 22.1" fill="#c7c7c7" />
+														<polygon points="35 22.4 35 21.7 34 22.3 34 23 35 22.4" fill="#4976b6" />
+														<polygon points="34.9 22.3 34.9 21.7 35 21.7 35 22.4 34 23 34 22.8 34.9 22.3" fill="#4d565b" />
+														<polygon points="34.9 22.3 35 22.4 34 23 34 22.8 34.9 22.3" fill="#e6f5ff" />
+														<polygon points="33.8 25.9 33.8 27.2 35.3 26.3 35.3 25.1 33.8 25.9" fill="#c7c7c7" />
+														<polygon points="35 26.2 35 25.5 34 26.1 34 26.8 35 26.2" fill="#4976b6" />
+														<polygon points="34.9 26.1 34.9 25.5 35 25.5 35 26.2 34 26.8 34 26.6 34.9 26.1" fill="#4d565b" />
+														<polygon points="34.9 26.1 35 26.2 34 26.8 34 26.6 34.9 26.1" fill="#e6f5ff" />
+														<polygon points="11.6 17.5 11.6 17.8 14.1 16.4 14.1 16 11.6 17.5" fill="#808b90" />
+													</g>
+												</svg>
+											</div>
+											<div><p>Suprimentos</p></div>											
+										</div>
+									</div>
+									<div class="col-xs-12 col-lg-4 col-xl-4">
+										<div class="card-material">
+											<div>
+												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40px" height="40px">
+													<title>processo-producao-01</title>
+													<g style="isolation:isolate">
+														<ellipse cx="20" cy="31.2" rx="19.5" ry="7.8" fill="#ededed" />
+														<polygon points="31.5 15.3 31.5 27.8 24.3 32.1 24 31.9 20.8 33.8 20.8 34.1 19.5 34.8 19.5 22.3 31.5 15.3" fill="#570100"
+														/>
+														<polygon points="29.6 18.2 30.1 17.9 30.1 27.5 29.6 27.8 29.6 18.2" fill="#ba3636" />
+														<polygon points="30.6 17.6 31.1 17.3 31.1 26.9 30.6 27.2 30.6 17.6" fill="#ba3636" />
+														<polygon points="28.6 18.8 29.1 18.5 29.1 28.1 28.6 28.4 28.6 18.8" fill="#ba3636" />
+														<polygon points="27.6 19.4 28.2 19 28.2 28.7 27.6 29 27.6 19.4" fill="#ba3636" />
+														<polygon points="26.6 19.9 27.2 19.6 27.2 29.2 26.6 29.5 26.6 19.9" fill="#ba3636" />
+														<polygon points="25.6 20.5 26.2 20.2 26.2 29.8 25.6 30.1 25.6 20.5" fill="#ba3636" />
+														<polygon points="24.7 21.1 25.2 20.7 25.2 30.4 24.7 30.7 24.7 21.1" fill="#ba3636" />
+														<polygon points="23.7 21.6 24.2 21.3 24.2 30.9 23.7 31.3 23.7 21.6" fill="#ba3636" />
+														<polygon points="22.7 22.2 23.2 21.9 23.2 31.5 22.7 31.8 22.7 22.2" fill="#ba3636" />
+														<polygon points="21.7 22.8 22.3 22.4 22.3 32.1 21.7 32.4 21.7 22.8" fill="#ba3636" />
+														<polygon points="20.7 23.3 21.3 23 21.3 32.6 20.7 33 20.7 23.3" fill="#ba3636" />
+														<polygon points="19.7 23.9 20.3 23.6 20.3 33.2 19.7 33.5 19.7 23.9" fill="#ba3636" />
+														<polygon points="29.7 18.1 30.3 17.8 30.3 27.4 29.7 27.7 29.7 18.1" fill="#750000" />
+														<polygon points="30.7 17.5 31.3 17.2 31.3 26.8 30.7 27.1 30.7 17.5" fill="#750000" />
+														<polygon points="28.7 18.7 29.3 18.4 29.3 28 28.7 28.3 28.7 18.7" fill="#750000" />
+														<polygon points="27.8 19.3 28.3 18.9 28.3 28.6 27.8 28.9 27.8 19.3" fill="#750000" />
+														<polygon points="26.8 19.8 27.3 19.5 27.3 29.1 26.8 29.5 26.8 19.8" fill="#750000" />
+														<polygon points="25.8 20.4 26.3 20.1 26.3 29.7 25.8 30 25.8 20.4" fill="#750000" />
+														<polygon points="24.8 21 25.4 20.6 25.4 30.3 24.8 30.6 24.8 21" fill="#750000" />
+														<polygon points="23.8 21.5 24.4 21.2 24.4 30.8 23.8 31.2 23.8 21.5" fill="#750000" />
+														<polygon points="22.8 22.1 23.4 21.8 23.4 31.4 22.8 31.7 22.8 22.1" fill="#750000" />
+														<polygon points="21.9 22.7 22.4 22.4 22.4 32 21.9 32.3 21.9 22.7" fill="#750000" />
+														<polygon points="20.9 23.2 21.4 22.9 21.4 32.5 20.9 32.9 20.9 23.2" fill="#750000" />
+														<polygon points="19.9 23.8 20.4 23.5 20.4 33.1 19.9 33.4 19.9 23.8" fill="#750000" />
+														<polygon points="31.5 25.9 31.9 26 23.8 32 21.3 33.5 19.5 34.5 19.5 32.9 31.5 25.9" fill="#d8d8d8" />
+														<polygon points="31.9 26 31.9 27.6 23.8 32.4 21.3 33.8 19.5 34.8 19.5 33.2 31.9 26" fill="#9d9b96" />
+														<polygon points="8.5 16 20.5 9 31.5 15.3 19.5 22.3 8.5 16" fill="#d1c9ca" />
+														<polygon points="20.5 10.6 29.5 15.8 30.3 15.3 20.5 9.7 10 15.8 11.4 16 20.5 10.6" fill="#7e898d" />
+														<polygon points="20.5 9.7 20.5 10.6 11.4 16 10 15.8 20.5 9.7" fill="#545354" />
+														<polygon points="12.4 16.1 21.2 11 20.5 10.6 11.4 16 12.4 16.1" fill="#8f8f8f" />
+														<polygon points="19.5 34.8 18.4 34.1 18.4 33.9 11 29.6 18 33.9 8.5 28.4 8.5 16 13.9 16.7 19.5 22.3 19.5 34.8" fill="#c9332e"
+														/>
+														<polygon points="9.7 27.9 9.7 16.7 9.1 16.4 9.1 27.6 9.7 27.9" fill="#820905" />
+														<polygon points="10.9 17.4 10.3 17 10.3 28.3 10.9 28.6 10.9 17.4" fill="#820905" />
+														<polygon points="12 18 11.5 17.7 11.5 28.9 12 29.3 12 18" fill="#820905" />
+														<polygon points="13.2 18.7 12.7 18.4 12.7 29.6 13.2 29.9 13.2 18.7" fill="#820905" />
+														<polygon points="14.4 19.4 13.8 19.1 13.8 30.3 14.4 30.6 14.4 19.4" fill="#820905" />
+														<polygon points="15.6 20.1 15 19.8 15 31 15.6 31.3 15.6 20.1" fill="#820905" />
+														<polygon points="16.8 20.8 16.2 20.5 16.2 31.7 16.8 32 16.8 20.8" fill="#820905" />
+														<polygon points="17.9 21.5 17.4 21.2 17.4 32.3 17.9 32.7 17.9 21.5" fill="#820905" />
+														<polygon points="19.1 22.2 18.6 21.9 18.6 33 19.1 33.3 19.1 22.2" fill="#820905" />
+														<polygon points="9.5 27.8 9.5 16.6 8.9 16.3 8.9 27.5 9.5 27.8" fill="#db3732" />
+														<polygon points="10.7 17.3 10.1 16.9 10.1 28.2 10.7 28.5 10.7 17.3" fill="#db3732" />
+														<polygon points="11.9 17.9 11.3 17.6 11.3 28.8 11.9 29.2 11.9 17.9" fill="#db3732" />
+														<polygon points="13 18.6 12.5 18.3 12.5 29.5 13 29.8 13 18.6" fill="#db3732" />
+														<polygon points="14.2 19.3 13.7 19 13.7 30.2 14.2 30.5 14.2 19.3" fill="#db3732" />
+														<polygon points="15.4 20 14.8 19.7 14.8 30.9 15.4 31.2 15.4 20" fill="#db3732" />
+														<polygon points="16.6 20.7 16 20.4 16 31.6 16.6 31.9 16.6 20.7" fill="#db3732" />
+														<polygon points="17.7 21.4 17.2 21.1 17.2 32.2 17.7 32.6 17.7 21.4" fill="#db3732" />
+														<polygon points="18.9 22.1 18.4 21.8 18.4 32.9 18.9 33.2 18.9 22.1" fill="#db3732" />
+														<polygon points="18.4 32.2 18.4 32.2 15.6 30.7 8.5 26.5 8.5 26.5 8 26.6 18.4 33.8 18.4 33.8 19.5 34.5 19.5 32.9 18.4 32.2"
+														fill="#fff3f4" />
+														<polygon points="18.4 32.6 18.4 32.6 15.6 31 8.5 26.9 8 26.6 8 28.2 18.4 34.1 18.4 34.1 19.5 34.8 19.5 33.2 18.4 32.6"
+														fill="#d3c9ca" />
+														<polygon points="26.4 9.2 13.4 16.8 7.4 15.9 20.4 8.4 26.4 9.2" fill="#fae35a" />
+														<polygon points="7.4 15.9 19.6 22.9 13.4 16.8 7.4 15.9" fill="#e6a007" />
+														<polygon points="26.4 9.2 13.4 16.8 19.6 22.9 32.6 15.3 26.4 9.2" fill="#cf8d00" />
+														<polygon points="20.4 22.5 14.2 16.3 14.5 16.1 20.7 22.2 20.4 22.5" fill="#bd8100" />
+														<polygon points="22.1 21.5 15.9 15.3 16.2 15.1 22.4 21.2 22.1 21.5" fill="#bd8100" />
+														<polygon points="23.8 20.5 17.7 14.4 17.9 14.1 24.1 20.2 23.8 20.5" fill="#bd8100" />
+														<polygon points="25.5 19.5 19.4 13.4 19.6 13.1 25.8 19.2 25.5 19.5" fill="#bd8100" />
+														<polygon points="27.3 18.5 21.1 12.4 21.3 12.1 27.5 18.2 27.3 18.5" fill="#bd8100" />
+														<polygon points="29 17.5 22.8 11.4 23 11.1 29.2 17.2 29 17.5" fill="#bd8100" />
+														<polygon points="30.7 16.5 24.5 10.4 24.7 10.1 30.9 16.2 30.7 16.5" fill="#bd8100" />
+														<polygon points="14.3 16.4 8.4 15.5 8.5 15.2 14.4 16 14.3 16.4" fill="#e0ac28" />
+														<polygon points="16 15.4 10.1 14.5 10.2 14.2 16.1 15 16 15.4" fill="#e0ac28" />
+														<polygon points="17.8 14.4 11.8 13.5 11.9 13.2 17.8 14 17.8 14.4" fill="#e0ac28" />
+														<polygon points="19.5 13.4 13.5 12.6 13.6 12.2 19.5 13 19.5 13.4" fill="#e0ac28" />
+														<polygon points="21.2 12.4 15.2 11.6 15.3 11.2 21.2 12.1 21.2 12.4" fill="#e0ac28" />
+														<polygon points="22.9 11.4 16.9 10.6 17 10.2 22.9 11.1 22.9 11.4" fill="#e0ac28" />
+														<polygon points="24.6 10.4 18.6 9.6 18.7 9.2 24.7 10.1 24.6 10.4" fill="#e0ac28" />
+														<polygon points="32.2 15.6 26 9.5 26.3 9.3 32.4 15.4 32.2 15.6" fill="#bd8100" />
+														<polygon points="26.1 9.6 20.2 8.7 20.2 8.3 26.2 9.2 26.1 9.6" fill="#e0ac28" />
+														<polygon points="16.9 31.8 16.9 33.3 17.6 33.7 17.6 32.2 16.9 31.8" fill="#d3c9ca" />
+														<polygon points="9.7 20.8 9.7 29.1 17.1 33.4 17.1 31.1 17.1 25.1 10.1 21.1 9.7 20.8" fill="#75a352" />
+														<polygon points="9.7 20.8 9.7 29.1 10.6 28.5 10.6 21.4 9.7 20.8" fill="#570100" />
+														<polygon points="10.1 21.1 10.1 27.6 17.1 32 17.1 25.1 10.1 21.1" fill="#ebe7e7" />
+														<rect x="13.5" y="19.3" width="0.2" height="8.1" transform="translate(-13.4 23.5) rotate(-60)" fill="#c0c4d1" />
+														<rect x="13.5" y="20.9" width="0.2" height="8.1" transform="translate(-14.8 24.3) rotate(-60)" fill="#c0c4d1" />
+														<rect x="13.5" y="20.1" width="0.2" height="8.1" transform="translate(-14.1 23.9) rotate(-60)" fill="#c0c4d1" />
+														<rect x="13.5" y="21.8" width="0.2" height="8.1" transform="translate(-15.6 24.7) rotate(-60)" fill="#c0c4d1" />
+														<rect x="13.5" y="22.7" width="0.2" height="8.1" transform="translate(-16.3 25.2) rotate(-60)" fill="#c0c4d1" />
+														<rect x="13.5" y="23.6" width="0.2" height="8.1" transform="translate(-17.1 25.6) rotate(-60)" fill="#c0c4d1" />
+														<rect x="13.5" y="24.8" width="0.2" height="8.1" transform="translate(-18.2 26.2) rotate(-60)" fill="#73757d" />
+														<polygon points="17.1 30.3 10.1 26.2 10.1 27.1 17.1 31.1 17.1 30.3" fill="#222" />
+														<polygon points="10.1 27.1 10.1 28.8 11.6 28.8 17.1 32 17.1 31.1 10.1 27.1" fill="#44662a" />
+														<polygon points="16.5 25.1 13.6 23.5 13.6 24.4 16.5 26 16.5 25.1" fill="#696969" />
+														<polygon points="13.7 24.2 13.7 23.7 16.4 25.3 16.4 25.8 13.7 24.2" fill="#799abc" />
+														<polygon points="13.8 24.2 13.8 23.8 13.7 23.7 13.7 24.2 16.4 25.8 16.4 25.7 13.8 24.2" fill="#b1b1b1" />
+														<polygon points="10.7 21.8 10.7 22.7 13.2 24.1 13.2 23.2 10.7 21.8" fill="#696969" />
+														<polygon points="10.8 22.5 10.8 22 13 23.3 13 23.8 10.8 22.5" fill="#799abc" />
+														<polygon points="10.9 22.5 10.9 22.1 10.8 22 10.8 22.5 13 23.8 13 23.8 10.9 22.5" fill="#b1b1b1" />
+														<polygon points="25.2 36.6 21.2 34.3 21.2 28.7 25.2 31 25.2 36.6" fill="#ba9d5e" />
+														<polygon points="24.8 31.3 24.8 35.9 21.6 34.1 21.6 29.4 24.8 31.3" fill="#a17f4c" />
+														<polygon points="28 29.4 25.2 31 25.2 36.6 28 35 28 29.4" fill="#d1a64f" />
+														<polygon points="25.2 36.6 28.6 34.7 28.6 29.1 25.2 31 25.2 36.6" fill="#d2b371" />
+														<polygon points="25.6 31.3 25.6 35.9 28.2 34.4 28.2 29.8 25.6 31.3" fill="#c5a666" />
+														<polygon points="28 34.3 28 29.9 28.2 29.8 28.2 34.4 25.6 35.9 25.6 35.7 28 34.3" fill="#a17f4c" />
+														<polygon points="25.6 33.3 25.6 33.6 28.2 32 28 31.9 25.6 33.3" fill="#f5df95" />
+														<polygon points="28.2 32.4 28.2 32 25.6 33.4 25.6 33.9 28.2 32.4" fill="#d2b371" />
+														<polygon points="28 34.3 28.2 34.4 25.6 35.9 25.6 35.7 28 34.3" fill="#f5df95" />
+														<polygon points="21.8 34 21.8 29.5 21.6 29.4 21.6 34.1 24.8 35.9 24.8 35.7 21.8 34" fill="#c9a963" />
+														<polygon points="24.8 33.3 24.8 33.6 21.6 31.6 21.8 31.5 24.8 33.3" fill="#dfbf7b" />
+														<polygon points="21.6 32 21.6 31.6 24.8 33.4 24.8 33.9 21.6 32" fill="#ba9d5e" />
+														<polygon points="21.8 34 21.6 34.1 24.8 35.9 24.8 35.7 21.8 34" fill="#dfbf7b" />
+														<polygon points="28 29.4 25.2 31 21.2 28.7 24 27.1 28 29.4" fill="#d1a64f" />
+														<polygon points="21.2 28.7 24.6 26.8 28.6 29.1 25.2 31 21.2 28.7" fill="#f5df95" />
+														<polygon points="25.2 30.6 22 28.7 24.6 27.3 27.8 29.1 25.2 30.6" fill="#e3c87f" />
+														<polygon points="24.6 27.4 27.6 29.2 27.8 29.1 24.6 27.3 22 28.7 22.2 28.8 24.6 27.4" fill="#a17f4c" />
+														<polygon points="23.8 29.8 23.5 29.6 26.2 28.2 26.2 28.4 23.8 29.8" fill="#d2b371" />
+														<polygon points="25.8 28 26.2 28.2 23.6 29.7 23.3 29.5 25.8 28" fill="#f5df95" />
+														<polygon points="24.6 27.4 24.6 27.3 22 28.7 22.2 28.8 24.6 27.4" fill="#d2b371" />
+														<polygon points="27.8 30.5 27.8 30.9 27.6 31.1 27.6 30.6 27.5 30.7 27.7 30.3 27.9 30.5 27.8 30.5" fill="#654532" />
+														<polygon points="26.4 31 25.8 32.1 26.3 32.4 26.8 31.3 26.4 31" fill="#c9c9c9" />
+														<path d="M27.4,30.7h-.1v.2h0V31h.2Z" fill="#654532" />
+														<polygon points="22.2 36.9 20 35.6 20 33.2 22.2 34.5 22.2 36.9" fill="#bf9245" />
+														<polygon points="24 33.5 22.2 34.5 22.2 36.9 24 35.9 24 33.5" fill="#cfa658" />
+														<path d="M22.4,35.5v-.8h0l.6-.3v.8h0Zm0-.8v.7l.5-.3v-.7Z" fill="#a05e00" />
+														<polygon points="22.8 34.8 22.8 35.2 22.6 35.3 22.6 34.9 22.5 34.9 22.7 34.6 22.9 34.8 22.8 34.8" fill="#a05e00" />
+														<polygon points="24 33.5 22.2 34.5 21.2 33.9 20.8 33.7 20 33.2 21.7 32.2 22.6 32.7 22.9 32.9 24 33.5" fill="#edce7d" />
+														<polygon points="21.2 33.9 20.8 33.7 22.6 32.7 22.9 32.9 21.2 33.9" fill="#fee9ab" />
+														<polygon points="20.8 35.9 20.1 35.5 20.1 35 20.8 35.3 20.8 35.9" fill="#ababab" />
+														<polygon points="20.7 35.8 20.2 35.5 20.2 35.5 20.7 35.8 20.7 35.8" fill="#595959" />
+														<polygon points="20.7 35.8 20.2 35.4 20.2 35.4 20.7 35.7 20.7 35.8" fill="#595959" />
+														<polygon points="20.7 35.7 20.2 35.4 20.2 35.3 20.7 35.7 20.7 35.7" fill="#595959" />
+														<polygon points="20.7 35.6 20.2 35.3 20.2 35.3 20.7 35.6 20.7 35.6" fill="#595959" />
+														<polygon points="20.7 35.5 20.2 35.2 20.2 35.1 20.7 35.4 20.7 35.5" fill="#595959" />
+														<polygon points="20.8 33.7 20.8 34.5 20.9 34.3 21 34.6 21.1 34.4 21.1 34.7 21.2 33.9 20.8 33.7" fill="#dbc68a" />
+														<polygon points="23.4 34.2 23.2 34.3 23.2 34.5 23.4 34.4 23.4 34.2" fill="#a05e00" />
+														<polygon points="23.6 34.1 23.4 34.2 23.4 34.4 23.6 34.3 23.6 34.1" fill="#a05e00" />
+														<polygon points="23.8 33.9 23.7 34 23.7 34.2 23.8 34.1 23.8 33.9" fill="#a05e00" />
+														<polygon points="25.1 27.5 23.7 28.3 25.4 29.3 26.8 28.5 25.1 27.5" fill="#e6daca" style="mix-blend-mode:multiply" />
+														<polygon points="26.5 29.9 24.8 28.9 24.8 27.9 26.5 28.9 26.5 29.9" fill="#bf9245" />
+														<polygon points="27.9 28.1 26.5 28.9 26.5 29.9 27.9 29.1 27.9 28.1" fill="#cfa658" />
+														<polygon points="27.9 28.1 26.5 28.9 25.7 28.4 25.4 28.3 24.8 27.9 26.1 27.1 26.8 27.5 27.1 27.6 27.9 28.1" fill="#edce7d"
+														/>
+														<polygon points="25.7 28.4 25.4 28.3 26.8 27.5 27.1 27.6 25.7 28.4" fill="#fee9ab" />
+														<polygon points="25.4 28.3 25.4 28.9 25.5 28.7 25.5 28.9 25.6 28.8 25.7 29 25.7 28.4 25.4 28.3" fill="#dbc68a" />
+														<polygon points="27.4 28.6 27.3 28.7 27.3 28.9 27.4 28.8 27.4 28.6" fill="#a05e00" />
+														<polygon points="27.6 28.5 27.4 28.6 27.4 28.8 27.6 28.7 27.6 28.5" fill="#a05e00" />
+														<polygon points="27.8 28.4 27.6 28.5 27.6 28.7 27.8 28.6 27.8 28.4" fill="#a05e00" />
+														<polygon points="26.4 27.3 26.1 27.6 25.8 27.4 26.2 27.2 26.4 27.3" fill="#ebebeb" />
+														<polygon points="26.4 27.3 26.1 27.5 26 27.5 26.4 27.3 26.4 27.3" fill="#bfbfbf" />
+														<polygon points="26.4 27.3 26 27.5 26 27.5 26.3 27.3 26.4 27.3" fill="#bfbfbf" />
+														<polygon points="26.3 27.3 26 27.5 26 27.5 26.3 27.3 26.3 27.3" fill="#bfbfbf" />
+														<polygon points="26.3 27.3 25.9 27.5 25.9 27.5 26.3 27.3 26.3 27.3" fill="#bfbfbf" />
+														<polygon points="26.2 27.2 25.9 27.4 25.8 27.4 26.2 27.2 26.2 27.2" fill="#bfbfbf" />
+														<path d="M26.6,29.4V29h0l.3-.2v.4h0Zm0-.4v.4h.3v-.4Z" fill="#a05e00" />
+														<polygon points="26.8 29 26.8 29.2 26.7 29.3 26.7 29.1 26.7 29.1 26.7 28.9 26.8 29 26.8 29" fill="#a05e00" />
+													</g>
+												</svg>
+											</div>
+											<div><p>Produção</p></div>											
+										</div>										
+									</div>
+									<div class="col-xs-12 col-lg-4 col-xl-4">
+										<div class="card-material">
+											<div>
+												<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 40 40" width="40px" height="40px">
+													<defs>
+														<linearGradient id="a" x1="67.04" y1="22.62" x2="65.27" y2="18.3" gradientTransform="matrix(-1, 0, 0, 1, 85.32, 0)" gradientUnits="userSpaceOnUse">
+															<stop offset="0" stop-color="#71bc9a" />
+															<stop offset="0.24" stop-color="#67b290" />
+															<stop offset="0.63" stop-color="#4e9876" />
+															<stop offset="0.93" stop-color="#37805f" />
+														</linearGradient>
+														<linearGradient id="b" x1="-155.51" y1="28.97" x2="-158.06" y2="23.84" gradientTransform="translate(191.5)" gradientUnits="userSpaceOnUse">
+															<stop offset="0" stop-color="#3b8664" />
+															<stop offset="0.26" stop-color="#377c5c" />
+															<stop offset="0.7" stop-color="#2b6248" />
+															<stop offset="0.93" stop-color="#23513b" />
+														</linearGradient>
+														<linearGradient id="c" x1="-157.23" y1="25.09" x2="-156.65" y2="25.09" gradientTransform="translate(191.5)" gradientUnits="userSpaceOnUse">
+															<stop offset="0" stop-color="#285d44" />
+															<stop offset="0.2" stop-color="#24533c" />
+															<stop offset="0.54" stop-color="#183928" />
+															<stop offset="0.93" stop-color="#08120a" />
+														</linearGradient>
+														<linearGradient id="d" x1="-157.52" y1="26.82" x2="-157.17" y2="27.47" xlink:href="#c" />
+														<linearGradient id="e" x1="-160.19" y1="31.48" x2="-162.74" y2="26.36" xlink:href="#b" />
+														<linearGradient id="f" x1="-161.9" y1="27.61" x2="-161.33" y2="27.61" xlink:href="#c" />
+														<linearGradient id="g" x1="-162.2" y1="29.34" x2="-161.85" y2="29.99" xlink:href="#c" />
+														<linearGradient id="h" x1="67.24" y1="30.03" x2="64.7" y2="24.91" gradientTransform="matrix(-1, 0, 0, 1, 85.32, 0)" gradientUnits="userSpaceOnUse">
+															<stop offset="0" stop-color="#71bc9a" />
+															<stop offset="0.39" stop-color="#67b290" />
+															<stop offset="0.93" stop-color="#529e7c" />
+														</linearGradient>
+														<linearGradient id="i" x1="65.53" y1="26.15" x2="66.1" y2="26.15" gradientTransform="matrix(-1, 0, 0, 1, 85.32, 0)" gradientUnits="userSpaceOnUse">
+															<stop offset="0" stop-color="#5aa583" />
+															<stop offset="0.2" stop-color="#539b7a" />
+															<stop offset="0.53" stop-color="#418163" />
+															<stop offset="0.93" stop-color="#265941" />
+														</linearGradient>
+														<linearGradient id="j" x1="65.23" y1="27.89" x2="65.58" y2="28.53" xlink:href="#i" />
+														<linearGradient id="k" x1="65.26" y1="28.41" x2="65.98" y2="22.13" gradientTransform="matrix(-1, 0, 0, 1, 85.32, 0)" gradientUnits="userSpaceOnUse">
+															<stop offset="0" />
+															<stop offset="0.14" stop-color="#040a07" />
+															<stop offset="0.37" stop-color="#10241b" />
+															<stop offset="0.67" stop-color="#224f3b" />
+															<stop offset="0.93" stop-color="#34795a" />
+														</linearGradient>
+														<linearGradient id="l" x1="63.8" y1="31.95" x2="61.26" y2="26.83" xlink:href="#h" />
+														<linearGradient id="m" x1="62.09" y1="28.07" x2="62.66" y2="28.07" xlink:href="#i" />
+														<linearGradient id="n" x1="61.8" y1="29.81" x2="62.15" y2="30.45" xlink:href="#i" />
+														<linearGradient id="o" x1="61.83" y1="30.33" x2="62.54" y2="24.05" xlink:href="#k" />
+														<linearGradient id="p" x1="72.77" y1="30.62" x2="67.69" y2="21.35" xlink:href="#h" />
+														<linearGradient id="q" x1="66.12" y1="23.13" x2="73.94" y2="26.23" xlink:href="#i" />
+														<linearGradient id="r" x1="69.26" y1="21.27" x2="69.54" y2="29.24" xlink:href="#k" />
+														<linearGradient id="s" x1="65.88" y1="18.51" x2="66" y2="21.87" xlink:href="#k" />
+													</defs>
+													<title>processo-distribuicao</title>
+													<g style="isolation:isolate">
+														<ellipse cx="20" cy="31.2" rx="19.5" ry="7.8" fill="#ededed" />
+														<path d="M5.5,16.8V23l9.2,5.2V21.7Z" fill="#74bf9d" />
+														<polygon points="14.7 21.7 5.5 17.4 5.5 16.9 14.4 19.8 14.7 21.7" fill="#45916f" />
+														<path d="M5.1,16.9v.2l9,3.4L23.9,15Z" fill="#163223" />
+														<polygon points="14.7 11.5 23.2 14.5 14.1 20.2 5.1 16.9 14.7 11.5" fill="#378160" />
+														<polygon points="6.7 23.4 11.9 26.3 11.9 25.9 6.7 23 6.7 23.4" fill="#7ecaa8" />
+														<polygon points="6.7 23 11.9 25.9 11.9 25.5 6.7 22.5 6.7 23" fill="#95e0be" />
+														<polygon points="6.7 22.6 11.9 25.5 11.9 25 6.7 22.1 6.7 22.6" fill="#7ecaa8" />
+														<polygon points="6.7 22.1 11.9 25 11.9 24.6 6.7 21.7 6.7 22.1" fill="#95e0be" />
+														<polygon points="6.7 21.7 11.9 24.6 11.9 24.2 6.7 21.3 6.7 21.7" fill="#7ecaa8" />
+														<polygon points="6.7 21.3 11.9 24.2 11.9 23.7 6.7 20.8 6.7 21.3" fill="#95e0be" />
+														<polygon points="6.7 20.8 11.9 23.7 11.9 23.3 6.7 20.4 6.7 20.8" fill="#7ecaa8" />
+														<polygon points="6.7 20.4 11.9 23.3 11.9 22.9 6.7 20 6.7 20.4" fill="#95e0be" />
+														<polygon points="6.7 20 11.9 22.9 11.9 22.4 6.7 19.6 6.7 20" fill="#7ecaa8" />
+														<polygon points="6.7 19.6 11.9 22.5 11.9 22 6.7 19.1 6.7 19.6" fill="#95e0be" />
+														<polygon points="6.7 19.1 11.9 22 11.9 21.6 6.7 18.7 6.7 19.1" fill="#7ecaa8" />
+														<polygon points="7 18.9 6.7 18.7 6.7 23.7 7 23.5 7 18.9" fill="#45916f" />
+														<polygon points="9.3 24.7 8.8 24.4 8.8 24.2 9.3 24.5 9.3 24.7" fill="#204a35" />
+														<polygon points="12 21.7 12 21.2 6.6 18.2 6.6 18.7 12 21.7" fill="#24543d" />
+														<polygon points="12.3 21.6 12 21.7 12 21.2 12.3 21 12.3 21.6" fill="#060f07" />
+														<polygon points="12.3 21 12 21.2 6.6 18.2 6.9 18 12.3 21" fill="#347858" />
+														<polygon points="25.8 24 25.8 35.4 37.3 29 37.3 17.6 25.8 24" fill="#45916f" />
+														<polygon points="37.3 18.3 37.3 19.1 25.8 25.6 25.8 24.8 37.3 18.3" fill="#337758" />
+														<polygon points="19.3 17.2 13.1 18.4 13.1 28.2 25.8 35.4 25.8 24 19.3 17.2" fill="#79c4a2" />
+														<polygon points="25.8 25.6 19.2 18 13.1 19 13.1 18.5 19.4 17.5 25.8 24.8 25.8 25.6" fill="#45916f" />
+														<polygon points="24.4 11.6 12.5 18.3 19.2 17.2 31.2 10.5 24.4 11.6" fill="#337657" />
+														<polygon points="25.1 11.9 23.2 12.4 24.5 13.1 27 11.7 25.1 11.9" fill="#163223" />
+														<path d="M18.8,18.6a.6.6,0,0,0-.5.4,1.7,1.7,0,0,0,.5,1.8,1.2,1.2,0,0,0,.9.4.6.6,0,0,0,.5-.4,1.7,1.7,0,0,0-.5-1.8A1.2,1.2,0,0,0,18.8,18.6Z"
+														fill="#367e5d" />
+														<path d="M18.9,20.6c.4.4.9.4,1.1,0h0a1.4,1.4,0,0,0-.4-1.3l-.2-.2c-.4-.3-.8-.2-.9.1A1.4,1.4,0,0,0,18.9,20.6Z" fill="#5da987"
+														/>
+														<path d="M19.1,20.4h0c.3.3.6.3.8.2H20a1.4,1.4,0,0,0-.4-1.3h0l-.2-.2a.5.5,0,0,0-.6.1h0A1.2,1.2,0,0,0,19.1,20.4Z" fill="url(#a)"
+														/>
+														<polygon points="19.2 17.2 25.9 24.3 37.8 17.6 31.2 10.5 27.7 12.5 19.2 17.2" fill="#275b42" />
+														<polygon points="33.4 23.8 33.4 28.1 35.2 27 35.2 22.8 33.4 23.8" fill="#509c7a" />
+														<polygon points="33.4 23.8 35 22.9 35 27 33.4 27.9 33.4 23.8" fill="#1d4430" />
+														<polygon points="34.9 23.1 34.9 26.9 34.4 27.1 33.5 27.6 33.5 23.9 34.1 23.5 34.9 23.1" fill="url(#b)" />
+														<polygon points="34.9 26.9 34.5 27.1 34.5 23.3 34.9 23.1 34.9 26.9" fill="url(#c)" />
+														<polygon points="34.5 26.6 34.9 26.8 34.9 26.9 34.5 27.1 34.4 27.1 33.5 27.6 33.5 27.1 34.5 26.6" fill="url(#d)" />
+														<polygon points="34.8 26.8 34.8 23.2 34.9 23.1 34.9 26.9 33.5 27.6 33.5 27.5 34.8 26.8" fill="#153122" />
+														<polygon points="34.9 26.9 34.8 26.8 33.5 27.5 33.5 27.6 34.9 26.9" fill="#469270" />
+														<polygon points="34.8 25 34.9 25 33.5 25.8 33.5 25.6 34.8 25" fill="#469270" />
+														<polygon points="34.9 25.1 33.5 25.9 33.5 25.8 34.9 25 34.9 25.1" fill="#173626" />
+														<polygon points="35 27 35.2 27 35.2 22.8 35 22.9 35 27" fill="#347a5a" />
+														<polygon points="33.4 23.8 33.4 23.5 35.5 22.3 35.5 22.6 33.4 23.8" fill="#45916f" />
+														<polygon points="33.2 23.7 33.4 23.8 33.4 23.5 33.2 23.4 33.2 23.7" fill="#71bd9b" />
+														<polygon points="33.2 23.4 33.4 23.5 35.5 22.3 35.4 22.2 33.2 23.4" fill="#88d4b2" />
+														<polygon points="33.4 28.6 33.4 28.3 35.5 27.1 35.5 27.4 33.4 28.6" fill="#45916f" />
+														<polygon points="33.2 28.5 33.4 28.6 33.4 28.3 33.2 28.2 33.2 28.5" fill="#71bd9b" />
+														<polygon points="33.2 28.2 33.4 28.3 35.5 27.1 35.4 27 33.2 28.2" fill="#88d4b2" />
+														<polygon points="28.7 26.3 28.7 30.6 30.6 29.6 30.6 25.3 28.7 26.3" fill="#509c7a" />
+														<polygon points="28.7 26.3 30.4 25.4 30.4 29.5 28.7 30.4 28.7 26.3" fill="#1d4430" />
+														<polygon points="30.2 25.6 30.2 29.4 29.8 29.6 28.9 30.1 28.9 26.4 29.5 26 30.2 25.6" fill="url(#e)" />
+														<polygon points="30.2 29.4 29.8 29.6 29.8 25.8 30.2 25.6 30.2 29.4" fill="url(#f)" />
+														<polygon points="29.8 29.1 30.2 29.3 30.2 29.4 29.8 29.6 29.7 29.7 28.9 30.1 28.9 29.6 29.8 29.1" fill="url(#g)" />
+														<polygon points="30.1 29.3 30.1 25.7 30.2 25.6 30.2 29.4 28.9 30.1 28.9 30 30.1 29.3" fill="#153122" />
+														<polygon points="30.2 29.4 30.1 29.3 28.9 30 28.9 30.1 30.2 29.4" fill="#469270" />
+														<polygon points="30.1 27.5 30.2 27.5 28.9 28.3 28.9 28.2 30.1 27.5" fill="#469270" />
+														<polygon points="30.2 27.7 28.9 28.4 28.9 28.3 30.2 27.5 30.2 27.7" fill="#173626" />
+														<polygon points="30.4 29.5 30.6 29.6 30.6 25.3 30.4 25.4 30.4 29.5" fill="#347a5a" />
+														<polygon points="28.7 26.3 28.7 26 30.9 24.8 30.9 25.1 28.7 26.3" fill="#45916f" />
+														<polygon points="28.5 26.2 28.7 26.3 28.7 26 28.5 25.9 28.5 26.2" fill="#71bd9b" />
+														<polygon points="28.5 25.9 28.7 26 30.9 24.8 30.7 24.7 28.5 25.9" fill="#88d4b2" />
+														<polygon points="28.7 31.1 28.7 30.8 30.9 29.6 30.9 29.9 28.7 31.1" fill="#45916f" />
+														<polygon points="28.5 31 28.7 31.1 28.7 30.8 28.5 30.7 28.5 31" fill="#71bd9b" />
+														<polygon points="28.5 30.7 28.7 30.8 30.9 29.6 30.7 29.5 28.5 30.7" fill="#88d4b2" />
+														<polygon points="20.7 24.8 20.7 29.2 18.9 28.1 18.9 23.8 20.7 24.8" fill="#73bf9d" />
+														<polygon points="20.7 24.8 19 23.9 19 28 20.7 29 20.7 24.8" fill="#367e5d" />
+														<polygon points="19.2 24.1 19.2 27.9 19.7 28.2 20.6 28.7 20.6 24.9 20 24.6 19.2 24.1" fill="url(#h)" />
+														<polygon points="19.2 27.9 19.6 28.2 19.6 24.4 19.2 24.1 19.2 27.9" fill="url(#i)" />
+														<polygon points="19.6 27.6 19.2 27.9 19.2 27.9 19.6 28.2 19.7 28.2 20.6 28.7 20.6 28.2 19.6 27.6" fill="url(#j)" />
+														<polygon points="19.2 24.1 19.2 26.1 19.7 28.2 20.6 28.7 20.6 27.5 20 24.6 19.2 24.1" fill="url(#k)" style="mix-blend-mode:screen"
+														/>
+														<polygon points="19.3 27.9 19.3 24.2 19.2 24.1 19.2 27.9 20.6 28.7 20.6 28.6 19.3 27.9" fill="#5da987" />
+														<polygon points="19.2 27.9 19.3 27.9 20.6 28.6 20.6 28.7 19.2 27.9" fill="#77c2a0" />
+														<polygon points="19.3 26 19.2 26.1 20.6 26.8 20.6 26.7 19.3 26" fill="#77c2a0" />
+														<polygon points="19.2 26.2 20.6 27 20.6 26.8 19.2 26.1 19.2 26.2" fill="#367e5d" />
+														<polygon points="19 28 18.9 28.1 18.9 23.8 19 23.9 19 28" fill="#539f7d" />
+														<polygon points="20.7 24.9 20.7 24.5 18.6 23.4 18.6 23.7 20.7 24.9" fill="#71bd9b" />
+														<polygon points="20.9 24.8 20.7 24.9 20.7 24.5 20.9 24.4 20.9 24.8" fill="#45916f" />
+														<polygon points="20.9 24.4 20.7 24.5 18.6 23.4 18.7 23.3 20.9 24.4" fill="#88d4b2" />
+														<polygon points="20.7 29.7 20.7 29.3 18.6 28.1 18.6 28.4 20.7 29.7" fill="#71bd9b" />
+														<polygon points="20.9 29.6 20.7 29.7 20.7 29.3 20.9 29.3 20.9 29.6" fill="#45916f" />
+														<polygon points="20.9 29.2 20.7 29.3 18.6 28.1 18.7 28 20.9 29.2" fill="#88d4b2" />
+														<polygon points="24.1 26.8 24.1 31.1 22.3 30 22.3 25.8 24.1 26.8" fill="#73bf9d" />
+														<polygon points="24.1 26.8 22.5 25.9 22.5 29.9 24.1 30.9 24.1 26.8" fill="#367e5d" />
+														<polygon points="22.6 26.1 22.6 29.9 23.1 30.1 24 30.6 24 26.8 23.4 26.5 22.6 26.1" fill="url(#l)" />
+														<polygon points="22.6 29.9 23 30.1 23 26.3 22.6 26.1 22.6 29.9" fill="url(#m)" />
+														<polygon points="23 29.6 22.6 29.8 22.6 29.9 23 30.1 23.1 30.1 24 30.6 24 30.1 23 29.6" fill="url(#n)" />
+														<polygon points="22.6 26.1 22.6 28.1 23.1 30.1 24 30.6 24 29.4 23.4 26.5 22.6 26.1" fill="url(#o)" style="mix-blend-mode:screen"
+														/>
+														<polygon points="22.8 29.8 22.8 26.1 22.6 26.1 22.6 29.9 24 30.6 24 30.5 22.8 29.8" fill="#5da987" />
+														<polygon points="22.6 29.9 22.8 29.8 24 30.5 24 30.6 22.6 29.9" fill="#77c2a0" />
+														<polygon points="22.8 28 22.6 28 24 28.8 24 28.6 22.8 28" fill="#77c2a0" />
+														<polygon points="22.6 28.1 24 28.9 24 28.8 22.6 28 22.6 28.1" fill="#367e5d" />
+														<polygon points="22.5 29.9 22.3 30 22.3 25.8 22.5 25.9 22.5 29.9" fill="#539f7d" />
+														<polygon points="24.2 26.8 24.2 26.5 22 25.3 22 25.6 24.2 26.8" fill="#71bd9b" />
+														<polygon points="24.3 26.7 24.2 26.8 24.2 26.5 24.3 26.4 24.3 26.7" fill="#45916f" />
+														<polygon points="24.3 26.4 24.2 26.5 22 25.3 22.2 25.2 24.3 26.4" fill="#88d4b2" />
+														<polygon points="24.2 31.6 24.2 31.3 22 30 22 30.4 24.2 31.6" fill="#71bd9b" />
+														<polygon points="24.3 31.5 24.2 31.6 24.2 31.3 24.3 31.2 24.3 31.5" fill="#45916f" />
+														<polygon points="24.3 31.2 24.2 31.3 22 30 22.2 29.9 24.3 31.2" fill="#88d4b2" />
+														<polygon points="16.9 32.6 18.8 31.5 18.8 31.4 16.9 32.4 16.9 32.6" fill="#4f9b79" />
+														<polygon points="11.3 29.4 16.9 32.6 16.9 32.4 11.3 29.2 11.3 29.4" fill="#6cb896" />
+														<polygon points="18.8 31.4 13.2 28.2 11.3 29.2 16.9 32.4 18.8 31.4" fill="#8cd8b6" />
+														<polygon points="17.4 22.8 17.2 22.9 17.2 30.4 17.4 30.3 17.4 22.8" fill="#5da987" />
+														<polygon points="17.2 22.9 14.7 21.5 14.7 29 17.2 30.4 17.2 22.9" fill="#367e5d" />
+														<polygon points="15 22.3 15 25.5 16.9 26.5 16.9 23.3 16.3 23 15 22.3" fill="url(#p)" />
+														<polygon points="15.4 22.5 15.4 25.3 16.9 26.1 16.9 26.5 15 25.5 15 22.3 15.4 22.5" fill="url(#q)" />
+														<polygon points="15.1 22.3 15.1 25.5 16.9 26.4 16.9 26.5 15 25.5 15 22.3 15.1 22.3" fill="#77c2a0" />
+														<polygon points="16.9 26.8 15 25.8 15 28.6 16.9 29.6 16.9 26.8" fill="#2e6a4e" />
+														<polygon points="15.1 25.9 15.1 28.5 16.9 29.5 16.9 29.6 15 28.6 15 25.8 15.1 25.9" fill="#77c2a0" />
+														<polygon points="14.9 21.4 14.7 21.5 17.2 22.9 17.4 22.8 14.9 21.4" fill="#7ec9a7" />
+														<polygon points="15.1 22.3 15.1 25.5 15 25.5 15 22.3 15.1 22.3" fill="#5da987" />
+														<polygon points="15.1 25.9 15.1 28.5 15 28.6 15 25.8 15.1 25.9" fill="#5da987" />
+														<path d="M17,25.9v.9h.2v-.9H17Z" fill="#479270" />
+														<polygon points="16.9 26 17 26.1 17 26.1 17.1 27 17.1 27 17.2 27 17.2 27 17.2 26.4 17.2 26.3 17.1 26.2 17 26 17 25.9 17 25.9 16.9 26 16.9 26"
+														fill="#479270" />
+														<path d="M16.9,26v.9h.2v-.9h-.3Z" fill="#78c3a1" />
+														<path d="M17.2,26.5h0V27h.1v-.5Z" fill="#55a07e" />
+														<path d="M16.9,26v.3H17l.2.3h.1v-.4h-.3Z" fill="#479270" />
+														<path d="M17.2,26.1l-.3.2h.3Z" fill="#61ad8b" />
+														<path d="M17,25.9h0V26Z" fill="#83ceac" />
+														<path d="M16.9,26h.2v.3h-.3V26Z" fill="#68b492" />
+														<path d="M17.2,26.1h-.2v.3h.2Z" fill="#78c3a1" />
+														<path d="M17.1,26.8V27h-.2v-.5h.2Z" fill="#78c3a1" />
+														<polygon points="16.9 26.3 16.9 26.4 17.1 26.5 17.2 26.5 16.9 26.3" fill="#90dcba" />
+														<polygon points="17.1 26.8 17.2 26.8 17.2 26.5 17.1 26.5 17.1 26.8" fill="#68b492" />
+														<path d="M17,26.5h0Z" fill="#0c1c11" />
+														<path d="M17,25.9h.2v.4h0v-.4H17Z" fill="#479270" />
+														<path d="M17,25.9h0Z" fill="#61ad8b" />
+														<path d="M17,25.9h0Z" fill="#83ceac" />
+														<path d="M17,26.8h0Z" fill="#5fab89" />
+														<path d="M17,26.7h0Z" fill="#55a17f" />
+														<path d="M16.9,26.7h0Z" fill="#82cdab" />
+														<path d="M16.9,26.6h0Z" fill="#8dd8b6" />
+														<ellipse cx="17" cy="26.7" rx="0.1" ry="0.1" transform="translate(-11.2 12.3) rotate(-30.5)" fill="#5fab89" />
+														<path d="M16.9,26.6h0S16.9,26.6,16.9,26.6Z" fill="#71bd9b" />
+														<path d="M17,26.6h0Z" fill="#87d3b1" />
+														<path d="M17,26.7h0Z" fill="#71bd9b" />
+														<path d="M16.4,26.5h.1l.3.2h-.1l-.3-.2h0Z" fill="#68b492" />
+														<path d="M16.9,26.8h0Z" fill="#66b18f" />
+														<path d="M16.9,26.7h0Z" fill="#56a280" />
+														<path d="M17,26.7h-.2l-.3-.2a0,0,0,0,1,0-.1h.1l.3.2H17Z" fill="#87d3b1" />
+														<polygon points="14.3 21.1 14.3 29 14.4 29.1 14.5 29.1 14.5 29.1 14.7 29 14.5 28.9 14.5 21.4 14.7 21.5 17.2 23 17.2 30.7 17.4 30.8 17.4 22.8 14.3 21.1"
+														fill="#71bd9b" />
+														<polygon points="17.6 22.7 17.4 22.8 17.4 30.8 17.6 30.7 17.6 22.7" fill="#45916f" />
+														<polygon points="14.5 20.9 14.3 21.1 17.4 22.8 17.6 22.7 14.5 20.9" fill="#88d4b2" />
+														<polygon points="14.5 29.1 14.5 29.1 14.7 29 14.7 29 14.7 21.5 14.5 21.4 14.5 29.1" fill="#45916f" />
+														<path d="M13.7,23.8h0Z" fill="#347a5a" />
+														<path d="M13.5,23.8h0Z" fill="#317254" />
+														<path d="M13.5,24Z" fill="#2f6e51" />
+														<path d="M13.5,24h0Z" fill="#2f6e51" />
+														<path d="M13.4,24h0Z" fill="#2f6e51" />
+														<path d="M13.5,23.8V24h0Z" fill="#44906e" />
+														<path d="M13.9,23.7h0Z" fill="#275b42" />
+														<polygon points="13.5 23.8 13.8 23.7 13.9 23.7 13.6 23.9 13.5 23.8" fill="#1f4733" />
+														<ellipse cx="13.5" cy="23.8" rx="0.1" ry="0.1" fill="#1f4733" />
+														<path d="M13.7,23.4v.4h-.2v-.4Z" fill="#347a5a" />
+														<path d="M13.5,23.4h.2v.4h-.2Z" fill="#317254" />
+														<path d="M13.5,23.9h0Z" fill="#2f6e51" />
+														<path d="M13.5,23.9h0Z" fill="#2f6e51" />
+														<path d="M13.4,23.8h0Z" fill="#2f6e51" />
+														<path d="M13.5,23.4v.4h0v-.4Z" fill="#44906e" />
+														<path d="M13.7,23.4v.4h-.1v-.4Z" fill="#275b42" />
+														<ellipse cx="13.5" cy="23.4" rx="0.1" ry="0.1" fill="#3d8967" />
+														<polygon points="13.1 23.5 13.5 23.7 13.5 23.1 13 22.8 13.1 23.5" fill="#489371" />
+														<polygon points="13.4 23.1 13.1 23 13.2 23.4 13.5 23.6 13.4 23.1" fill="#73be9c" />
+														<polygon points="13.4 23.3 13.5 23.6 13.2 23.4 13.2 23.4 13.4 23.3" fill="#529d7b" />
+														<polygon points="13.9 23.5 13.5 23.7 13.5 23.1 14 22.8 13.9 23.5" fill="#1a3c2b" />
+														<polygon points="13.8 23.4 13.9 23 13.6 23.1 13.6 23.6 13.8 23.4" fill="#2b644a" />
+														<polygon points="14 22.8 13.5 23.1 13 22.8 13.5 22.6 14 22.8" fill="#85d1af" />
+														<polygon points="13 22.9 13.5 23.1 13.5 22.5 13 22.9" fill="#2e6c4f" />
+														<polygon points="14 22.9 13.5 23.1 13.5 22.5 14 22.9" fill="#102619" />
+														<polygon points="13.6 23.3 13.6 23.6 13.8 23.4 13.8 23.4 13.6 23.3" fill="#153122" />
+														<polygon points="13.8 23.4 13.9 23 13.9 23 13.8 23.4 13.6 23.6 13.6 23.6 13.8 23.4" fill="#377f5f" />
+														<polygon points="13.8 23.4 13.8 23.4 13.8 23.4 13.6 23.6 13.6 23.6 13.8 23.4" fill="#23523b" />
+														<polygon points="13.2 23.4 13.1 23 13.1 23 13.2 23.4 13.5 23.6 13.5 23.5 13.2 23.4" fill="#519c7a" />
+														<polygon points="13.2 23.4 13.2 23.4 13.2 23.4 13.5 23.6 13.5 23.5 13.2 23.4" fill="#327456" />
+														<polygon points="13.1 23 13.2 23.4 13.2 23.4 13.2 23.5 13.4 23.6 13.1 23" fill="#72bd9b" opacity="0.31" />
+														<polygon points="13.2 23 13.5 23.5 13.4 23.3 13.4 23.1 13.4 23.1 13.2 23" fill="#72bd9b" opacity="0.47" />
+														<polygon points="13.1 22.9 13.1 23 13.4 23.6 13.5 23.6 13.5 23.5 13.2 23 13.1 22.9" fill="#95e0be" opacity="0.54" />
+														<polygon points="13.4 23.1 13.4 23.3 13.4 23.1 13.4 23.1" fill="#95e0be" opacity="0.54" />
+														<polygon points="13.2 23.4 13.2 23.4 13.2 23.5 13.2 23.4" fill="#95e0be" opacity="0.54" />
+														<polygon points="13.6 23.1 13.6 23.3 13.6 23.5 13.6 23.6 13.7 23.5 13.8 23.5 13.8 23.4 13.8 23.4 13.9 23 13.9 23 13.8 23 13.6 23.1 13.6 23.1"
+														fill="#72bd9b" opacity="0.31" />
+														<polygon points="13.8 23.5 13.8 23.4 13.8 23.4 13.8 23.5" fill="#95e0be" opacity="0.5" />
+														<polygon points="13.6 23.1 13.6 23.3 13.6 23.1 13.6 23.1" fill="#95e0be" opacity="0.5" />
+														<polygon points="13.6 23.5 13.6 23.6 13.7 23.5 13.9 23 13.9 23 13.8 23 13.6 23.5" fill="#95e0be" opacity="0.5" />
+														<polygon points="21.4 32.1 21.4 32.3 25.8 34.8 25.8 34.6 21.4 32.1" fill="#79c4a2" />
+														<polygon points="24.5 8 22 9.4 23.3 10.2 25.8 8.7 24.5 8" fill="#94e0be" />
+														<polygon points="25.8 8.7 23.3 10.2 23.3 13.8 25.8 12.4 25.8 8.7" fill="#499472" />
+														<polygon points="22 9.4 23.3 10.2 23.3 13.8 22 14.1 22 9.4" fill="#68b492" />
+														<polygon points="22.7 9.4 24.5 8.4 25.2 8.8 23.4 9.8 22.7 9.4" fill="#499472" />
+														<polygon points="24.5 8.4 24.5 9.1 25.2 8.8 24.5 8.4" fill="#68b492" />
+														<polygon points="25.8 24.8 25.9 24.3 37.8 17.6 37.7 18.1 25.8 24.8" fill="#11281a" />
+														<polygon points="12.5 18.3 12.7 18.8 19.2 17.8 25.8 24.8 25.9 24.3 19.2 17.2 12.5 18.3" fill="#163223" />
+														<polygon points="15 22.3 15 22.5 15.8 25.9 16.9 26.4 16.9 25.6 16.3 23 15 22.3" fill="url(#r)" style="mix-blend-mode:screen"
+														/>
+														<path d="M18.8,19.1l.3,1.3c.3.3.6.3.8.2l-.3-1.4h0l-.2-.2A.5.5,0,0,0,18.8,19.1Z" fill="url(#s)" style="mix-blend-mode:screen"
+														/>
+														<path d="M9.3,31.7c0,.5.7,1.2,1.5,1.5s1.5.1,1.5-.4-.7-1.2-1.5-1.5S9.3,31.2,9.3,31.7Z" fill="#c3c5c7" style="mix-blend-mode:multiply"
+														/>
+														<path d="M6.9,25.7h0Z" fill="#d18d6d" />
+														<path d="M7.3,29.8c-.1.5-.8,1.1-1.7,1.3s-1.5-.1-1.4-.6.8-1.1,1.7-1.3S7.4,29.3,7.3,29.8Z" fill="#c3c5c7" style="mix-blend-mode:multiply"
+														/>
+														<path d="M5.8,29.1h0a.2.2,0,0,0,0,.1v.2H7a.2.2,0,0,0-.1-.2l-.5-.2v-.3H5.8Z" fill="#1b1b1b" />
+														<path d="M7,29.3c.1,0,0,.1,0,.1H6.2s0-.1,0-.1l.2-.2v.2H7Z" fill="#1b1b1b" />
+														<path d="M5.3,30.6H5.2v-.2a1.1,1.1,0,0,1-.1-.3H4.5c-.1.1-.1.1-.1.2h0v.2h.1v.2h.1l.3.2h.3a.3.3,0,0,0,0-.2Z" fill="#1b1b1b"
+														/>
+														<path d="M4.8,30H5v.6a.5.5,0,0,1,.1.3H5l-.2-.2v-.4a.4.4,0,0,1,0-.2h.2Z" fill="#1b1b1b" />
+														<path d="M5.8,26.3a2.1,2.1,0,0,0-.2,1c.1.4.1.4,0,.6A5.6,5.6,0,0,0,5.8,29a.6.6,0,0,0,.5,0h.2V27.8a.8.8,0,0,1,0-.4,2.6,2.6,0,0,0,.2-.8,4.1,4.1,0,0,0-.1-1.1Z"
+														fill="#152a75" />
+														<path d="M6.4,25.5v.2l-.3.4-.2.2h0v.2a2.5,2.5,0,0,0,.1.4v.5c0,.1,0,.2,0,.2h.2l-.2.2c-.1,0,0,.2,0,.3v.3L6,29h.4V27.8a.8.8,0,0,1,0-.4,2.6,2.6,0,0,0,.2-.8A4.1,4.1,0,0,0,6.4,25.5Z"
+														fill="#19318f" />
+														<path d="M6.4,25.2a1.5,1.5,0,0,1-.1,1,1.2,1.2,0,0,1-.5.5,6.6,6.6,0,0,1-.4,1.4,2.2,2.2,0,0,0-.3.5,2.4,2.4,0,0,0,0,.6V30a.5.5,0,0,1-.7.1,5,5,0,0,1,0-1.5c.1-.3.2-.4.2-.7a6.2,6.2,0,0,1,.2-1.1,1.2,1.2,0,0,1,0-.7l.3-.7H6.4Z"
+														fill="#19318f" />
+														<path d="M5,26v-.2h.2a.1.1,0,0,0,0-.1H4.8v.2a1.7,1.7,0,0,0,0,.2c0,.2-.1.4,0,.6v.3h0a6.2,6.2,0,0,0-.2,1.1c0,.2-.1.3-.2.7a5,5,0,0,0,0,1.5h.2a1.5,1.5,0,0,0-.1-.3v-.4a1.8,1.8,0,0,1,.1-.9v-.6c.1-.3,0-.6.1-.9v-.3A2.8,2.8,0,0,1,5,26Z"
+														fill="#152a75" />
+														<path d="M6.3,22.7l.2.5a1.9,1.9,0,0,1,.1.5c0,.2,0,.4,0,.5s0,.6,0,.9a2.2,2.2,0,0,1,0,.3c0,.2.1.3,0,.4l-.5.2H5.4L4.6,26c-.1-.1-.1-.1,0-.2a1.6,1.6,0,0,0,0-.4v-.5a1.4,1.4,0,0,0-.1-.6,1.2,1.2,0,0,1-.2-.6c0-.3,0-.6.3-.8l.5-.3.4-.2h.4Z"
+														fill="#b53726" />
+														<path d="M5.8,22.4H5.4l-.4.2-.5.3c-.3.2-.3.5-.3.8s.2.5.2.7.1.6.1.9a3.3,3.3,0,0,1,0,.6H5v-.2a2.2,2.2,0,0,1,0-.7,3,3,0,0,0-.1-1l-.2-.4v-.5h.1l.5-.3H6.2Z"
+														fill="#bd3928" style="mix-blend-mode:multiply" />
+														<path d="M5.9,22.9a.2.2,0,0,1-.4.2l-.2-.2L5,22.5l.4-.2h.4a2.7,2.7,0,0,1,.2.5Z" fill="#d18d6d" />
+														<path d="M5.4,22.9a.9.9,0,0,1,0-.3v-.2H5.4l-.4.2.3.4h0Z" fill="#c77752" />
+														<path d="M5.1,22.5H4.9s0,.1,0,.1H5l.2.2h.2l-.2-.2v-.2Z" fill="#cc3e2b" />
+														<path d="M6.1,22.6s0-.1,0-.1H5.9a.4.4,0,0,1,0,.2h0v.2h.2A.3.3,0,0,1,6.1,22.6Z" fill="#cc3e2b" />
+														<path d="M5.1,22.2v.2l.4.3h.3v-.5S5.2,21.9,5.1,22.2Z" fill="#deb08a" />
+														<path d="M5.1,22.2v.2l.3.2a.9.9,0,0,1,0-.1v-.5Z" fill="#d18d6d" />
+														<circle cx="5.2" cy="24" r="0.1" transform="translate(-0.8 0.2) rotate(-2)" fill="#ffba3e" />
+														<path d="M8.2,24.5h0s.1,0,0,.1H6.7v-.2h0l.5.2H8.2Z" fill="#f1bc95" />
+														<path d="M6.5,23.8a2.2,2.2,0,0,0,0-.3h.1s0,.1,0,.1h0Z" fill="#d18d6d" />
+														<path d="M7.5,24.5H6.7L7,24h.5Z" fill="#d18d6d" />
+														<path d="M6.5,23.6a1.1,1.1,0,0,0,0-.3l-.2-.5v-.3h.2v1.1h.4l.4.2h.1s-.1.2-.1.2H6.5V24h0Z" fill="#b23625" />
+														<polygon points="7.3 26 6.2 25.4 6.2 24.3 7.3 25 7.3 26" fill="#bf9245" />
+														<polygon points="8.2 24.5 7.3 25 7.3 26 8.2 25.5 8.2 24.5" fill="#cfa658" />
+														<polygon points="8.2 24.5 7.3 25 6.8 24.7 6.6 24.6 6.2 24.3 7.1 23.8 7.5 24.1 7.7 24.2 8.2 24.5" fill="#edce7d" />
+														<polygon points="6.8 24.7 6.6 24.6 7.5 24.1 7.7 24.2 6.8 24.7" fill="#fee9ab" />
+														<polygon points="6.6 24.6 6.6 25 6.6 24.9 6.7 25 6.7 24.9 6.8 25.1 6.8 24.7 6.6 24.6" fill="#dbc68a" />
+														<polygon points="7.9 24.8 7.8 24.9 7.8 25 7.9 24.9 7.9 24.8" fill="#a05e00" />
+														<polygon points="8 24.7 7.9 24.8 7.9 24.9 8 24.8 8 24.7" fill="#a05e00" />
+														<polygon points="8.1 24.7 8.1 24.7 8.1 24.8 8.1 24.8 8.1 24.7" fill="#a05e00" />
+														<polygon points="7.3 24 7 24.1 6.8 24 7.1 23.9 7.3 24" fill="#ebebeb" />
+														<polygon points="7.2 24 7 24.1 7 24.1 7.2 24 7.2 24" fill="#bfbfbf" />
+														<polygon points="7.2 24 7 24.1 7 24.1 7.2 24 7.2 24" fill="#bfbfbf" />
+														<polygon points="7.2 24 7 24.1 7 24.1 7.2 24 7.2 24" fill="#bfbfbf" />
+														<polygon points="7.2 23.9 7 24.1 6.9 24.1 7.2 23.9 7.2 23.9" fill="#bfbfbf" />
+														<polygon points="7.1 23.9 6.9 24.1 6.9 24 7.1 23.9 7.1 23.9" fill="#bfbfbf" />
+														<polygon points="7.6 24.9 7.4 25 7.4 25.3 7.6 25.2 7.6 24.9" fill="none" stroke="#a05e00" stroke-miterlimit="10" stroke-width="0.02"
+														/>
+														<polygon points="7.5 25.1 7.5 25.2 7.4 25.2 7.5 25.1 7.4 25.1 7.5 25 7.5 25.1 7.5 25.1" fill="#a05e00" />
+														<path d="M6.4,22.8a.3.3,0,0,0-.1-.2h.1Z" fill="#c9c9c9" />
+														<path d="M6.1,22.5c0,.2-.2.2-.4.2H5.3c-.6-.5-.2-.6-.1-.9h.1a.9.9,0,0,1,.7-.3l.3.2v.2h0A5,5,0,0,1,6.1,22.5Z" fill="#f0b88f"
+														/>
+														<path d="M6.2,21.6H5.5v.6a.5.5,0,0,0,0,.2H5.3c-.6-.5-.2-.6-.1-.9h.1l.3-.2h.6v.2Z" fill="#df9876" />
+														<path d="M6.1,22.4H5.4a.4.4,0,0,1,0-.2v-.3c0-.2.2-.3.6-.3h.2a.5.5,0,0,0-.1-.3l-.5-.3a.7.7,0,0,0-.6.2.7.7,0,0,0-.2.5,1.1,1.1,0,0,0,.1.3l.2.4h.1s0,0,0-.1V22H5a.2.2,0,0,1,0-.1h.2v.2a.5.5,0,0,1,0,.1v.3l.2.2h.6Zm-.2,0H6s0,.1,0,.1H5.7a.1.1,0,0,1,0-.1H6Z"
+														fill="#4f2900" />
+														<path d="M5.7,21H6l-.4-.2a.7.7,0,0,0-.6.2.7.7,0,0,0-.2.5,1.1,1.1,0,0,0,.1.3l.2.3H5v-.3a1.7,1.7,0,0,1,0-.5.6.6,0,0,1,.5-.5Z"
+														fill="#422200" />
+														<path d="M6.1,22.3h0Z" fill="#703a00" />
+														<path d="M6.1,22.4h0c-.1.2-.3.2-.5.1H5.4a.6.6,0,0,1,0-.1h0V22H5.3v.2a.8.8,0,0,1,0,.3h0v.2H6v-.2a.6.6,0,0,0,0-.2Z" fill="#422200"
+														/>
+														<path d="M7,25.7H6.3l-.6-.2H5.3a.2.2,0,0,1,0-.1h.5l.3.2H7Z" fill="#f1bc95" />
+														<path d="M5.7,25.3h0l.6.2h.1l-.2-.2H5.7Z" fill="#d18d6d" />
+														<path d="M5.7,24.9h0l-.2.2H5.3V25H4.8v-.3l-.3-.4v-.5a.9.9,0,0,1,0-.2v-.2l.2-.2h.3a1.1,1.1,0,0,1,.3.6v.5a1.2,1.2,0,0,0,.2.6h.2Z"
+														fill="#c33b29" />
+														<path d="M5.4,25.2H4.8v-.3l-.3-.4-.2-.4a.5.5,0,0,1,.1-.4h.2a.5.5,0,0,0,0,.4l.2.4.2.4.2.5.2.3h.1Z" fill="#b03525" />
+														<path d="M5.4,25.4h.3l.2-.3H5.6c.1.1-.2.3-.2.4H5.2s0,.1,0,.1Z" fill="#cc3e2b" />
+														<path d="M10.7,31.2h0a.2.2,0,0,1,0,.1v.2H9.3a.2.2,0,0,1,.1-.2l.5-.2v-.3h.6Z" fill="#1b1b1b" />
+														<path d="M9.4,31.4c-.1,0,0,.1,0,.1h.8s0-.1,0-.1L10,31v.2H9.4Z" fill="#2a2a2a" />
+														<path d="M11.1,32.8h.1l.2-.3a1.2,1.2,0,0,0,.1-.3H12c.1.1.1.1.1.2h0v.2h-.1V33h-.1l-.3.2h-.3a.3.3,0,0,1,0-.2Z" fill="#1b1b1b"
+														/>
+														<path d="M11.7,32.2h-.2v.6a.5.5,0,0,0-.1.3h.3l.2-.2v-.4a.4.4,0,0,0,0-.2h-.2Z" fill="#2a2a2a" />
+														<path d="M10.8,28.2a2.2,2.2,0,0,1,.1,1c-.1.4-.1.5,0,.6a5.8,5.8,0,0,1-.2,1.2.6.6,0,0,1-.5,0H10V29.8a.8.8,0,0,0,0-.4,2.7,2.7,0,0,1-.2-.9,4.3,4.3,0,0,1,.2-1.1Z"
+														fill="#543a2c" />
+														<path d="M10.1,27.4v.2l.3.4.2.2h0v.2a2.6,2.6,0,0,1-.1.4v.5c0,.1,0,.2,0,.3h-.3l.3.2c.1,0,0,.2,0,.3v.3l-.2.6H10V29.8a.8.8,0,0,0,0-.4,2.7,2.7,0,0,1-.2-.9A4.3,4.3,0,0,1,10.1,27.4Z"
+														fill="#6e4c39" />
+														<path d="M12.1,32.3a5.1,5.1,0,0,0,.1-1.5c-.1-.3-.2-.5-.2-.7a6.4,6.4,0,0,0-.2-1.1,1.2,1.2,0,0,0,.1-.8,1.2,1.2,0,0,0-.2-.5s-.3.2-.9-.1-.6-.4-.6-.4a1.5,1.5,0,0,0,0,1.1,1.2,1.2,0,0,0,.5.5,6.8,6.8,0,0,0,.4,1.4,2.2,2.2,0,0,1,.3.6,2.5,2.5,0,0,1,0,.6v.8A.5.5,0,0,0,12.1,32.3Z"
+														fill="#6e4c39" />
+														<path d="M11.6,28v-.3h.3v.5a1.2,1.2,0,0,1-.1.8A6.4,6.4,0,0,1,12,30c0,.2,0,.3.2.7a5.1,5.1,0,0,1-.1,1.5h-.2v-.8a1.9,1.9,0,0,0-.1-.9V30c-.1-.3,0-.6-.1-.9v-.3A3,3,0,0,0,11.6,28Z"
+														fill="#543a2c" />
+														<path d="M9.9,24.8v-.3a.4.4,0,0,1,.4-.1v.2H9.9Z" fill="#e3d64d" />
+														<path d="M9.9,25.9c0,.8.1,1.8.1,1.8s.6.5,1.9.1a4.7,4.7,0,0,1-.2-1.1c.1-.1.5-.7.5-1s.1-.6-.2-.8l-.5-.4-.4-.2h-.4l-.5.3A1.7,1.7,0,0,0,9.9,25.9Z"
+														fill="#ebe56b" />
+														<path d="M10.9,25.2a7.9,7.9,0,0,0-.3,1,8.8,8.8,0,0,0-.2.9s0-1.1-.1-1.4a1.6,1.6,0,0,1,.1-.6S10.4,25.2,10.9,25.2Z" fill="#ebe56b"
+														/>
+														<path d="M10.7,24.4h.4l.4.2.5.4c.3.3.3.5.2.8s-.5.9-.5,1a4.7,4.7,0,0,0,.2,1.1h-.5v-.7a3.1,3.1,0,0,1,.1-1.1l.3-.4v-.5a.3.3,0,0,0,0-.1h-.1l-.5-.4H10.2Z"
+														fill="#e3d64d" />
+														<path d="M10.5,25a.2.2,0,0,0,.4.2l.3-.2.4-.4-.4-.2h-.4a2.8,2.8,0,0,0-.2.5Z" fill="#d18d6d" />
+														<path d="M11,24.9a1,1,0,0,0,0-.3v-.2h.1l.4.2-.4.4h0Z" fill="#c77752" />
+														<path d="M11.4,24.5h.2s0,.1,0,.1h-.1l-.3.2h-.4a.2.2,0,0,1,0,0H11l.2-.2v-.2Z" fill="#f4ed6e" />
+														<path d="M10.3,24.6h.2a.4.4,0,0,0,0,.3h0v.2h-.1v-.2h0a.2.2,0,0,1,0-.1h0Z" fill="#f4ed6e" />
+														<path d="M11.3,24.3v.3l-.4.3h-.3v-.5S11.2,24,11.3,24.3Z" fill="#deb08a" />
+														<path d="M11.3,24.3v.3l-.3.2h0v-.5Z" fill="#d18d6d" />
+														<path d="M10.3,24.6c0,.2.2.2.4.2l.3-.2h.1c.5-.6.2-.6.1-.9h-.1a.9.9,0,0,0-.7-.3l-.3.2v.2h0A5.2,5.2,0,0,0,10.3,24.6Z" fill="#f0b88f"
+														/>
+														<path d="M10.1,23.6h.7v.6a.5.5,0,0,1,0,.2h.1c.5-.6.2-.6.1-.9h-.1l-.3-.2h-.7v.2Z" fill="#df9876" />
+														<path d="M11.1,24.2h0v-.2h.2a.2.2,0,0,1,0,.1h0a.6.6,0,0,0-.1.3h.1l.2-.4a1.1,1.1,0,0,0,0-.4.8.8,0,0,0-.2-.5.7.7,0,0,0-.6-.2l-.5.3a.5.5,0,0,0-.1.4h.2c.4,0,.6.1.6.3V24h.1Z"
+														fill="#4f2900" />
+														<path d="M10.7,23h-.3l.5-.3a.7.7,0,0,1,.6.2.8.8,0,0,1,.2.5,1.1,1.1,0,0,1,0,.4l-.2.3h0V24a1.8,1.8,0,0,0,0-.5.6.6,0,0,0-.6-.5Z"
+														fill="#422200" />
+														<path d="M8.6,26.9H8.1v-.2h1l.3-.2h.1c.2,0,.2.1.2.3H8.6A.1.1,0,0,0,8.6,26.9Z" fill="#f1bc95" />
+														<path d="M9.3,26.7h.2l.3-.2H9.3Z" fill="#d18d6d" />
+														<path d="M8.5,26.6h0l.2.5a.1.1,0,0,1,0,.1H8.5l-.2-.6a.1.1,0,0,1,0-.1v-.2h.1Z" fill="#6f6f6f" />
+														<polygon points="8.5 27.3 8.5 27.3 8.5 27.3 8.6 27.3 8.6 27.3 8.5 27.3" fill="#3f3f3f" />
+														<path d="M8.5,26.5H8.3a.1.1,0,0,1,0-.1v-.2Z" fill="#3f3f3f" />
+														<path d="M8.3,26.8h0Z" fill="#242424" />
+														<path d="M8.4,26.5v.2a.1.1,0,0,0,0,.1l.2.6h0l-.2-.6a.1.1,0,0,1,0-.1v-.2h0Z" fill="#212121" />
+														<path d="M8.3,26.8l.2.6h.1v-.2a.1.1,0,0,0,0-.1l-.2-.6H8.5v.2A.1.1,0,0,0,8.3,26.8Z" fill="#6f6f6f" />
+														<path d="M8.6,27.3h0v-.2a.1.1,0,0,0,0-.1l-.2-.6h0v.2a.1.1,0,0,0,0,.1l.2.6h0Z" />
+														<path d="M8.6,27.3h0v-.2h0l-.2-.6h0v.2a.1.1,0,0,0,0,.1l.2.6h0Z" fill="#4e4e4e" />
+														<path d="M8.5,26.5v.2a.1.1,0,0,0,0,.1l.2.6h0l-.2-.6a.1.1,0,0,1,0-.1v-.2h0Z" fill="#404040" />
+														<path d="M8.4,26.3h0l.2.5a.1.1,0,0,1,0,.1V27H8.3l-.2-.6a.1.1,0,0,1,0-.1l.2-.2h.1Z" fill="#6f6f6f" />
+														<polygon points="8.3 27.1 8.3 27.1 8.3 27 8.4 27 8.4 27.1 8.3 27.1" fill="#3f3f3f" />
+														<path d="M8.4,26.2h.1v.2H8.1a.1.1,0,0,1,0-.1l.2-.2Z" fill="#3f3f3f" />
+														<path d="M8.1,26.5h0Z" fill="#242424" />
+														<path d="M8.3,26.2l-.2.2a.1.1,0,0,0,0,.1l.2.6h0l-.2-.6a.1.1,0,0,1,0-.1l.2-.2h0Z" fill="#212121" />
+														<path d="M8.2,26.5l.2.6h.1l.2-.2a.1.1,0,0,0,0-.1l-.2-.6H8.4l-.2.2A.1.1,0,0,0,8.2,26.5Z" fill="#6f6f6f" />
+														<path d="M8.4,27.1h0l.2-.2a.1.1,0,0,0,0-.1l-.2-.6h0l-.2.2a.1.1,0,0,0,0,.1l.2.6h0Z" />
+														<path d="M8.4,27.1h0l.2-.2h0l-.2-.6h0l-.2.2a.1.1,0,0,0,0,.1l.2.6h0Z" fill="#4e4e4e" />
+														<path d="M8.4,26.2l-.2.2a.1.1,0,0,0,0,.1l.2.6h0l-.2-.6a.1.1,0,0,1,0-.1l.2-.2h0Z" fill="#404040" />
+														<polygon points="8.6 26.7 8.4 26.3 8.2 26.5 8.4 27 8.6 26.7" fill="#0a0a0a" />
+														<polygon points="8.4 27 8.6 26.7 8.4 26.3 8.2 26.5 8.4 27" fill="#2a8dde" />
+														<polygon points="8.4 27 8.6 26.7 8.4 26.3 8.4 27" fill="#0262c2" />
+														<polygon points="8.7 26.9 8.5 27.2 8.4 27.1 8.6 26.8 8.7 26.9" />
+														<polygon points="8.6 26.8 8.4 27 8.5 27.2 8.7 27 8.6 26.8" fill="#4e4e4e" />
+														<polygon points="8.6 26.9 8.6 26.9 8.6 26.9 8.6 27 8.6 26.9" fill="#212121" />
+														<polygon points="8.6 27 8.6 26.9 8.6 27 8.6 27 8.6 27" fill="#212121" />
+														<polygon points="8.5 27 8.6 27 8.6 27 8.5 27 8.5 27" fill="#212121" />
+														<polygon points="8.5 27 8.5 27 8.5 27 8.5 27.1 8.5 27" fill="#212121" />
+														<polygon points="8.6 27 8.6 26.9 8.7 27 8.6 27 8.6 27" fill="#212121" />
+														<polygon points="8.6 27 8.6 27 8.6 27 8.6 27.1 8.6 27" fill="#212121" />
+														<polygon points="8.6 27.1 8.6 27 8.6 27.1 8.6 27.1 8.6 27.1" fill="#212121" />
+														<polygon points="8.5 27.1 8.5 27.1 8.6 27.1 8.5 27.1 8.5 27.1" fill="#212121" />
+														<polygon points="8.6 27 8.7 27 8.7 27.1 8.7 27.1 8.6 27" fill="#212121" />
+														<polygon points="8.6 27.1 8.6 27.1 8.7 27.1 8.6 27.1 8.6 27.1" fill="#212121" />
+														<polygon points="8.6 27.1 8.6 27.1 8.6 27.1 8.6 27.2 8.6 27.1" fill="#212121" />
+														<polygon points="8.5 27.2 8.6 27.1 8.6 27.2 8.6 27.2 8.5 27.2" fill="#212121" />
+														<polygon points="8.7 27.1 8.7 27.1 8.7 27.1 8.7 27.1 8.7 27.1" fill="#212121" />
+														<polygon points="8.6 27.1 8.7 27.1 8.7 27.2 8.7 27.2 8.6 27.1" fill="#212121" />
+														<polygon points="8.6 27.2 8.6 27.2 8.6 27.2 8.6 27.2 8.6 27.2" fill="#212121" />
+														<polygon points="8.6 27.2 8.6 27.2 8.6 27.2 8.6 27.3 8.6 27.2" fill="#212121" />
+														<polygon points="8.6 26.9 8.6 26.9 8.6 26.9 8.6 26.9 8.6 26.9" fill="#a36400" />
+														<polygon points="8.5 26.9 8.6 26.9 8.6 26.9 8.6 27 8.5 26.9" fill="#a3a3a3" />
+														<polygon points="8.5 27 8.5 26.9 8.6 27 8.5 27 8.5 27" fill="#a3a3a3" />
+														<polygon points="8.5 27 8.5 27 8.5 27 8.5 27 8.5 27" fill="#a3a3a3" />
+														<polygon points="8.6 26.9 8.6 26.9 8.6 27 8.6 27 8.6 26.9" fill="#a36400" />
+														<polygon points="8.6 27 8.6 27 8.6 27 8.6 27 8.6 27" fill="#a3a3a3" />
+														<polygon points="8.5 27 8.6 27 8.6 27 8.6 27.1 8.5 27" fill="#a3a3a3" />
+														<polygon points="8.5 27.1 8.5 27 8.5 27.1 8.5 27.1 8.5 27.1" fill="#a3a3a3" />
+														<polygon points="8.6 27 8.7 27 8.7 27 8.6 27.1 8.6 27" fill="#a36400" />
+														<polygon points="8.6 27.1 8.6 27 8.6 27.1 8.6 27.1 8.6 27.1" fill="#a3a3a3" />
+														<polygon points="8.6 27.1 8.6 27.1 8.6 27.1 8.6 27.1 8.6 27.1" fill="#a3a3a3" />
+														<polygon points="8.5 27.1 8.6 27.1 8.6 27.1 8.5 27.2 8.5 27.1" fill="#a3a3a3" />
+														<polygon points="8.7 27.1 8.7 27 8.7 27.1 8.7 27.1 8.7 27.1" fill="#a36400" />
+														<polygon points="8.6 27.1 8.6 27.1 8.7 27.1 8.6 27.2 8.6 27.1" fill="#004000" />
+														<polygon points="8.6 27.2 8.6 27.1 8.6 27.2 8.6 27.2 8.6 27.2" fill="#a3a3a3" />
+														<polygon points="8.6 27.2 8.6 27.2 8.6 27.2 8.6 27.2 8.6 27.2" fill="#004000" />
+														<polygon points="8.6 26.9 8.6 26.9 8.6 26.9 8.6 26.9 8.6 26.9" fill="#a86700" />
+														<polygon points="8.5 26.9 8.6 26.9 8.6 26.9 8.6 27 8.5 26.9" fill="#a8a8a8" />
+														<polygon points="8.5 27 8.5 26.9 8.6 27 8.5 27 8.5 27" fill="#a8a8a8" />
+														<polygon points="8.5 27 8.5 27 8.5 27 8.5 27 8.5 27" fill="#a8a8a8" />
+														<polygon points="8.6 26.9 8.6 26.9 8.6 27 8.6 27 8.6 26.9" fill="#a86700" />
+														<polygon points="8.6 27 8.6 27 8.6 27 8.6 27 8.6 27" fill="#a8a8a8" />
+														<polygon points="8.5 27 8.6 27 8.6 27 8.6 27.1 8.5 27" fill="#a8a8a8" />
+														<polygon points="8.5 27.1 8.5 27 8.5 27.1 8.5 27.1 8.5 27.1" fill="#a8a8a8" />
+														<polygon points="8.6 27 8.7 27 8.7 27 8.6 27.1 8.6 27" fill="#a86700" />
+														<polygon points="8.6 27.1 8.6 27 8.6 27.1 8.6 27.1 8.6 27.1" fill="#a8a8a8" />
+														<polygon points="8.6 27.1 8.6 27.1 8.6 27.1 8.6 27.1 8.6 27.1" fill="#a8a8a8" />
+														<polygon points="8.5 27.1 8.6 27.1 8.6 27.1 8.5 27.2 8.5 27.1" fill="#a8a8a8" />
+														<polygon points="8.7 27.1 8.7 27 8.7 27.1 8.7 27.1 8.7 27.1" fill="#a86700" />
+														<polygon points="8.6 27.1 8.7 27.1 8.7 27.1 8.6 27.2 8.6 27.1" fill="#004500" />
+														<polygon points="8.6 27.2 8.6 27.1 8.6 27.2 8.6 27.2 8.6 27.2" fill="#a8a8a8" />
+														<polygon points="8.6 27.2 8.6 27.2 8.6 27.2 8.6 27.2 8.6 27.2" fill="#004500" />
+														<polygon points="8.6 26.9 8.6 26.9 8.6 26.9 8.6 26.9 8.6 26.9" fill="#ae6b00" />
+														<polygon points="8.6 26.9 8.6 26.9 8.6 26.9 8.6 27 8.6 26.9" fill="#aeaeae" />
+														<polygon points="8.5 27 8.5 26.9 8.6 27 8.5 27 8.5 27" fill="#aeaeae" />
+														<polygon points="8.5 27 8.5 27 8.5 27 8.5 27 8.5 27" fill="#aeaeae" />
+														<polygon points="8.6 26.9 8.6 26.9 8.6 27 8.6 27 8.6 26.9" fill="#ae6b00" />
+														<polygon points="8.6 27 8.6 27 8.6 27 8.6 27 8.6 27" fill="#aeaeae" />
+														<polygon points="8.5 27 8.6 27 8.6 27 8.6 27.1 8.5 27" fill="#aeaeae" />
+														<polygon points="8.5 27.1 8.5 27 8.6 27.1 8.5 27.1 8.5 27.1" fill="#aeaeae" />
+														<polygon points="8.6 27 8.7 27 8.7 27 8.7 27.1 8.6 27" fill="#ae6b00" />
+														<polygon points="8.6 27.1 8.6 27 8.6 27.1 8.6 27.1 8.6 27.1" fill="#aeaeae" />
+														<polygon points="8.6 27.1 8.6 27.1 8.6 27.1 8.6 27.1 8.6 27.1" fill="#aeaeae" />
+														<polygon points="8.5 27.1 8.6 27.1 8.6 27.1 8.6 27.2 8.5 27.1" fill="#aeaeae" />
+														<polygon points="8.7 27.1 8.7 27 8.7 27.1 8.7 27.1 8.7 27.1" fill="#ae6b00" />
+														<polygon points="8.6 27.1 8.7 27.1 8.7 27.1 8.6 27.2 8.6 27.1" fill="#004b00" />
+														<polygon points="8.6 27.2 8.6 27.1 8.6 27.2 8.6 27.2 8.6 27.2" fill="#aeaeae" />
+														<polygon points="8.6 27.2 8.6 27.2 8.6 27.2 8.6 27.2 8.6 27.2" fill="#004b00" />
+														<polygon points="8.6 26.9 8.6 26.9 8.6 26.9 8.6 26.9 8.6 26.9" fill="#b36e00" />
+														<polygon points="8.6 26.9 8.6 26.9 8.6 26.9 8.6 27 8.6 26.9" fill="#b3b3b3" />
+														<polygon points="8.5 27 8.5 26.9 8.6 27 8.5 27 8.5 27" fill="#b3b3b3" />
+														<polygon points="8.5 27 8.5 27 8.5 27 8.5 27 8.5 27" fill="#b3b3b3" />
+														<polygon points="8.6 26.9 8.6 26.9 8.7 27 8.6 27 8.6 26.9" fill="#b36e00" />
+														<polygon points="8.6 27 8.6 27 8.6 27 8.6 27 8.6 27" fill="#b3b3b3" />
+														<polygon points="8.5 27 8.6 27 8.6 27 8.6 27.1 8.5 27" fill="#b3b3b3" />
+														<polygon points="8.5 27.1 8.5 27 8.6 27.1 8.5 27.1 8.5 27.1" fill="#b3b3b3" />
+														<polygon points="8.6 27 8.7 27 8.7 27 8.7 27.1 8.6 27" fill="#b36e00" />
+														<polygon points="8.6 27.1 8.6 27 8.6 27.1 8.6 27.1 8.6 27.1" fill="#b3b3b3" />
+														<polygon points="8.6 27.1 8.6 27.1 8.6 27.1 8.6 27.1 8.6 27.1" fill="#b3b3b3" />
+														<polygon points="8.5 27.1 8.6 27.1 8.6 27.1 8.6 27.2 8.5 27.1" fill="#b3b3b3" />
+														<polygon points="8.7 27.1 8.7 27 8.7 27.1 8.7 27.1 8.7 27.1" fill="#b36e00" />
+														<polygon points="8.6 27.1 8.7 27.1 8.7 27.1 8.6 27.2 8.6 27.1" fill="#005000" />
+														<polygon points="8.6 27.2 8.6 27.1 8.6 27.2 8.6 27.2 8.6 27.2" fill="#b3b3b3" />
+														<polygon points="8.6 27.2 8.6 27.2 8.6 27.2 8.6 27.2 8.6 27.2" fill="#005000" />
+														<polygon points="8.6 26.9 8.6 26.9 8.6 26.9 8.6 26.9 8.6 26.9" fill="#b97100" />
+														<polygon points="8.6 26.9 8.6 26.9 8.6 26.9 8.6 27 8.6 26.9" fill="#b9b9b9" />
+														<polygon points="8.5 27 8.5 26.9 8.6 27 8.5 27 8.5 27" fill="#b9b9b9" />
+														<polygon points="8.5 27 8.5 27 8.5 27 8.5 27 8.5 27" fill="#b9b9b9" />
+														<polygon points="8.6 26.9 8.6 26.9 8.7 27 8.6 27 8.6 26.9" fill="#b97100" />
+														<polygon points="8.6 27 8.6 27 8.6 27 8.6 27 8.6 27" fill="#b9b9b9" />
+														<polygon points="8.5 27 8.6 27 8.6 27 8.6 27.1 8.5 27" fill="#b9b9b9" />
+														<polygon points="8.5 27.1 8.5 27 8.6 27.1 8.5 27.1 8.5 27.1" fill="#b9b9b9" />
+														<polygon points="8.6 27 8.7 27 8.7 27 8.7 27.1 8.6 27" fill="#b97100" />
+														<polygon points="8.6 27.1 8.6 27 8.6 27.1 8.6 27.1 8.6 27.1" fill="#b9b9b9" />
+														<polygon points="8.6 27.1 8.6 27.1 8.6 27.1 8.6 27.1 8.6 27.1" fill="#b9b9b9" />
+														<polygon points="8.5 27.1 8.6 27.1 8.6 27.1 8.6 27.2 8.5 27.1" fill="#b9b9b9" />
+														<polygon points="8.7 27.1 8.7 27 8.7 27.1 8.7 27.1 8.7 27.1" fill="#b97100" />
+														<polygon points="8.6 27.1 8.7 27.1 8.7 27.1 8.6 27.2 8.6 27.1" fill="#005600" />
+														<polygon points="8.6 27.2 8.6 27.1 8.6 27.2 8.6 27.2 8.6 27.2" fill="#b9b9b9" />
+														<polygon points="8.6 27.2 8.6 27.2 8.6 27.2 8.6 27.2 8.6 27.2" fill="#005600" />
+														<polygon points="8.6 26.9 8.6 26.9 8.6 26.9 8.6 26.9 8.6 26.9" fill="#be7500" />
+														<polygon points="8.6 26.9 8.6 26.9 8.6 26.9 8.6 27 8.6 26.9" fill="#bebebe" />
+														<polygon points="8.5 27 8.5 26.9 8.6 27 8.5 27 8.5 27" fill="#bebebe" />
+														<polygon points="8.5 27 8.5 27 8.5 27 8.5 27 8.5 27" fill="#bebebe" />
+														<polygon points="8.6 26.9 8.6 26.9 8.7 27 8.6 27 8.6 26.9" fill="#be7500" />
+														<polygon points="8.6 27 8.6 27 8.6 27 8.6 27 8.6 27" fill="#bebebe" />
+														<polygon points="8.5 27 8.6 27 8.6 27 8.6 27.1 8.5 27" fill="#bebebe" />
+														<polygon points="8.5 27.1 8.5 27 8.6 27.1 8.5 27.1 8.5 27.1" fill="#bebebe" />
+														<polygon points="8.6 27 8.7 27 8.7 27 8.7 27.1 8.6 27" fill="#be7500" />
+														<polygon points="8.6 27.1 8.6 27 8.6 27.1 8.6 27.1 8.6 27.1" fill="#bebebe" />
+														<polygon points="8.6 27.1 8.6 27.1 8.6 27.1 8.6 27.1 8.6 27.1" fill="#bebebe" />
+														<polygon points="8.5 27.1 8.6 27.1 8.6 27.1 8.6 27.2 8.5 27.1" fill="#bebebe" />
+														<polygon points="8.7 27.1 8.7 27 8.7 27.1 8.7 27.1 8.7 27.1" fill="#be7500" />
+														<polygon points="8.6 27.1 8.7 27.1 8.7 27.1 8.6 27.2 8.6 27.1" fill="#005b00" />
+														<polygon points="8.6 27.2 8.6 27.1 8.6 27.2 8.6 27.2 8.6 27.2" fill="#bebebe" />
+														<polygon points="8.6 27.2 8.6 27.2 8.6 27.2 8.6 27.2 8.6 27.2" fill="#005b00" />
+														<polygon points="8.6 26.9 8.6 26.9 8.6 26.9 8.6 26.9 8.6 26.9" fill="#c37800" />
+														<polygon points="8.6 26.9 8.6 26.9 8.6 26.9 8.6 27 8.6 26.9" fill="#c3c3c3" />
+														<polygon points="8.5 27 8.5 26.9 8.6 27 8.5 27 8.5 27" fill="#c3c3c3" />
+														<polygon points="8.5 27 8.5 27 8.5 27 8.5 27 8.5 27" fill="#c3c3c3" />
+														<polygon points="8.6 26.9 8.6 26.9 8.7 27 8.6 27 8.6 26.9" fill="#c37800" />
+														<polygon points="8.6 27 8.6 27 8.6 27 8.6 27 8.6 27" fill="#c3c3c3" />
+														<polygon points="8.5 27 8.6 27 8.6 27 8.6 27.1 8.5 27" fill="#c3c3c3" />
+														<polygon points="8.5 27.1 8.5 27 8.6 27.1 8.5 27.1 8.5 27.1" fill="#c3c3c3" />
+														<polygon points="8.6 27 8.7 27 8.7 27 8.7 27.1 8.6 27" fill="#c37800" />
+														<polygon points="8.6 27.1 8.6 27 8.6 27.1 8.6 27.1 8.6 27.1" fill="#c3c3c3" />
+														<polygon points="8.6 27.1 8.6 27.1 8.6 27.1 8.6 27.1 8.6 27.1" fill="#c3c3c3" />
+														<polygon points="8.5 27.1 8.6 27.1 8.6 27.1 8.6 27.2 8.5 27.1" fill="#c3c3c3" />
+														<polygon points="8.7 27.1 8.7 27 8.7 27.1 8.7 27.1 8.7 27.1" fill="#c37800" />
+														<polygon points="8.6 27.1 8.7 27.1 8.7 27.1 8.6 27.2 8.6 27.1" fill="#006000" />
+														<polygon points="8.6 27.2 8.6 27.1 8.6 27.2 8.6 27.2 8.6 27.2" fill="#c3c3c3" />
+														<polygon points="8.6 27.2 8.6 27.2 8.6 27.2 8.6 27.2 8.6 27.2" fill="#006000" />
+														<polygon points="8.6 26.9 8.6 26.9 8.6 26.9 8.6 26.9 8.6 26.9" fill="#c97b00" />
+														<polygon points="8.6 26.9 8.6 26.9 8.6 26.9 8.6 27 8.6 26.9" fill="#c9c9c9" />
+														<polygon points="8.5 27 8.6 26.9 8.6 27 8.5 27 8.5 27" fill="#c9c9c9" />
+														<polygon points="8.5 27 8.5 27 8.5 27 8.5 27 8.5 27" fill="#c9c9c9" />
+														<polygon points="8.6 27 8.6 26.9 8.7 27 8.6 27 8.6 27" fill="#c97b00" />
+														<polygon points="8.6 27 8.6 27 8.6 27 8.6 27 8.6 27" fill="#c9c9c9" />
+														<polygon points="8.6 27 8.6 27 8.6 27 8.6 27.1 8.6 27" fill="#c9c9c9" />
+														<polygon points="8.5 27.1 8.5 27 8.6 27.1 8.5 27.1 8.5 27.1" fill="#c9c9c9" />
+														<polygon points="8.6 27 8.7 27 8.7 27 8.7 27.1 8.6 27" fill="#c97b00" />
+														<polygon points="8.6 27.1 8.6 27 8.7 27.1 8.6 27.1 8.6 27.1" fill="#c9c9c9" />
+														<polygon points="8.6 27.1 8.6 27.1 8.6 27.1 8.6 27.1 8.6 27.1" fill="#c9c9c9" />
+														<polygon points="8.5 27.1 8.6 27.1 8.6 27.1 8.6 27.2 8.5 27.1" fill="#c9c9c9" />
+														<polygon points="8.7 27.1 8.7 27.1 8.7 27.1 8.7 27.1 8.7 27.1" fill="#c97b00" />
+														<polygon points="8.6 27.1 8.7 27.1 8.7 27.1 8.7 27.2 8.6 27.1" fill="#060" />
+														<polygon points="8.6 27.2 8.6 27.1 8.6 27.2 8.6 27.2 8.6 27.2" fill="#c9c9c9" />
+														<polygon points="8.6 27.2 8.6 27.2 8.6 27.2 8.6 27.2 8.6 27.2" fill="#060" />
+														<polygon points="8.6 26.9 8.6 26.9 8.6 26.9 8.6 26.9 8.6 26.9" fill="#ce7e00" />
+														<polygon points="8.6 26.9 8.6 26.9 8.6 26.9 8.6 27 8.6 26.9" fill="#cecece" />
+														<polygon points="8.5 27 8.6 26.9 8.6 27 8.5 27 8.5 27" fill="#cecece" />
+														<polygon points="8.5 27 8.5 27 8.5 27 8.5 27 8.5 27" fill="#cecece" />
+														<polygon points="8.6 27 8.6 26.9 8.7 27 8.6 27 8.6 27" fill="#ce7e00" />
+														<polygon points="8.6 27 8.6 27 8.6 27 8.6 27 8.6 27" fill="#cecece" />
+														<polygon points="8.6 27 8.6 27 8.6 27 8.6 27.1 8.6 27" fill="#cecece" />
+														<polygon points="8.5 27.1 8.5 27 8.6 27.1 8.5 27.1 8.5 27.1" fill="#cecece" />
+														<polygon points="8.6 27 8.7 27 8.7 27 8.7 27.1 8.6 27" fill="#ce7e00" />
+														<polygon points="8.6 27.1 8.6 27 8.7 27.1 8.6 27.1 8.6 27.1" fill="#cecece" />
+														<polygon points="8.6 27.1 8.6 27.1 8.6 27.1 8.6 27.1 8.6 27.1" fill="#cecece" />
+														<polygon points="8.5 27.1 8.6 27.1 8.6 27.1 8.6 27.2 8.5 27.1" fill="#cecece" />
+														<polygon points="8.7 27.1 8.7 27.1 8.7 27.1 8.7 27.1 8.7 27.1" fill="#ce7e00" />
+														<polygon points="8.6 27.1 8.7 27.1 8.7 27.1 8.7 27.2 8.6 27.1" fill="#006b00" />
+														<polygon points="8.6 27.2 8.6 27.1 8.6 27.2 8.6 27.2 8.6 27.2" fill="#cecece" />
+														<polygon points="8.6 27.2 8.6 27.2 8.6 27.2 8.6 27.2 8.6 27.2" fill="#006b00" />
+														<polygon points="8.6 26.9 8.6 26.9 8.6 26.9 8.6 26.9 8.6 26.9" fill="#d48200" />
+														<polygon points="8.6 26.9 8.6 26.9 8.6 26.9 8.6 27 8.6 26.9" fill="#d4d4d4" />
+														<polygon points="8.5 27 8.6 26.9 8.6 27 8.5 27 8.5 27" fill="#d4d4d4" />
+														<polygon points="8.5 27 8.5 27 8.5 27 8.5 27 8.5 27" fill="#d4d4d4" />
+														<polygon points="8.6 27 8.6 26.9 8.7 27 8.6 27 8.6 27" fill="#d48200" />
+														<polygon points="8.6 27 8.6 27 8.6 27 8.6 27 8.6 27" fill="#d4d4d4" />
+														<polygon points="8.6 27 8.6 27 8.6 27 8.6 27.1 8.6 27" fill="#d4d4d4" />
+														<polygon points="8.5 27.1 8.5 27 8.6 27.1 8.5 27.1 8.5 27.1" fill="#d4d4d4" />
+														<polygon points="8.6 27 8.7 27 8.7 27 8.7 27.1 8.6 27" fill="#d48200" />
+														<polygon points="8.6 27.1 8.6 27 8.7 27.1 8.6 27.1 8.6 27.1" fill="#d4d4d4" />
+														<polygon points="8.6 27.1 8.6 27.1 8.6 27.1 8.6 27.1 8.6 27.1" fill="#d4d4d4" />
+														<polygon points="8.5 27.1 8.6 27.1 8.6 27.1 8.6 27.2 8.5 27.1" fill="#d4d4d4" />
+														<polygon points="8.7 27.1 8.7 27.1 8.7 27.1 8.7 27.1 8.7 27.1" fill="#d48200" />
+														<polygon points="8.6 27.1 8.7 27.1 8.7 27.1 8.7 27.2 8.6 27.1" fill="#007100" />
+														<polygon points="8.6 27.2 8.6 27.1 8.6 27.2 8.6 27.2 8.6 27.2" fill="#d4d4d4" />
+														<polygon points="8.6 27.2 8.6 27.2 8.6 27.2 8.6 27.2 8.6 27.2" fill="#007100" />
+														<polygon points="8.6 26.9 8.6 26.9 8.6 26.9 8.6 26.9 8.6 26.9" fill="#d98500" />
+														<polygon points="8.6 26.9 8.6 26.9 8.6 26.9 8.6 27 8.6 26.9" fill="#d9d9d9" />
+														<polygon points="8.5 27 8.6 26.9 8.6 27 8.5 27 8.5 27" fill="#d9d9d9" />
+														<polygon points="8.5 27 8.5 27 8.5 27 8.5 27 8.5 27" fill="#d9d9d9" />
+														<polygon points="8.6 27 8.6 26.9 8.7 27 8.6 27 8.6 27" fill="#d98500" />
+														<polygon points="8.6 27 8.6 27 8.6 27 8.6 27 8.6 27" fill="#d9d9d9" />
+														<polygon points="8.6 27 8.6 27 8.6 27 8.6 27.1 8.6 27" fill="#d9d9d9" />
+														<polygon points="8.5 27.1 8.5 27 8.6 27.1 8.5 27.1 8.5 27.1" fill="#d9d9d9" />
+														<polygon points="8.6 27 8.7 27 8.7 27 8.7 27.1 8.6 27" fill="#d98500" />
+														<polygon points="8.6 27.1 8.6 27 8.7 27.1 8.6 27.1 8.6 27.1" fill="#d9d9d9" />
+														<polygon points="8.6 27.1 8.6 27.1 8.6 27.1 8.6 27.1 8.6 27.1" fill="#d9d9d9" />
+														<polygon points="8.5 27.1 8.6 27.1 8.6 27.1 8.6 27.2 8.5 27.1" fill="#d9d9d9" />
+														<polygon points="8.7 27.1 8.7 27.1 8.7 27.1 8.7 27.1 8.7 27.1" fill="#d98500" />
+														<polygon points="8.6 27.1 8.7 27.1 8.7 27.1 8.7 27.2 8.6 27.1" fill="#007600" />
+														<polygon points="8.6 27.2 8.6 27.1 8.6 27.2 8.6 27.2 8.6 27.2" fill="#d9d9d9" />
+														<polygon points="8.6 27.2 8.6 27.2 8.6 27.2 8.6 27.2 8.6 27.2" fill="#007600" />
+														<polygon points="8.6 26.9 8.6 26.9 8.6 26.9 8.6 26.9 8.6 26.9" fill="#ff9d00" />
+														<polygon points="8.6 26.9 8.6 26.9 8.6 26.9 8.6 27 8.6 26.9" fill="#ededed" style="mix-blend-mode:multiply" />
+														<polygon points="8.5 27 8.6 26.9 8.6 27 8.5 27 8.5 27" fill="#ededed" style="mix-blend-mode:multiply" />
+														<polygon points="8.5 27 8.5 27 8.5 27 8.5 27 8.5 27" fill="#ededed" style="mix-blend-mode:multiply" />
+														<polygon points="8.6 27 8.6 26.9 8.7 27 8.6 27 8.6 27" fill="#ff9d00" />
+														<polygon points="8.6 27 8.6 27 8.6 27 8.6 27 8.6 27" fill="#ededed" style="mix-blend-mode:multiply" />
+														<polygon points="8.6 27 8.6 27 8.6 27 8.6 27.1 8.6 27" fill="#ededed" style="mix-blend-mode:multiply" />
+														<polygon points="8.5 27.1 8.5 27 8.6 27.1 8.5 27.1 8.5 27.1" fill="#ededed" style="mix-blend-mode:multiply" />
+														<polygon points="8.6 27 8.7 27 8.7 27 8.7 27.1 8.6 27" fill="#ff9d00" />
+														<polygon points="8.6 27.1 8.6 27 8.7 27.1 8.6 27.1 8.6 27.1" fill="#ededed" style="mix-blend-mode:multiply" />
+														<polygon points="8.6 27.1 8.6 27.1 8.6 27.1 8.6 27.1 8.6 27.1" fill="#ededed" style="mix-blend-mode:multiply" />
+														<polygon points="8.5 27.1 8.6 27.1 8.6 27.1 8.6 27.2 8.5 27.1" fill="#ededed" style="mix-blend-mode:multiply" />
+														<polygon points="8.7 27.1 8.7 27.1 8.7 27.1 8.7 27.1 8.7 27.1" fill="#ff9d00" />
+														<polygon points="8.6 27.1 8.7 27.1 8.7 27.1 8.7 27.2 8.6 27.1" fill="#009c00" />
+														<polygon points="8.6 27.2 8.6 27.1 8.6 27.2 8.6 27.2 8.6 27.2" fill="#ededed" style="mix-blend-mode:multiply" />
+														<polygon points="8.6 27.2 8.6 27.2 8.6 27.2 8.6 27.2 8.6 27.2" fill="#009c00" />
+														<polygon points="8.4 26.9 8.6 26.7 8.4 26.3 8.3 26.5 8.4 26.9" fill="#ededed" style="mix-blend-mode:multiply" />
+														<polygon points="8.3 26.6 8.4 26.4 8.4 26.4 8.3 26.6 8.3 26.6" />
+														<polygon points="8.3 26.6 8.5 26.4 8.5 26.4 8.3 26.6 8.3 26.6" />
+														<polygon points="8.3 26.6 8.5 26.5 8.5 26.5 8.3 26.6 8.3 26.6" />
+														<polygon points="8.3 26.7 8.5 26.5 8.5 26.5 8.3 26.7 8.3 26.7" />
+														<polygon points="8.4 26.7 8.5 26.6 8.5 26.6 8.4 26.7 8.4 26.7" fill="#ff9500" />
+														<polygon points="8.4 26.8 8.5 26.6 8.6 26.7 8.4 26.9 8.4 26.8" fill="#aeaeae" />
+														<ellipse cx="9.5" cy="26.2" transform="translate(-12.7 9.3) rotate(-32.7)" fill="#0e0e0e" />
+														<path d="M8.6,26.8h0l.8-.5h.1l-.8.5H8.6Z" fill="#232323" />
+														<path d="M8.6,26.8h0l.8-.5h0l-.8.5H8.6Z" fill="#454545" />
+														<path d="M8.6,26.8l.9-.5h0l-.9.5Z" fill="#616161" />
+														<path d="M8.6,26.8h0Z" fill="#202020" />
+														<path d="M8.6,26.8h0Z" />
+														<path d="M8.7,26.4H8.6a.1.1,0,0,0,0,.1h.8l.4.2h.5l-.2-.2H8.7Z" fill="#f1bc95" />
+														<path d="M10.2,26.8h0v.3h.1l.2-.2h.5l.2-.2.4-.3L12,26v-.4a.6.6,0,0,0,0-.2v-.2h-.3a1.2,1.2,0,0,0-.6.5v.2l-.2.3-.4.5h-.3Z"
+														fill="#f4ed6e" />
+														<path d="M10.4,27.2h.8l.2-.2.4-.3.4-.4a.6.6,0,0,0,0-.5c0-.1,0-.2-.1-.2h-.2v.2h0a.5.5,0,0,1-.1.4l-.4.3-.4.4-.4.4-.3.3h-.1Z"
+														fill="#e8e269" />
+														<path d="M10.4,27.4h-.1c-.1,0-.2-.1-.2-.2a.9.9,0,0,1-.1-.4h.3c-.1,0,.1.4.1.4h-.1Z" fill="#f9f371" />
+														<path d="M9.7,25.7v-.9a.4.4,0,0,1,.2-.3h.1a1.7,1.7,0,0,0-.3,1.2v.5H9.4c0-.1.1-.2.2-.3Z" fill="#e8e269" />
+														<path d="M9.7,26.6H9.4l-.2-.3h.2c-.1.1.2.3.2.3h.1s0,.1,0,.1Z" fill="#f9f371" />
+														<polygon points="8.7 32.9 10.7 34 8.2 35.4 6.2 34.3 8.7 32.9" fill="#c3c5c7" style="mix-blend-mode:multiply" />
+														<polygon points="6.7 36.3 9.1 34.9 9.1 32.3 6.7 33.7 6.7 36.3" fill="#bf9245" />
+														<polygon points="4.7 32.6 6.7 33.7 6.7 36.3 4.7 35.2 4.7 32.6" fill="#cfa658" />
+														<polygon points="5.8 33.5 6.4 33.9 6.4 34.7 5.8 34.3 5.8 33.5" fill="none" stroke="#a05e00" stroke-miterlimit="10" stroke-width="0.08"
+														/>
+														<polygon points="6 34 6.1 34.4 6.2 34.5 6.2 34.1 6.3 34.1 6.1 33.8 6 33.9 6 34" fill="#a05e00" />
+														<polygon points="4.7 32.6 6.7 33.7 7.8 33 8.2 32.8 9.1 32.3 7.2 31.2 6.3 31.7 5.9 31.9 4.7 32.6" fill="#edce7d" />
+														<polygon points="7.8 33 8.2 32.8 6.3 31.7 5.9 31.9 7.8 33" fill="#fee9ab" />
+														<polygon points="8.3 35.2 9 34.8 9 34.2 8.3 34.6 8.3 35.2" fill="#ababab" />
+														<polygon points="8.3 35.1 8.9 34.7 8.9 34.7 8.3 35.1 8.3 35.1" fill="#595959" />
+														<polygon points="8.3 35 8.9 34.7 8.9 34.6 8.3 35 8.3 35" fill="#595959" />
+														<polygon points="8.3 34.9 8.9 34.6 8.9 34.6 8.3 34.9 8.3 34.9" fill="#595959" />
+														<polygon points="8.3 34.9 8.9 34.5 8.9 34.5 8.3 34.8 8.3 34.9" fill="#595959" />
+														<polygon points="8.3 34.7 8.9 34.4 8.9 34.3 8.3 34.6 8.3 34.7" fill="#595959" />
+														<polygon points="8.2 32.8 8.2 33.7 8.1 33.5 8.1 33.8 7.9 33.6 7.8 33.9 7.8 33 8.2 32.8" fill="#dbc68a" />
+														<polygon points="5.4 33.3 5.6 33.4 5.6 33.7 5.4 33.6 5.4 33.3" fill="#a05e00" />
+														<polygon points="5.1 33.2 5.3 33.3 5.3 33.5 5.1 33.4 5.1 33.2" fill="#a05e00" />
+														<polygon points="4.9 33 5.1 33.1 5.1 33.4 4.9 33.3 4.9 33" fill="#a05e00" />
+														<polygon points="7.4 31.4 8.5 32.1 7.1 32.9 6 32.2 7.4 31.4" fill="#e6daca" style="mix-blend-mode:multiply" />
+														<polygon points="6.3 33.3 7.6 32.5 7.6 31.7 6.3 32.5 6.3 33.3" fill="#bf9245" />
+														<polygon points="5.1 31.9 6.3 32.5 6.3 33.3 5.1 32.7 5.1 31.9" fill="#cfa658" />
+														<polygon points="5.1 31.9 6.3 32.5 6.9 32.2 7.1 32 7.6 31.7 6.5 31.1 6 31.4 5.8 31.5 5.1 31.9" fill="#edce7d" />
+														<polygon points="6.9 32.2 7.1 32 6 31.4 5.8 31.5 6.9 32.2" fill="#fee9ab" />
+														<polygon points="7.1 32 7.1 32.5 7.1 32.4 7 32.6 7 32.5 6.9 32.6 6.9 32.2 7.1 32" fill="#dbc68a" />
+														<polygon points="5.5 32.3 5.6 32.4 5.6 32.5 5.5 32.5 5.5 32.3" fill="#a05e00" />
+														<polygon points="5.4 32.3 5.5 32.3 5.5 32.4 5.4 32.4 5.4 32.3" fill="#a05e00" />
+														<polygon points="5.2 32.2 5.3 32.2 5.3 32.4 5.2 32.3 5.2 32.2" fill="#a05e00" />
+														<polygon points="6.3 31.3 6.6 31.5 6.8 31.4 6.5 31.2 6.3 31.3" fill="#ebebeb" />
+														<polygon points="6.3 31.3 6.6 31.5 6.6 31.5 6.3 31.3 6.3 31.3" fill="#bfbfbf" />
+														<polygon points="6.4 31.3 6.6 31.5 6.7 31.5 6.4 31.3 6.4 31.3" fill="#bfbfbf" />
+														<polygon points="6.4 31.3 6.7 31.5 6.7 31.4 6.4 31.3 6.4 31.3" fill="#bfbfbf" />
+														<polygon points="6.4 31.3 6.7 31.4 6.7 31.4 6.4 31.3 6.4 31.3" fill="#bfbfbf" />
+														<polygon points="6.5 31.2 6.8 31.4 6.8 31.4 6.5 31.2 6.5 31.2" fill="#bfbfbf" />
+														<polygon points="5.9 32.5 6.2 32.6 6.2 32.9 5.9 32.8 5.9 32.5" fill="none" stroke="#a05e00" stroke-miterlimit="10" stroke-width="0.03"
+														/>
+														<polygon points="6 32.7 6 32.8 6.1 32.8 6.1 32.7 6.1 32.7 6.1 32.6 6 32.6 6 32.7" fill="#a05e00" />
+													</g>
+												</svg>
+											</div>
+											<div><p>Distribuição</p></div>											
+										</div>										
+									</div>
+								</div>
+								<div>
+									<p>Desde o momento em que a produção é concluída até o momento em que o consumidor recebe o produto, tomando posse do mesmo,
+									os produtos são de responsabilidade da logística, a qual deve mantê-los armazenados na empresa e, então transportá-los para
+									o distribuidor ou diretamente ao consumidor.</p>
+									<p>O processo mais comum de distribuição é quando a empresa entrega o produto final para o distribuidor, que por sua vez vende
+									o produto para um varejista e em seguida aos consumidores finais</p>
+								</div>
+							</article>
+						</div>
+					</section>
+				</div>
+			</div>
+		</div>
+		<script src="./assets/js/jquery.min.js"></script>
+		<script src="./assets/js/bootstrap.min.js"></script>
+		<script type="text/javascript">
+			$(".sidebar-toggle").click(function(e) { e.preventDefault(); $("#wrapper").toggleClass("toggled"); }); $("[data-role=dropdown]").dropdown();
+			$("#main-toggle").on("click", function(){
+				if( document.getElementById("edit_side").checked) {
+					document.getElementById("edit_side").checked = false;	
+				} else {
+					document.getElementById("edit_side").checked = true;
+				}				
+			});
+	
+		</script>
+	</body>
+</html>
+<div class="modal fade" id="module-completed" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog modal-sm" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">Parabéns!</h4>
+			</div>
+			<div class="modal-body">
+				<div class="module-unlocked">
+					<div>
+						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="60px" height="60px" class="header-score-icon">
+							<polygon points="464 444.8 388.3 445.9 349.9 512 299.7 426.7 264.5 366.9 379.7 299.7 414.9 360.5 464 444.8" style="fill:#ff7058"
+							/>
+							<polygon points="247.5 366.9 212.3 426.7 162.1 512 123.7 445.9 48 444.8 97.1 360.5 132.3 299.7 247.5 366.9" style="fill:#ff7058"
+							/>
+							<path d="M132.3,299.7l115.2,67.2-35.2,59.7c-4.3-3.2-7.5-6.4-10.7-7.5h-3.2c-4.3,0-10.7,1.1-16,2.1a81.2,81.2,0,0,1-22.4,3.2c-7.5,0-13.9-1.1-20.3-5.3-13.9-8.5-19.2-23.5-23.5-36.3-2.1-7.5-5.3-14.9-7.5-18.1s-6.4-4.3-10.7-5.3Z"
+								style="fill:#231f20;opacity:0.100000001490116;isolation:isolate" />
+							<path d="M414.9,360.5c-4.3,2.1-8.5,3.2-10.7,5.3s-5.3,10.7-7.5,18.1c-4.3,13.9-9.6,28.8-23.5,36.3a37.9,37.9,0,0,1-20.3,5.3,81.2,81.2,0,0,1-22.4-3.2c-6.4-1.1-11.7-2.1-16-2.1h-3.2c-3.2,1.1-6.4,3.2-10.7,7.5L265.6,368l115.2-67.2Z"
+								style="fill:#231f20;opacity:0.100000001490116;isolation:isolate" />
+							<path d="M473.6,217.6c0,18.1-26.7,33.1-30.9,50.1s10.7,43.7,2.1,58.7-39.5,14.9-52.3,27.7-11.7,42.7-27.7,52.3-41.6-6.4-58.7-2.1-32,30.9-50.1,30.9-33.1-26.7-50.1-30.9-43.7,10.7-58.7,2.1-14.9-39.5-27.7-52.3-42.7-11.7-52.3-27.7,6.4-41.6,2.1-58.7-30.9-32-30.9-50.1,26.7-33.1,30.9-50.1-10.7-43.7-2.1-58.7,39.5-14.9,52.3-27.7,11.7-42.7,27.7-52.3,41.6,6.4,58.7,2.1S237.9,0,256,0s33.1,26.7,50.1,30.9,43.7-10.7,58.7-2.1,14.9,39.5,27.7,52.3,42.7,11.7,52.3,27.7-6.4,41.6-2.1,58.7S473.6,199.5,473.6,217.6Z"
+								style="fill:#ffd15c" />
+							<polygon points="256 128 277.3 193.1 346.7 193.1 290.1 233.6 311.5 299.7 256 259.2 200.5 299.7 221.9 233.6 165.3 193.1 234.7 193.1 256 128"
+								style="fill:#fff" />
+							<path d="M256,370.1A152.5,152.5,0,1,1,408.5,217.6,152.5,152.5,0,0,1,256,370.1Zm0-273.1c-66.1,0-120.5,54.4-120.5,120.5S189.9,338.1,256,338.1s120.5-54.4,120.5-120.5S322.1,97.1,256,97.1Z"
+								style="fill:#ff7058" />
+							<path d="M256,370.1c-82.1,0-149.3-66.1-152.5-147.2v5.3a152.5,152.5,0,0,0,305.1,0v-5.3C405.3,305.1,338.1,370.1,256,370.1Z"
+								style="fill:#231f20;opacity:0.100000001490116;isolation:isolate" />
+						</svg>						
+					</div>
+					<p>Você acaba de liberar o acesso para uma nova lição!</p>
+					<p>Bons estudos!</p>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-unlocked" data-dismiss="modal">Obrigado!</button>
+			</div>
+		</div>
+	</div>
+</div>
